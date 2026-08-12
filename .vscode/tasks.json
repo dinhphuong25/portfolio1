@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install Nodemailer",
+			"type": "shell",
+			"command": "npm install nodemailer && npm install -D @types/nodemailer"
+		},
+		{
+			"label": "Delete favicon",
+			"type": "shell",
+			"command": "Remove-Item src\\app\\favicon.ico -Force -ErrorAction SilentlyContinue",
+			"isBackground": false
+		},
+		{
+			"label": "Install framer-motion",
+			"type": "shell",
+			"command": "npm install framer-motion",
+			"isBackground": false
+		},
+		{
+			"label": "Next JS Build",
+			"type": "shell",
+			"command": "npm run build"
+		},
+		{
+			"label": "Next JS Start",
+			"type": "shell",
+			"command": "npm run dev"
+		}
+	]
+}

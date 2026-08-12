@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tech UI | Senior Frontend Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Tech Gradient */
+        .tech-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Background Animated Glows */
+        .glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .glow-1 { top: -100px; left: -100px; }
+        .glow-2 { bottom: -100px; right: -100px; }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-6 border-b border-white/5 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-xl font-black tracking-tighter">TECH<span class="text-indigo-500">CORE</span></div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-white transition-colors">Giải pháp</a>
+                <a href="#" class="hover:text-white transition-colors">Tính năng</a>
+                <a href="#" class="hover:text-white transition-colors">Tài liệu</a>
+            </div>
+            <button class="px-5 py-2.5 bg-white text-black rounded-full text-sm font-bold hover:bg-indigo-500 hover:text-white transition-all duration-300">
+                Bắt đầu ngay
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-4xl text-center" data-aos="zoom-out" data-aos-duration="1500">
+            <span class="px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold tracking-widest uppercase mb-6 inline-block">
+                Sẵn sàng cho kỷ nguyên AI 2025
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 leading-[1.1]">
+                Hệ thống <span id="typed" class="tech-gradient"></span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Tối ưu hóa hiệu suất doanh nghiệp bằng nền tảng điện toán đám mây thế hệ mới. Giao diện sắc nét, tốc độ xử lý vượt trội.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 rounded-2xl font-bold shadow-lg shadow-indigo-500/20 hover:bg-indigo-500 hover:-translate-y-1 transition-all duration-300">
+                    Khám phá tính năng
+                </a>
+                <a href="#" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold hover:bg-white/10 transition-all duration-300">
+                    Xem Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-4 tracking-tight">Tính năng đột phá</h2>
+            <p class="text-gray-500">Trải nghiệm sức mạnh của công nghệ tối tân ngay trong tầm tay.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-10 rounded-[2.5rem] group cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Tốc độ tối đa</h3>
+                <p class="text-gray-400 leading-relaxed">Xử lý hàng triệu truy vấn mỗi giây với kiến trúc microservices được tối ưu hóa 100%.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-10 rounded-[2.5rem] group cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Bảo mật đa tầng</h3>
+                <p class="text-gray-400 leading-relaxed">Dữ liệu của bạn được mã hóa AES-256 đầu cuối, đảm bảo an toàn tuyệt đối trước mọi rủi ro.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-10 rounded-[2.5rem] group cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Phân tích chuyên sâu</h3>
+                <p class="text-gray-400 leading-relaxed">Dashboard thông minh tự động dự báo xu hướng kinh doanh bằng thuật toán học máy nâng cao.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 text-center text-gray-600 text-sm">
+        <p>&copy; 2025 TechCore Solutions. Đã được tối ưu hóa cho tương lai.</p>
+    </footer>
+
+    <!-- Libraries CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script>
+        // Typed.js Initialization
+        const typed = new Typed('#typed', {
+            strings: ['Khởi tạo hệ thống...', 'Tối ưu hóa quy trình...', 'Tự động hóa toàn diện...', 'Dẫn đầu công nghệ...'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            cursorChar: '_',
+        });
+
+        // AOS Initialization
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        // GSAP Animations
+        gsap.from("nav", {
+            y: -100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out"
+        });
+
+        // Smooth Hover Animation with GSAP for individual buttons if needed
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                gsap.to(btn, { scale: 1.05, duration: 0.3 });
+            });
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, { scale: 1, duration: 0.3 });
+            });
+        });
+    </script>
+</body>
+</html>
