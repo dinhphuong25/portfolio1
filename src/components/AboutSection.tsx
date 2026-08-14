@@ -9,61 +9,21 @@ export default function AboutSection() {
     const { language } = useLanguage();
 
     const storyVi = [
-        (
-            <React.Fragment key="p1">
-                Chào bạn! Tôi là <strong className="font-extrabold text-slate-900 dark:text-white">Kim Đình Phương</strong>, sinh viên năm 3 chuyên ngành <strong className="font-extrabold text-slate-900 dark:text-white">Quản lý Chuỗi cung ứng & Logistics</strong> tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="p2">
-                Tôi đặc biệt hứng thú với cách <strong className="font-extrabold text-slate-900 dark:text-white">hàng hóa, dữ liệu và quy trình</strong> được kết nối để tạo nên một chuỗi cung ứng vận hành hiệu quả. Vì vậy, bên cạnh kiến thức chuyên ngành, tôi chủ động khám phá công nghệ và phát triển kỹ năng lập trình để tìm ra những cách tiếp cận mới cho các bài toán thực tế.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="p3">
-                Tôi đang tự học và thực hành <strong className="font-extrabold text-slate-900 dark:text-white">phát triển web với Next.js, TypeScript</strong>, đồng thời tìm hiểu về <strong className="font-extrabold text-slate-900 dark:text-white">AI, tự động hóa quy trình và thiết kế UI/UX</strong>. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được ứng dụng để giải quyết một vấn đề cụ thể, thay vì chỉ dừng lại ở việc tạo ra một sản phẩm đẹp hoặc hiện đại.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="p4">
-                Từ quan điểm đó, tôi đã thực hiện một số dự án cá nhân như <strong className="font-extrabold text-slate-900 dark:text-white">EcoFresh WMS – hệ thống quản lý kho lạnh</strong>, <strong className="font-extrabold text-slate-900 dark:text-white">Ez Study – cổng học tập</strong> và <strong className="font-extrabold text-slate-900 dark:text-white">HiTOEIC – nền tảng luyện thi</strong>. Mỗi dự án là một cơ hội để tôi kết hợp tư duy Logistics với công nghệ, đồng thời rèn luyện khả năng phân tích vấn đề, thiết kế giải pháp và tối ưu trải nghiệm người dùng.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="p5">
-                Trong tương lai, tôi hướng đến trở thành một <strong className="font-extrabold text-slate-900 dark:text-white">Digital Supply Chain Specialist</strong> – người có khả năng kết nối giữa <strong className="font-extrabold text-slate-900 dark:text-white">nghiệp vụ vận hành, dữ liệu và công nghệ</strong>, góp phần xây dựng những giải pháp số thiết thực cho hoạt động Logistics và Chuỗi cung ứng.
-            </React.Fragment>
-        ),
+        "Chào bạn! Tôi là Kim Đình Phương, sinh viên năm 3 chuyên ngành Quản lý Chuỗi cung ứng & Logistics tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ.",
+        "Tôi đặc biệt hứng thú với cách hàng hóa, dữ liệu và quy trình được kết nối để tạo nên một chuỗi cung ứng vận hành hiệu quả. Vì vậy, bên cạnh kiến thức chuyên ngành, tôi chủ động khám phá công nghệ và phát triển kỹ năng lập trình để tìm ra những cách tiếp cận mới cho các bài toán thực tế.",
+        "Tôi đang tự học và thực hành phát triển web với Next.js, TypeScript, đồng thời tìm hiểu về AI, tự động hóa quy trình và thiết kế UI/UX. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được ứng dụng để giải quyết một vấn đề cụ thể, thay vì chỉ dừng lại ở việc tạo ra một sản phẩm đẹp hoặc hiện đại.",
+        "Từ quan điểm đó, tôi đã thực hiện một số dự án cá nhân như EcoFresh WMS – hệ thống quản lý kho lạnh, Ez Study – cổng học tập và HiTOEIC – nền tảng luyện thi. Mỗi dự án là một cơ hội để tôi kết hợp tư duy Logistics với công nghệ, đồng thời rèn luyện khả năng phân tích vấn đề, thiết kế giải pháp và tối ưu trải nghiệm người dùng.",
+        "Trong tương lai, tôi hướng đến trở thành một Digital Supply Chain Specialist – người có khả năng kết nối giữa nghiệp vụ vận hành, dữ liệu và công nghệ, góp phần xây dựng những giải pháp số thiết thực cho hoạt động Logistics và Chuỗi cung ứng.",
     ];
 
     const mottoVi = "Logistics là nền tảng tôi theo đuổi. Công nghệ là công cụ tôi lựa chọn. Và giải quyết vấn đề thực tế là mục tiêu tôi hướng đến.";
 
     const storyEn = [
-        (
-            <React.Fragment key="ep1">
-                Hello! I am <strong className="font-extrabold text-slate-900 dark:text-white">Kim Dinh Phuong</strong>, a 3rd-year student majoring in <strong className="font-extrabold text-slate-900 dark:text-white">Supply Chain Management & Logistics</strong> at Can Tho University of Technology.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="ep2">
-                I am particularly fascinated by how <strong className="font-extrabold text-slate-900 dark:text-white">goods, data, and processes</strong> connect to form an efficient operational supply chain. Alongside my academic studies, I proactively explore technology and develop programming skills to find practical solutions.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="ep3">
-                I am self-learning fullstack <strong className="font-extrabold text-slate-900 dark:text-white">web development with Next.js, TypeScript</strong>, while researching <strong className="font-extrabold text-slate-900 dark:text-white">AI, process automation, and UI/UX design</strong>. I strongly believe technology brings real value only when applied to solve real-world problems.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="ep4">
-                Guided by this principle, I engineered projects like <strong className="font-extrabold text-slate-900 dark:text-white">EcoFresh WMS cold-storage system</strong>, <strong className="font-extrabold text-slate-900 dark:text-white">Ez Study portal</strong>, and <strong className="font-extrabold text-slate-900 dark:text-white">HiTOEIC exam platform</strong>. Each project bridges logistics domain knowledge with digital engineering.
-            </React.Fragment>
-        ),
-        (
-            <React.Fragment key="ep5">
-                In the future, I aim to become a <strong className="font-extrabold text-slate-900 dark:text-white">Digital Supply Chain Specialist</strong> — serving as a bridge between <strong className="font-extrabold text-slate-900 dark:text-white">field operations, data, and technology</strong> to build impactful digital solutions.
-            </React.Fragment>
-        ),
+        "Hello! I am Kim Dinh Phuong, a 3rd-year student majoring in Supply Chain Management & Logistics at Can Tho University of Technology.",
+        "I am particularly fascinated by how goods, data, and processes connect to form an efficient operational supply chain. Alongside my academic studies, I proactively explore technology and develop programming skills to find practical solutions.",
+        "I am self-learning fullstack web development with Next.js, TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology brings real value only when applied to solve real-world problems.",
+        "Guided by this principle, I engineered projects like EcoFresh WMS cold-storage system, Ez Study portal, and HiTOEIC exam platform. Each project bridges logistics domain knowledge with digital engineering.",
+        "In the future, I aim to become a Digital Supply Chain Specialist — serving as a bridge between field operations, data, and technology to build impactful digital solutions.",
     ];
 
     const mottoEn = "Logistics is my foundation. Technology is my tool. Solving real-world problems is my goal.";
