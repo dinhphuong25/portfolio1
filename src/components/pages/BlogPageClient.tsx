@@ -150,9 +150,9 @@ export default function BlogPageClient() {
                 </div>
             </div>
 
-            {/* Sleek Floating Toast Notification for Unpublished Posts */}
+            {/* Sleek Floating Toast Notification for Unpublished Posts - Bottom Right */}
             {toastMessage && (
-                <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
+                <div className="fixed bottom-6 right-6 z-50 max-w-sm px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
                     <span className="text-base shrink-0">✍️</span>
                     <span>{toastMessage}</span>
                     <button 
