@@ -107,17 +107,6 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                     >
                         <span className="font-extrabold text-[10px] tracking-tight">Zalo</span>
                     </a>
-
-                    {/* Email */}
-                    <a
-                        href={`mailto:${profileData.email}`}
-                        title="Email"
-                        className="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-900 hover:border-slate-400 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center cursor-pointer"
-                    >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </a>
                 </motion.div>
             </div>
         </section>
