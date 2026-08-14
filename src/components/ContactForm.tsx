@@ -102,7 +102,6 @@ export default function ContactForm() {
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
-        // Clear error when user starts typing
         if (errors[name as keyof FormErrors]) {
             setErrors((prev) => ({ ...prev, [name]: undefined }));
         }
@@ -113,7 +112,7 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 {/* Name field */}
                 <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                         {isVi ? "Tên" : "Name"} <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -122,7 +121,7 @@ export default function ContactForm() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full px-5 py-4 bg-slate-50 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white focus:border-transparent transition-all placeholder:text-slate-400 ${errors.name ? "border-red-300 bg-red-50" : "border-slate-200"
+                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 ${errors.name ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
                             }`}
                         placeholder={isVi ? "Tên của bạn" : "Your name"}
                         aria-invalid={!!errors.name}
@@ -138,7 +137,7 @@ export default function ContactForm() {
 
                 {/* Email field */}
                 <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                         {isVi ? "Email" : "Email"} <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -147,7 +146,7 @@ export default function ContactForm() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full px-5 py-4 bg-slate-50 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white focus:border-transparent transition-all placeholder:text-slate-400 ${errors.email ? "border-red-300 bg-red-50" : "border-slate-200"
+                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 ${errors.email ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
                             }`}
                         placeholder={isVi ? "you@example.com" : "you@example.com"}
                         aria-invalid={!!errors.email}
@@ -163,7 +162,7 @@ export default function ContactForm() {
 
                 {/* Message textarea */}
                 <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                         {isVi ? "Tin nhắn" : "Message"} <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -172,7 +171,7 @@ export default function ContactForm() {
                         value={formData.message}
                         onChange={handleChange}
                         rows={6}
-                        className={`w-full px-5 py-4 bg-slate-50 border rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white focus:border-transparent transition-all resize-none placeholder:text-slate-400 ${errors.message ? "border-red-300 bg-red-50" : "border-slate-200"
+                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all resize-none placeholder:text-slate-400 ${errors.message ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
                             }`}
                         placeholder={isVi ? "Kể cho tôi nghe về dự án của bạn..." : "Tell me about your project..."}
                         aria-invalid={!!errors.message}
@@ -190,7 +189,7 @@ export default function ContactForm() {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-3 shadow-md shadow-indigo-200 hover:shadow-lg hover:shadow-indigo-300 group mt-4"
+                    className="w-full px-8 py-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-2xl hover:bg-slate-800 dark:hover:bg-white active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-3 shadow-md hover:shadow-lg cursor-pointer mt-4"
                 >
                     {isSubmitting ? (
                         <>
