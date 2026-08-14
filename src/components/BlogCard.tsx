@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Link } from '@/components/ViewTransitions';
 import { BlogPost } from "@/data/posts";
@@ -6,15 +8,31 @@ import { useLanguage } from "@/context/LanguageContext";
 interface BlogCardProps {
     post: BlogPost;
     featured?: boolean;
+    onUnpublishedClick?: () => void;
 }
 
-export default function BlogCard({ post, featured = false }: BlogCardProps) {
+export default function BlogCard({ post, featured = false, onUnpublishedClick }: BlogCardProps) {
     const { language } = useLanguage();
     const isVi = language === "vi";
+    const isPublished = post.isPublished !== false;
+
+    const handleClick = (e: React.MouseEvent) => {
+        if (!isPublished) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (onUnpublishedClick) {
+                onUnpublishedClick();
+            }
+        }
+    };
 
     return (
-        <article className={`group relative p-4 rounded-3xl bg-slate-50/60 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-xl transition-all duration-300 ease-out flex flex-col ${featured ? 'md:flex-row md:gap-8 md:items-center' : 'gap-4'}`}>
-            <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10 focus:outline-none rounded-3xl" aria-label={`Read ${post.title}`} />
+        <article className={`group relative p-4 rounded-3xl bg-slate-50/60 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-xl transition-all duration-300 ease-out flex flex-col ${featured ? 'md:flex-row md:gap-8 md:items-center' : 'gap-4'} ${!isPublished ? 'cursor-pointer' : ''}`}>
+            {isPublished ? (
+                <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10 focus:outline-none rounded-3xl" aria-label={`Read ${post.title}`} />
+            ) : (
+                <div onClick={handleClick} className="absolute inset-0 z-10 cursor-pointer rounded-3xl" aria-label={`Unpublished post ${post.title}`} />
+            )}
 
             {/* Thumbnail */}
             <div className={`rounded-2xl overflow-hidden relative shadow-xs transition-all duration-500 group-hover:shadow-md ${featured ? 'w-full md:w-1/2 aspect-[16/9]' : 'w-full aspect-[16/10]'} bg-slate-100 dark:bg-slate-800`}>
@@ -28,7 +46,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                             ? "(max-width: 768px) 100vw, 50vw"
                             : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         }
-                        className="object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                        className={`object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out ${!isPublished ? 'opacity-85' : ''}`}
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800">
@@ -36,11 +54,17 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                     </div>
                 )}
 
-                {/* Category Badge */}
-                <div className="absolute top-3 left-3 z-20">
+                {/* Category Badge & Unpublished Status Badge */}
+                <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-800 dark:text-slate-200 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
                         {post.category}
                     </span>
+
+                    {!isPublished && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider bg-amber-500/90 dark:bg-amber-600/90 backdrop-blur-md text-white shadow-2xs">
+                            <span>✍️</span> {isVi ? "Chưa công bố" : "Draft"}
+                        </span>
+                    )}
                 </div>
             </div>
 
@@ -63,7 +87,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 </div>
 
                 <div className="pt-2 flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:translate-x-1 transition-transform duration-200">
-                    <span>{isVi ? "Đọc bài viết" : "Read Article"}</span>
+                    <span>{isPublished ? (isVi ? "Đọc bài viết" : "Read Article") : (isVi ? "Đang viết, chưa công bố" : "In Progress")}</span>
                     <svg className="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

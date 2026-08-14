@@ -9,6 +9,7 @@ export interface BlogPost {
     slug: string;
     content?: string;
     tags: string[];
+    isPublished?: boolean;
 }
 
 export const BLOG_POSTS_VI: BlogPost[] = [
@@ -22,6 +23,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         image: "/untitled-1555924881176370155281.jpg",
         slug: "stepping-out-of-the-safe-nest",
         tags: ["Tản mạn", "Phát triển bản thân", "Trải nghiệm"],
+        isPublished: true,
         content: `
 <p class="lead">Trong hành trình chia sẻ, trải nghiệm và quan sát nhịp sống hối hả xung quanh, mình nhận ra một sự thật khá chạnh lòng: Rất nhiều người ngoài kia đang sống một cuộc đời "làng nhàng", lặp đi lặp lại một cách tẻ nhạt. Sâu thẳm bên trong, họ luôn khao khát những điều lớn lao hơn, một cuộc sống rực rỡ và trọn vẹn hơn. Nhưng rồi, guồng quay hối hả của công việc, sự trì hoãn và trên hết là nỗi sợ hãi lại kéo họ về, nhốt họ trong cái lồng kính vô hình mang tên "vùng an toàn".</p>
 
@@ -51,15 +53,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
         slug: "logistics-supply-chain-optimization-2026",
         tags: ["Logistics", "Supply Chain", "Quản lý kho"],
-        content: `
-<p class="lead">Trong bối cảnh thương mại toàn cầu biến động nhanh chóng, chuỗi cung ứng đóng vai trò xương sống quyết định sự tồn tại và sức cạnh tranh của doanh nghiệp.</p>
-
-<h3>1. Tối ưu hóa định tuyến phân phối (Route Optimization)</h3>
-<p>Bằng cách áp dụng thuật toán phân tích dữ liệu khoảng cách, tình trạng giao thông và tải trọng xe, doanh nghiệp có thể cắt giảm tới 25% chi phí nhiên liệu và rút ngắn thời gian giao hàng đáng kể.</p>
-
-<h3>2. Ứng dụng hệ thống quản lý kho WMS thời gian thực</h3>
-<p>Kiểm soát tồn kho theo thời gian thực giúp giảm thiểu sai sót xuất nhập kho, duy trì tỷ lệ chính xác tồn kho trên 99% và đẩy nhanh tốc độ soạn hàng.</p>
-        `
+        isPublished: false
     },
     {
         id: "3",
@@ -71,11 +65,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         image: "/projects/ecofresh.jpg",
         slug: "ai-and-web-automation-in-supply-chain",
         tags: ["AI", "Tự động hóa", "Công nghệ"],
-        content: `
-<p class="lead">Trí tuệ nhân tạo (AI) không còn là khái niệm xa xôi mà đã trở thành công cụ thực chiến hàng ngày giúp tối ưu hóa công tác dự báo nhu cầu tồn kho và tự động hóa quy trình.</p>
-
-<p>Việc tích hợp giải pháp web dashboard kết hợp AI giúp các quản lý kho bãi có cái nhìn toàn cảnh thời gian thực về nhiệt độ, độ ẩm và tình trạng hàng tồn kho khẩn cấp.</p>
-        `
+        isPublished: false
     },
     {
         id: "4",
@@ -87,11 +77,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         image: "/projects/rapphim.jpg",
         slug: "minimalist-ui-ux-design-for-digital-products",
         tags: ["UI/UX", "Thiết kế", "Trải nghiệm"],
-        content: `
-<p class="lead">Một giao diện xuất sắc không phải là giao diện thêm vào thật nhiều hiệu ứng phức tạp, mà là giao diện không thể bớt đi bất kỳ chi tiết thừa nào nữa.</p>
-
-<p>Tư duy thiết kế tối giản (Minimalist Design) giúp người dùng tập trung hoàn toàn vào nội dung trọng tâm, giảm tải nhận thức và tăng tốc độ thao tác.</p>
-        `
+        isPublished: false
     }
 ];
 
@@ -106,6 +92,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         image: "/untitled-1555924881176370155281.jpg",
         slug: "stepping-out-of-the-safe-nest",
         tags: ["Musings", "Growth", "Experience"],
+        isPublished: true,
         content: BLOG_POSTS_VI[0].content
     },
     {
@@ -118,7 +105,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
         slug: "logistics-supply-chain-optimization-2026",
         tags: ["Logistics", "Supply Chain", "WMS"],
-        content: BLOG_POSTS_VI[1].content
+        isPublished: false
     },
     {
         id: "3",
@@ -130,7 +117,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         image: "/projects/ecofresh.jpg",
         slug: "ai-and-web-automation-in-supply-chain",
         tags: ["AI", "Automation", "Tech"],
-        content: BLOG_POSTS_VI[2].content
+        isPublished: false
     },
     {
         id: "4",
@@ -142,7 +129,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         image: "/projects/rapphim.jpg",
         slug: "minimalist-ui-ux-design-for-digital-products",
         tags: ["UI/UX", "Design", "Product"],
-        content: BLOG_POSTS_VI[3].content
+        isPublished: false
     }
 ];
 

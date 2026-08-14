@@ -19,6 +19,34 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         notFound();
     }
 
+    if (post.isPublished === false) {
+        return (
+            <div className="max-w-5xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
+                <div className="bg-white dark:bg-slate-900 sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-8 sm:p-12 text-center space-y-6">
+                    <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center mx-auto shadow-2xs border border-slate-200/60 dark:border-slate-700/60 text-3xl">
+                        ✍️
+                    </div>
+                    <div className="space-y-2 max-w-md mx-auto">
+                        <h2 className="text-xl font-extrabold text-slate-900 dark:text-white">
+                            {isVi ? 'Bài viết đang được viết, hiện chưa công bố' : 'Article In Progress'}
+                        </h2>
+                        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                            {isVi 
+                                ? 'Bài viết này đang trong quá trình biên soạn và chưa được phát hành chính thức. Rất mong bạn quay lại sau!' 
+                                : 'This article is currently under composition and has not been published yet. Please check back later!'}
+                        </p>
+                    </div>
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-md hover:-translate-y-0.5 transition-all"
+                    >
+                        ← {isVi ? 'Quay lại danh sách Bài viết' : 'Back to Blog Articles'}
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <>
             <ReadingProgressBar />
