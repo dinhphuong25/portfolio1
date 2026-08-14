@@ -42,42 +42,6 @@ export const BLOG_POSTS_VI: BlogPost[] = [
   <li><strong>Hạnh phúc của sự trưởng thành:</strong> Niềm vui đích thực khi thấy bản thân ngày hôm nay tốt hơn chính mình ngày hôm qua.</li>
 </ul>
         `
-    },
-    {
-        id: "2",
-        title: "Các phương pháp tối ưu hóa chuỗi cung ứng trong Logistics hiện đại",
-        excerpt: "Phân tích các giải pháp cắt giảm chi phí vận hành, nâng cao tỷ lệ hoàn thành đơn hàng và ứng dụng mô hình quản lý kho thông minh trong thực tế.",
-        date: "12 Tháng 6, 2026",
-        readTime: "6 phút đọc",
-        category: "Chuỗi cung ứng",
-        image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
-        slug: "logistics-supply-chain-optimization-2026",
-        tags: ["Logistics", "Supply Chain", "Quản lý kho"],
-        isPublished: false
-    },
-    {
-        id: "3",
-        title: "Ứng dụng Trí tuệ Nhân tạo (AI) và Tự động hóa trong quản lý kho bãi",
-        excerpt: "Khám phá cách AI và các công cụ tự động hóa quy trình giúp chuyển đổi kho bãi truyền thống thành trung tâm phân phối số thông minh.",
-        date: "20 Tháng 7, 2026",
-        readTime: "5 phút đọc",
-        category: "Lập trình",
-        image: "/projects/ecofresh.jpg",
-        slug: "ai-and-web-automation-in-supply-chain",
-        tags: ["AI", "Tự động hóa", "Công nghệ"],
-        isPublished: false
-    },
-    {
-        id: "4",
-        title: "Tư duy thiết kế giao diện (UI/UX) tối giản cho các ứng dụng thực tế",
-        excerpt: "Nguyên lý loại bỏ các chi tiết thừa, tập trung vào trải nghiệm người dùng cốt lõi và xây dựng giao diện mượt mà trên mọi thiết bị.",
-        date: "01 Tháng 8, 2026",
-        readTime: "4 phút đọc",
-        category: "Góc nhìn",
-        image: "/projects/rapphim.jpg",
-        slug: "minimalist-ui-ux-design-for-digital-products",
-        tags: ["UI/UX", "Thiết kế", "Trải nghiệm"],
-        isPublished: false
     }
 ];
 
@@ -94,49 +58,13 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         tags: ["Musings", "Growth", "Experience"],
         isPublished: true,
         content: BLOG_POSTS_VI[0].content
-    },
-    {
-        id: "2",
-        title: "Supply Chain Optimization Strategies in Modern Logistics",
-        excerpt: "Analyzing operational cost reduction techniques, order fulfillment speed enhancements, and smart warehouse management execution.",
-        date: "Jun 12, 2026",
-        readTime: "6 min read",
-        category: "Logistics",
-        image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
-        slug: "logistics-supply-chain-optimization-2026",
-        tags: ["Logistics", "Supply Chain", "WMS"],
-        isPublished: false
-    },
-    {
-        id: "3",
-        title: "Applying AI and Process Automation in Warehouse Management",
-        excerpt: "Exploring how Artificial Intelligence and workflow automation tools transform traditional warehouses into intelligent digital distribution hubs.",
-        date: "Jul 20, 2026",
-        readTime: "5 min read",
-        category: "Tech",
-        image: "/projects/ecofresh.jpg",
-        slug: "ai-and-web-automation-in-supply-chain",
-        tags: ["AI", "Automation", "Tech"],
-        isPublished: false
-    },
-    {
-        id: "4",
-        title: "Minimalist UI/UX Design Thinking for Pragmatic Applications",
-        excerpt: "The core philosophy of eliminating noise, prioritizing essential user flows, and crafting frictionless digital experiences across devices.",
-        date: "Aug 1, 2026",
-        readTime: "4 min read",
-        category: "Thoughts",
-        image: "/projects/rapphim.jpg",
-        slug: "minimalist-ui-ux-design-for-digital-products",
-        tags: ["UI/UX", "Design", "Product"],
-        isPublished: false
     }
 ];
 
 export const BLOG_POSTS = BLOG_POSTS_EN; // Default
 
-export const BLOG_CATEGORIES_EN = ["All", "Logistics", "Experience", "Tech", "Thoughts"];
-export const BLOG_CATEGORIES_VI = ["Tất cả", "Chuỗi cung ứng", "Trải nghiệm", "Lập trình", "Góc nhìn"];
+export const BLOG_CATEGORIES_EN = ["All", "Experience"];
+export const BLOG_CATEGORIES_VI = ["Tất cả", "Trải nghiệm"];
 
 export const BLOG_CATEGORIES = BLOG_CATEGORIES_EN; // Default
 
