@@ -11,14 +11,11 @@ interface ProfileHeaderProps {
 
 export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderProps) {
     return (
-        <section className="relative overflow-hidden pb-8 border-b border-slate-100 dark:border-slate-800/80">
-            {/* Top Cover Border Line / Minimal Cover Accent */}
-            <div className="w-full h-3 bg-slate-900 dark:bg-slate-100 border-b border-slate-200/80 dark:border-slate-800" />
-
+        <section className="relative overflow-hidden pt-10 pb-8 px-4 sm:px-8 border-b border-slate-100 dark:border-slate-800/80">
             {/* Ambient background decoration */}
             <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-transparent to-transparent dark:from-slate-900/30 pointer-events-none" />
 
-            <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10 pt-8 px-4 sm:px-8">
+            <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10">
                 {/* Avatar with Elegant Double Ring & Shadow Border */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
