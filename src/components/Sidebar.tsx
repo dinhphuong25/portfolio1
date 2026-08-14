@@ -104,16 +104,20 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside
         className={`
-          fixed z-50 transition-all duration-300 ease-out
-          w-48 rounded-2xl glass-premium shadow-2xl border border-slate-200/80 dark:border-slate-800
-          top-1/2 -translate-y-1/2 h-fit max-h-[90vh] overflow-y-auto
-          ${isOpen ? "left-4 opacity-100 scale-100 pointer-events-auto" : "-left-full opacity-0 scale-95 pointer-events-none lg:left-6 lg:opacity-100 lg:scale-100 lg:pointer-events-auto"}
+          fixed z-50 transition-all duration-300 ease-out flex flex-col justify-between
+          glass-premium shadow-2xl border border-slate-200/80 dark:border-slate-800 overflow-y-auto
+          lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto
+          ${isOpen
+            ? "left-3 top-3 bottom-3 w-60 rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
+            : "-left-full top-3 bottom-3 w-60 rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
+          }
         `}
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* Mobile close button */}
-        <div className="lg:hidden px-3 pt-3 pb-1 flex justify-end">
+        {/* Mobile header with close button */}
+        <div className="lg:hidden px-4 pt-3 pb-1 flex justify-between items-center border-b border-slate-100 dark:border-slate-800/80">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-slate-400">Menu</span>
           <button
             onClick={onClose}
             className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
@@ -123,7 +127,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </button>
         </div>
 
-        <nav className="px-3 py-3">
+        {/* Navigation links */}
+        <nav className="px-3 py-4 flex-1">
           <ul className="space-y-1">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -133,7 +138,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     href={item.href}
                     onClick={handleNavClick}
                     className={`
-                      relative flex items-center gap-2.5 px-3 py-2 text-xs font-bold rounded-xl transition-colors duration-200 z-10
+                      relative flex items-center gap-3 px-3 py-2.5 text-xs font-bold rounded-xl transition-colors duration-200 z-10
                       ${active
                         ? "text-slate-900 dark:text-white"
                         : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -159,6 +164,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </ul>
         </nav>
 
+        {/* Footer controls: language toggle & download CV button */}
         <div className="p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
           <div className="flex flex-col bg-slate-100/80 dark:bg-slate-800/80 p-1 rounded-xl gap-0.5 relative border border-slate-200/60 dark:border-slate-700/60">
             <button
