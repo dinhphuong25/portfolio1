@@ -9,20 +9,68 @@ export default function AboutSection() {
     const { language } = useLanguage();
 
     const storyVi = [
-        "Chào bạn! Tôi là Kim Đình Phương, sinh viên năm 3 chuyên ngành Quản lý Chuỗi cung ứng & Logistics tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ. Ngay từ những ngày đầu học tập, tôi đã luôn bị cuốn hút bởi cách mà hàng hóa, dữ liệu và quy trình được vận hành trơn tru trong thực tế.",
-        "Thay vì chỉ dừng lại ở lý thuyết sách vở, tôi chọn cho mình một lối đi riêng: kết hợp tư duy chuỗi cung ứng với công nghệ phần mềm hiện đại. Tôi dành phần lớn thời gian tự học lập trình web (Next.js, TypeScript), tìm hiểu về Trí tuệ nhân tạo (AI), tự động hóa quy trình và thiết kế giao diện người dùng (UI/UX).",
-        "Đối với tôi, sản phẩm tốt nhất là sản phẩm giải quyết được vấn đề thực tế. Mọi dự án tôi từng phát triển — từ hệ thống Quản lý kho lạnh EcoFresh WMS, cổng học tập Ez Study cho tới nền tảng luyện thi HiTOEIC — đều xuất phát từ mong muốn tối ưu hóa trải nghiệm và đơn giản hóa các thao tác phức tạp.",
-        "Mục tiêu dài hạn của tôi là trở thành một Chuyên gia Supply Chain tiên phong ứng dụng giải pháp số (Digital Supply Chain Specialist) — cầu nối vững chắc giữa nghiệp vụ vận hành thực địa và sức mạnh của công nghệ số."
+        (
+            <React.Fragment key="p1">
+                Chào bạn! Tôi là <strong className="font-extrabold text-slate-900 dark:text-white">Kim Đình Phương</strong>, sinh viên năm 3 chuyên ngành <strong className="font-extrabold text-slate-900 dark:text-white">Quản lý Chuỗi cung ứng & Logistics</strong> tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="p2">
+                Tôi đặc biệt hứng thú với cách <strong className="font-extrabold text-slate-900 dark:text-white">hàng hóa, dữ liệu và quy trình</strong> được kết nối để tạo nên một chuỗi cung ứng vận hành hiệu quả. Vì vậy, bên cạnh kiến thức chuyên ngành, tôi chủ động khám phá công nghệ và phát triển kỹ năng lập trình để tìm ra những cách tiếp cận mới cho các bài toán thực tế.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="p3">
+                Tôi đang tự học và thực hành <strong className="font-extrabold text-slate-900 dark:text-white">phát triển web với Next.js, TypeScript</strong>, đồng thời tìm hiểu về <strong className="font-extrabold text-slate-900 dark:text-white">AI, tự động hóa quy trình và thiết kế UI/UX</strong>. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được ứng dụng để giải quyết một vấn đề cụ thể, thay vì chỉ dừng lại ở việc tạo ra một sản phẩm đẹp hoặc hiện đại.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="p4">
+                Từ quan điểm đó, tôi đã thực hiện một số dự án cá nhân như <strong className="font-extrabold text-slate-900 dark:text-white">EcoFresh WMS – hệ thống quản lý kho lạnh</strong>, <strong className="font-extrabold text-slate-900 dark:text-white">Ez Study – cổng học tập</strong> và <strong className="font-extrabold text-slate-900 dark:text-white">HiTOEIC – nền tảng luyện thi</strong>. Mỗi dự án là một cơ hội để tôi kết hợp tư duy Logistics với công nghệ, đồng thời rèn luyện khả năng phân tích vấn đề, thiết kế giải pháp và tối ưu trải nghiệm người dùng.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="p5">
+                Trong tương lai, tôi hướng đến trở thành một <strong className="font-extrabold text-slate-900 dark:text-white">Digital Supply Chain Specialist</strong> – người có khả năng kết nối giữa <strong className="font-extrabold text-slate-900 dark:text-white">nghiệp vụ vận hành, dữ liệu và công nghệ</strong>, góp phần xây dựng những giải pháp số thiết thực cho hoạt động Logistics và Chuỗi cung ứng.
+            </React.Fragment>
+        ),
     ];
+
+    const mottoVi = "Logistics là nền tảng tôi theo đuổi. Công nghệ là công cụ tôi lựa chọn. Và giải quyết vấn đề thực tế là mục tiêu tôi hướng đến.";
 
     const storyEn = [
-        "Hello! I am Kim Dinh Phuong, a 3rd-year Supply Chain Management & Logistics student at Can Tho University of Technology. From day one, I have been fascinated by how goods, data, and workflows seamlessly connect across complex supply chains.",
-        "Rather than sticking purely to academic textbooks, I chose a unique hybrid path: combining logistics operations with modern software engineering. I dedicate significant time to self-directed fullstack web development (Next.js, TypeScript), AI workflow automation, and intuitive UI/UX design.",
-        "I strongly believe the best software is one that solves a real operational headache. Every project I have engineered — from the EcoFresh Cold-Chain WMS to Ez Study and HiTOEIC — stems from a passion for optimizing workflows and making complex tools user-friendly.",
-        "My ultimate goal is to become a Tech-Driven Supply Chain Specialist — serving as a reliable bridge between traditional field operations and modern digital transformations."
+        (
+            <React.Fragment key="ep1">
+                Hello! I am <strong className="font-extrabold text-slate-900 dark:text-white">Kim Dinh Phuong</strong>, a 3rd-year student majoring in <strong className="font-extrabold text-slate-900 dark:text-white">Supply Chain Management & Logistics</strong> at Can Tho University of Technology.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="ep2">
+                I am particularly fascinated by how <strong className="font-extrabold text-slate-900 dark:text-white">goods, data, and processes</strong> connect to form an efficient operational supply chain. Alongside my academic studies, I proactively explore technology and develop programming skills to find practical solutions.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="ep3">
+                I am self-learning fullstack <strong className="font-extrabold text-slate-900 dark:text-white">web development with Next.js, TypeScript</strong>, while researching <strong className="font-extrabold text-slate-900 dark:text-white">AI, process automation, and UI/UX design</strong>. I strongly believe technology brings real value only when applied to solve real-world problems.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="ep4">
+                Guided by this principle, I engineered projects like <strong className="font-extrabold text-slate-900 dark:text-white">EcoFresh WMS cold-storage system</strong>, <strong className="font-extrabold text-slate-900 dark:text-white">Ez Study portal</strong>, and <strong className="font-extrabold text-slate-900 dark:text-white">HiTOEIC exam platform</strong>. Each project bridges logistics domain knowledge with digital engineering.
+            </React.Fragment>
+        ),
+        (
+            <React.Fragment key="ep5">
+                In the future, I aim to become a <strong className="font-extrabold text-slate-900 dark:text-white">Digital Supply Chain Specialist</strong> — serving as a bridge between <strong className="font-extrabold text-slate-900 dark:text-white">field operations, data, and technology</strong> to build impactful digital solutions.
+            </React.Fragment>
+        ),
     ];
 
-    const currentStory = language === "vi" ? storyVi : storyEn;
+    const mottoEn = "Logistics is my foundation. Technology is my tool. Solving real-world problems is my goal.";
+
+    const isVi = language === "vi";
+    const currentStory = isVi ? storyVi : storyEn;
+    const currentMotto = isVi ? mottoVi : mottoEn;
 
     const highlightsVi = [
         {
@@ -74,7 +122,7 @@ export default function AboutSection() {
         },
     ];
 
-    const currentHighlights = language === "vi" ? highlightsVi : highlightsEn;
+    const currentHighlights = isVi ? highlightsVi : highlightsEn;
 
     return (
         <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-100 dark:border-slate-800" aria-labelledby="about-heading">
@@ -82,7 +130,7 @@ export default function AboutSection() {
             <div className="flex items-center gap-3 mb-8">
                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
                 <h2 id="about-heading" className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
-                    {language === "vi" ? "CÂU CHUYỆN & GIỚI THIỆU" : "MY STORY & ABOUT"}
+                    {isVi ? "CÂU CHUYỆN & GIỚI THIỆU" : "MY STORY & ABOUT"}
                 </h2>
                 <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
             </div>
@@ -96,6 +144,11 @@ export default function AboutSection() {
                             {paragraph}
                         </p>
                     ))}
+
+                    {/* Highlighted Closing Motto Banner */}
+                    <div className="p-4 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 border-l-4 border-slate-900 dark:border-white text-slate-900 dark:text-white font-extrabold text-xs sm:text-sm leading-relaxed mt-4 shadow-2xs">
+                        "{currentMotto}"
+                    </div>
                 </div>
 
                 {/* Right Highlights Cards */}
