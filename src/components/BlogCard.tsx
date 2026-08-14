@@ -46,7 +46,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                             ? "(max-width: 768px) 100vw, 50vw"
                             : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         }
-                        className={`object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out ${!isPublished ? 'opacity-85' : ''}`}
+                        className="object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800">
@@ -54,17 +54,11 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                     </div>
                 )}
 
-                {/* Category Badge & Unpublished Status Badge */}
-                <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+                {/* Category Badge */}
+                <div className="absolute top-3 left-3 z-20 pointer-events-none">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-800 dark:text-slate-200 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
                         {post.category}
                     </span>
-
-                    {!isPublished && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider bg-amber-500/90 dark:bg-amber-600/90 backdrop-blur-md text-white shadow-2xs">
-                            <span>✍️</span> {isVi ? "Chưa công bố" : "Draft"}
-                        </span>
-                    )}
                 </div>
             </div>
 
@@ -87,7 +81,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                 </div>
 
                 <div className="pt-2 flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:translate-x-1 transition-transform duration-200">
-                    <span>{isPublished ? (isVi ? "Đọc bài viết" : "Read Article") : (isVi ? "Đang viết, chưa công bố" : "In Progress")}</span>
+                    <span>{isVi ? "Đọc bài viết" : "Read Article"}</span>
                     <svg className="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
