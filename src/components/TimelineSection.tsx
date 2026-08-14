@@ -10,7 +10,7 @@ export const timelineDataEn = [
         title: "Started University",
         description: "Began my journey majoring in Logistics and Supply Chain Management at Can Tho University of Technology.",
         icon: (
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
             </svg>
         ),
@@ -21,7 +21,7 @@ export const timelineDataEn = [
         title: "Academic Research",
         description: "Participated in research on optimizing local warehouse distribution routes, developing my analytical skills.",
         icon: (
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
         ),
@@ -32,7 +32,7 @@ export const timelineDataEn = [
         title: "EcoFresh WMS",
         description: "Started developing warehouse management system tracking tools to monitor inventory in real-time.",
         icon: (
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
         ),
@@ -43,7 +43,7 @@ export const timelineDataEn = [
         title: "Internship & Advanced Studies",
         description: "Seeking practical internships and expanding knowledge in sustainable logistics and global supply chain.",
         icon: (
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
         ),
@@ -73,9 +73,9 @@ export default function TimelineSection() {
             </div>
 
             {/* Slate Minimal Vertical Tree Timeline */}
-            <div className="relative pl-4 sm:pl-6">
-                {/* Vertical Central Line through Icon Nodes */}
-                <div className="absolute left-[19px] sm:left-[27px] top-4 bottom-4 w-px bg-slate-200 dark:bg-slate-800" />
+            <div className="relative">
+                {/* Vertical Central Line - Perfectly Centered at 18px (center of 36px / w-9 node column) */}
+                <div className="absolute left-[18px] -translate-x-1/2 top-4 bottom-4 w-px bg-slate-200 dark:bg-slate-800" />
 
                 <div className="space-y-6">
                     {timelineData.map((item, index) => {
@@ -84,15 +84,17 @@ export default function TimelineSection() {
                         return (
                             <Reveal key={item.id} direction="up" delay={index * 80}>
                                 <div className="relative flex items-start gap-4 sm:gap-5 group">
-                                    {/* Icon Center Node */}
-                                    <div
-                                        className={`relative z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                            isLast
-                                                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md ring-2 ring-slate-900/10 dark:ring-white/20"
-                                                : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 group-hover:border-slate-400 dark:group-hover:border-slate-600 shadow-2xs"
-                                        }`}
-                                    >
-                                        {item.icon}
+                                    {/* Icon Center Node Container (Fixed 36px width) */}
+                                    <div className="relative flex items-center justify-center shrink-0 w-9 h-9">
+                                        <div
+                                            className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                                                isLast
+                                                    ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md ring-2 ring-slate-900/10 dark:ring-white/20"
+                                                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 group-hover:border-slate-400 dark:group-hover:border-slate-600 shadow-2xs"
+                                            }`}
+                                        >
+                                            {item.icon}
+                                        </div>
                                     </div>
 
                                     {/* Content Card */}
