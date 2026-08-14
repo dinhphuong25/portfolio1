@@ -11,27 +11,31 @@ interface ProfileHeaderProps {
 
 export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderProps) {
     return (
-        <section className="relative overflow-hidden pt-10 pb-8 px-4 sm:px-8 border-b border-slate-100 dark:border-slate-800/80">
-            {/* Ambient background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-transparent to-transparent dark:from-slate-900/30 pointer-events-none" />
+        <section className="relative overflow-hidden border-b border-slate-100 dark:border-slate-800/80">
+            {/* Top Cover Banner with Border */}
+            <div className="relative w-full h-32 sm:h-40 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800 overflow-hidden">
+                {/* Subtle Grid / Pattern overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            </div>
 
-            <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10">
-                {/* Avatar */}
+            <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10 px-4 sm:px-8 pb-8 -mt-16 sm:-mt-20">
+                {/* Overlapping Avatar with Ring & Border */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="relative cursor-pointer mb-5"
+                    className="relative cursor-pointer mb-4"
                 >
-                    <div className="p-1 rounded-full bg-slate-200/80 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                        <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden">
+                    <div className="p-1 rounded-full bg-white dark:bg-slate-900 ring-4 ring-white dark:ring-slate-900 shadow-xl border border-slate-200 dark:border-slate-800">
+                        <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden">
                             <Image
                                 src={encodeURI(profileData.avatar)}
                                 alt={profileData.name}
                                 fill
                                 unoptimized
                                 priority
-                                sizes="(max-width: 640px) 128px, 144px"
+                                sizes="(max-width: 640px) 112px, 128px"
                                 className="object-cover"
                             />
                         </div>
