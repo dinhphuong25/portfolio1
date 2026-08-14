@@ -108,8 +108,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           glass-premium shadow-2xl border border-slate-200/80 dark:border-slate-800 overflow-y-auto
           lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto
           ${isOpen
-            ? "left-3 top-3 bottom-3 w-[210px] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
-            : "-left-full top-3 bottom-3 w-[210px] rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
+            ? "left-3 top-3 bottom-3 w-[235px] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
+            : "-left-full top-3 bottom-3 w-[235px] rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
           }
         `}
         role="navigation"
