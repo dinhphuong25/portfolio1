@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Compass, Cpu, Target, Sparkles } from "lucide-react";
+import { GraduationCap, MapPin, Mail, Target } from "lucide-react";
 
 export default function AboutSection() {
     const { language } = useLanguage();
@@ -26,42 +26,46 @@ export default function AboutSection() {
 
     const highlightsVi = [
         {
-            icon: <Compass className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Chuyên ngành",
-            value: "Chuỗi Cung Ứng & Logistics",
+            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Trường học",
+            value: "ĐH Kỹ thuật – Công nghệ Cần Thơ",
         },
         {
-            icon: <Cpu className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Kỹ năng Tech",
-            value: "Next.js, Web & Automation",
+            icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Vị trí hiện tại",
+            value: "Cần Thơ, Việt Nam",
         },
         {
-            icon: <Sparkles className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Phương châm",
-            value: "Thực chiến • Tối giản • Hiệu quả",
+            icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Email liên hệ",
+            value: "kimdinhphuong205@gmail.com",
+            isLink: true,
+            href: "mailto:kimdinhphuong205@gmail.com",
         },
         {
             icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Định hướng",
+            label: "Định hướng sự nghiệp",
             value: "Digital Supply Chain Specialist",
         },
     ];
 
     const highlightsEn = [
         {
-            icon: <Compass className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Major",
-            value: "Supply Chain & Logistics",
+            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Education",
+            value: "Can Tho Univ. of Technology",
         },
         {
-            icon: <Cpu className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Tech Stack",
-            value: "Next.js, Web & Automation",
+            icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Location",
+            value: "Can Tho, Vietnam",
         },
         {
-            icon: <Sparkles className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Motto",
-            value: "Pragmatic • Minimal • Scalable",
+            icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Contact Email",
+            value: "kimdinhphuong205@gmail.com",
+            isLink: true,
+            href: "mailto:kimdinhphuong205@gmail.com",
         },
         {
             icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
@@ -104,13 +108,22 @@ export default function AboutSection() {
                             <div className="p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 shrink-0">
                                 {item.icon}
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 flex-1">
                                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">
                                     {item.label}
                                 </span>
-                                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight block mt-0.5">
-                                    {item.value}
-                                </span>
+                                {item.isLink ? (
+                                    <a
+                                        href={item.href}
+                                        className="text-xs font-bold text-slate-800 dark:text-slate-200 hover:underline leading-tight block mt-0.5 truncate"
+                                    >
+                                        {item.value}
+                                    </a>
+                                ) : (
+                                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight block mt-0.5">
+                                        {item.value}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     ))}
