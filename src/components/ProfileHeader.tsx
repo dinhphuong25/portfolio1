@@ -99,7 +99,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
 
                     {/* Zalo */}
                     <a
-                        href="https://zalo.me/0339906660"
+                        href="https://zalo.me/0903917400"
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Zalo"
