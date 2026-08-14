@@ -50,18 +50,9 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                 >
                     {profileData.name}
                     
-                    {/* Interactive Verified Tooltip Popup */}
-                    <div className="group/verified relative inline-flex items-center">
-                        <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-[#0866FF] shrink-0 cursor-pointer transition-transform duration-200 group-hover/verified:scale-110" />
-                        
-                        {/* Tooltip Popup Box - Compact & Centered */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-[11px] font-bold whitespace-nowrap shadow-lg border border-slate-700/50 dark:border-slate-300 opacity-0 translate-y-1 group-hover/verified:opacity-100 group-hover/verified:translate-y-0 transition-all duration-200 z-30 pointer-events-none flex items-center gap-1">
-                            <BadgeCheck className="w-3.5 h-3.5 text-white dark:text-slate-900 fill-[#0866FF] shrink-0" />
-                            <span>{language === "vi" ? "Tài khoản đã được xác minh" : "Verified Official Account"}</span>
-                            {/* Down Arrow Pointer */}
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent border-t-slate-900 dark:border-t-slate-100" />
-                        </div>
-                    </div>
+                    <span title="Verified" className="inline-flex items-center">
+                        <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-[#0866FF] shrink-0" />
+                    </span>
                 </motion.h1>
 
                 {/* Social Links Row */}
