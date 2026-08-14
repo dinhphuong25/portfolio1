@@ -55,7 +55,7 @@ export const projectsEn: Project[] = [
     },
     {
         id: "hitoeic",
-        title: "HiTOEIC / ByeTOEIC",
+        title: "HiTOEIC",
         summary: "A comprehensive, multi-language TOEIC exam preparation platform featuring 7,700+ practice questions, 100+ full-length mock tests, AI scoring, and spaced repetition vocabulary.",
         role: "Lead Developer",
         year: 2026,
@@ -65,7 +65,7 @@ export const projectsEn: Project[] = [
         featured: true,
         problem: "TOEIC learners often deal with fragmented study materials, lack of realistic timed mock tests, and expensive preparation courses.",
         process: "Engineered a high-speed web application with 7,700+ questions, 4 listening modes, 5-language internationalization, and instant score conversion algorithms.",
-        solution: "Built ByeTOEIC (HiTOEIC), a free full-featured preparation platform with 100+ mock tests, 59 grammar topics, interactive Listening & Reading modules, and spaced repetition vocabulary.",
+        solution: "Built HiTOEIC, a free full-featured preparation platform with 100+ mock tests, 59 grammar topics, interactive Listening & Reading modules, and spaced repetition vocabulary.",
         outcome: "Delivered an all-in-one learning platform serving thousands of students with full-length test simulation, performance analytics, and community leaderboards.",
         images: [],
         caseStudyUrl: "https://hitoeic.io.vn/",
@@ -174,7 +174,7 @@ export const projectsVi: Project[] = [
         role: "Trưởng nhóm phát triển",
         problem: "Học viên TOEIC thường gặp khó khăn với tài liệu rải rác, thiếu các bộ đề thi thử bấm giờ giống thi thật và chi phí ôn thi đắt đỏ.",
         process: "Xây dựng hệ thống web tốc độ cao tích hợp 7.700+ câu hỏi, 4 chế độ luyện nghe, hỗ trợ 5 ngôn ngữ và thuật toán chấm điểm chuẩn quốc tế.",
-        solution: "Phát triển nền tảng ByeTOEIC (HiTOEIC) miễn phí cung cấp 100+ đề thi thử, 59 chủ đề ngữ pháp, bài nghe/đọc giải thích chi tiết và hệ thống thẻ từ vựng thông minh.",
+        solution: "Phát triển nền tảng HiTOEIC miễn phí cung cấp 100+ đề thi thử, 59 chủ đề ngữ pháp, bài nghe/đọc giải thích chi tiết và hệ thống thẻ từ vựng thông minh.",
         outcome: "Mang lại nền tảng học tập toàn diện phục vụ hàng ngàn học viên thi thử trực tuyến, theo dõi tiến độ và đua bảng xếp hạng XP."
     },
     {
