@@ -116,7 +116,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
 
                             {/* Content Area */}
                             <div className="px-6 sm:px-10 lg:px-14 py-8 sm:py-12">
-                                <div className="prose dark:prose-invert max-w-3xl mx-auto text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+                                <div className="prose dark:prose-invert max-w-3xl mx-auto text-slate-700 dark:text-slate-300 leading-relaxed font-normal text-justify [&_p]:text-justify [&_li]:text-justify [&_div]:text-justify">
                                     {post.content ? (
                                         <MDXContent content={post.content} />
                                     ) : (

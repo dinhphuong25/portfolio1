@@ -497,7 +497,7 @@ body {
 .prose {
   color: var(--slate-700);
   line-height: 1.8;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
 }
 .prose p {
   margin-bottom: 1.5em;
@@ -505,112 +505,124 @@ body {
   text-justify: inter-word;
 }
 .prose h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   color: var(--slate-900);
   letter-spacing: -0.01em;
   text-align: left !important;
 }
+.dark .prose h3 {
+  color: #ffffff;
+}
 .prose blockquote {
-  border-left: 4px solid var(--indigo-500);
-  background: linear-gradient(to right, var(--indigo-50), transparent);
-  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--slate-900);
+  background: var(--slate-100);
+  padding: 1.25rem 1.75rem;
   border-radius: 0 1rem 1rem 0;
   font-style: italic;
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   color: var(--slate-800);
   font-weight: 500;
-  position: relative;
-  text-align: left !important;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
-.prose blockquote::before {
-  content: '"';
-  position: absolute;
-  top: -15px;
-  left: 10px;
-  font-size: 5rem;
-  color: var(--indigo-200);
-  opacity: 0.3;
-  font-family: Georgia, serif;
-  line-height: 1;
+.dark .prose blockquote {
+  border-left-color: #ffffff;
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--slate-200);
 }
 .prose blockquote p {
-  text-align: left !important;
-  font-size: 1.1em;
+  text-align: justify !important;
+  text-justify: inter-word;
+  font-size: 1.05em;
   line-height: 1.7;
 }
 .prose hr {
   border: 0;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--slate-200), transparent);
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+.dark .prose hr {
+  background: linear-gradient(to right, transparent, var(--slate-800), transparent);
 }
 .prose .lead {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--slate-800);
   font-weight: 500;
   line-height: 1.8;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
   text-align: justify !important;
   text-justify: inter-word;
 }
+.dark .prose .lead {
+  color: var(--slate-200);
+}
 .prose .lead::first-letter {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   float: left;
   line-height: 1;
   margin-top: 0.1rem;
   margin-right: 0.5rem;
   margin-bottom: -0.2rem;
-  color: var(--indigo-600);
+  color: var(--slate-900);
   font-family: Georgia, serif;
+}
+.dark .prose .lead::first-letter {
+  color: #ffffff;
 }
 .prose ul {
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 1.5em;
   color: var(--slate-700);
-  text-align: left !important;
+  text-align: justify !important;
+}
+.dark .prose ul {
+  color: var(--slate-300);
 }
 .prose ol {
   list-style-type: decimal;
   padding-left: 1.5rem;
   margin-bottom: 1.5em;
   color: var(--slate-700);
-  text-align: left !important;
+  text-align: justify !important;
+}
+.dark .prose ol {
+  color: var(--slate-300);
 }
 .prose li {
   margin-bottom: 0.5em;
   line-height: 1.8;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
 .prose li p {
   margin-bottom: 0.5em;
-  text-align: left !important;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
 .prose .callout {
-  background: var(--surface-elevated);
-  border: 1px solid var(--indigo-100);
-  border-left: 4px solid var(--indigo-400);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-left: 4px solid var(--slate-900);
   border-radius: 1rem;
-  padding: 2rem;
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  padding: 1.5rem 1.75rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
   box-shadow: var(--shadow-sm);
   text-align: justify !important;
   text-justify: inter-word;
-  position: relative;
-  overflow: hidden;
 }
-.prose .callout::after {
-  content: '';
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: linear-gradient(135deg, transparent, rgba(99, 102, 241, 0.05));
-  pointer-events: none;
+.dark .prose .callout {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: var(--slate-700);
+  border-left-color: #ffffff;
 }
 .prose .callout p {
   margin-bottom: 0;
@@ -621,18 +633,21 @@ body {
   font-weight: 700;
   color: var(--slate-900);
 }
+.dark .prose strong {
+  color: #ffffff;
+}
 .prose em {
   font-style: italic;
 }
 @media (min-width: 640px) {
   .prose {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .prose h3 {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
   .prose .lead {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 }
 

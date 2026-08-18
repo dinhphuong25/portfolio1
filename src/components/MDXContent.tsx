@@ -27,7 +27,7 @@ export default function MDXContent({ content }: MDXContentProps) {
           <div 
             key={index} 
             dangerouslySetInnerHTML={{ __html: part }} 
-            className="inline"
+            className="inline text-justify [&_p]:text-justify [&_li]:text-justify"
           />
         );
       })}
