@@ -16,8 +16,6 @@ export default function AboutSection() {
         "Trong tương lai, tôi hướng đến trở thành một Digital Supply Chain Specialist – người có khả năng kết nối giữa nghiệp vụ vận hành, dữ liệu và công nghệ, góp phần xây dựng những giải pháp số thiết thực cho hoạt động Logistics và Chuỗi cung ứng.",
     ];
 
-    const mottoVi = "Logistics là nền tảng tôi theo đuổi. Công nghệ là công cụ tôi lựa chọn. Và giải quyết vấn đề thực tế là mục tiêu tôi hướng đến.";
-
     const storyEn = [
         "Hello! I am Kim Dinh Phuong, a 3rd-year student majoring in Supply Chain Management & Logistics at Can Tho University of Technology.",
         "I am particularly fascinated by how goods, data, and processes connect to form an efficient operational supply chain. Alongside my academic studies, I proactively explore technology and develop programming skills to find practical solutions.",
@@ -26,11 +24,8 @@ export default function AboutSection() {
         "In the future, I aim to become a Digital Supply Chain Specialist — serving as a bridge between field operations, data, and technology to build impactful digital solutions.",
     ];
 
-    const mottoEn = "Logistics is my foundation. Technology is my tool. Solving real-world problems is my goal.";
-
     const isVi = language === "vi";
     const currentStory = isVi ? storyVi : storyEn;
-    const currentMotto = isVi ? mottoVi : mottoEn;
 
     const highlightsVi = [
         {
@@ -104,11 +99,6 @@ export default function AboutSection() {
                             {paragraph}
                         </p>
                     ))}
-
-                    {/* Highlighted Closing Motto Banner */}
-                    <div className="p-4 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 border-l-4 border-slate-900 dark:border-white text-slate-900 dark:text-white font-extrabold text-xs sm:text-sm leading-relaxed mt-4 shadow-2xs">
-                        "{currentMotto}"
-                    </div>
                 </div>
 
                 {/* Right Highlights Cards */}
