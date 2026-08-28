@@ -8,6 +8,7 @@ import { LanguageProvider as ClientLanguageProvider } from "@/context/LanguageCo
 import { ThemeProvider } from "@/components/ThemeProvider";
 import LayoutContent from "@/components/LayoutContent";
 import { ViewTransitions } from '@/components/ViewTransitions';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -129,6 +130,7 @@ export default function RootLayout({
             <ClientLanguageProvider>
               <LayoutContent>{children}</LayoutContent>
               <CommandPalette />
+              <SpeedInsights />
             </ClientLanguageProvider>
           </ThemeProvider>
         </body>
