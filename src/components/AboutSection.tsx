@@ -39,9 +39,9 @@ export default function AboutSection() {
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Email liên hệ",
-            value: "kimdinhphuong205@gmail.com",
+            value: "hi@dinhphuong.tech",
             isLink: true,
-            href: "mailto:kimdinhphuong205@gmail.com",
+            href: "mailto:hi@dinhphuong.tech",
         },
     ];
 
@@ -59,9 +59,9 @@ export default function AboutSection() {
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Contact Email",
-            value: "kimdinhphuong205@gmail.com",
+            value: "hi@dinhphuong.tech",
             isLink: true,
-            href: "mailto:kimdinhphuong205@gmail.com",
+            href: "mailto:hi@dinhphuong.tech",
         },
     ];
 

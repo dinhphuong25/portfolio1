@@ -103,7 +103,7 @@ export default function CommandPalette() {
       icon: <Copy size={18} />,
       label: { vi: "Sao chép địa chỉ Email", en: "Copy Email Address" },
       action: () => {
-        navigator.clipboard.writeText("kimdinhphuong205@gmail.com");
+        navigator.clipboard.writeText("hi@dinhphuong.tech");
         showToast(
           language === "vi" ? "Đã sao chép địa chỉ Email!" : "Email address copied to clipboard!",
           "success"
