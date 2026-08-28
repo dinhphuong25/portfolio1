@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { projectsEn, projectsVi } from "@/data/projects";
+import { projectsEn, projectsVi, Project } from "@/data/projects";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
@@ -16,6 +16,19 @@ function getDisplayDomain(url?: string) {
     }
 }
 
+function checkIsDeveloping(project: Project) {
+    const id = project.id.toLowerCase();
+    const title = project.title.toLowerCase();
+    return (
+        id.includes("ez-tool") ||
+        id.includes("eztool") ||
+        id.includes("ez-study") ||
+        id.includes("ezstudy") ||
+        title.includes("ez tool") ||
+        title.includes("ez study")
+    );
+}
+
 export default function ProjectsClient() {
     const { language } = useLanguage();
     const isVi = language === "vi";
@@ -25,20 +38,17 @@ export default function ProjectsClient() {
 
     useEffect(() => {
         if (toastMessage) {
-            const timer = setTimeout(() => setToastMessage(null), 3500);
+            const timer = setTimeout(() => setToastMessage(null), 4000);
             return () => clearTimeout(timer);
         }
     }, [toastMessage]);
 
-    const handleProjectLinkClick = (e: React.MouseEvent, projectId: string, projectTitle: string) => {
-        if (projectId === "ez-tool" || projectId === "ez-study") {
-            e.preventDefault();
-            setToastMessage(
-                isVi
-                    ? `Dự án ${projectTitle} hiện đang trong quá trình phát triển và sẽ ra mắt trong thời gian tới!`
-                    : `${projectTitle} is currently in development and will launch soon!`
-            );
-        }
+    const showDevelopmentToast = (title: string) => {
+        setToastMessage(
+            isVi
+                ? `Dự án ${title} hiện đang trong quá trình phát triển và sẽ ra mắt trong thời gian tới!`
+                : `${title} is currently in development and will launch soon!`
+        );
     };
 
     return (
@@ -51,7 +61,7 @@ export default function ProjectsClient() {
                             const displayDomain = getDisplayDomain(project.caseStudyUrl);
                             const isPinned = index === 0;
                             const targetUrl = project.caseStudyUrl || "#";
-                            const isDeveloping = project.id === "ez-tool" || project.id === "ez-study";
+                            const isDeveloping = checkIsDeveloping(project);
 
                             return (
                                 <motion.article
@@ -71,54 +81,96 @@ export default function ProjectsClient() {
                                         <div className="absolute top-0 left-0 right-0 h-1 bg-slate-900 dark:bg-white z-20" />
                                     )}
 
-                                    {/* Top Image Mockup Frame - Direct Link */}
-                                    <a
-                                        href={targetUrl}
-                                        target={isDeveloping ? "_self" : "_blank"}
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
-                                        className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
-                                    >
-                                        <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
-                                            <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
-                                                <div className="flex gap-1.5">
-                                                    <span className="w-2 h-2 rounded-full bg-rose-500/80" />
-                                                    <span className="w-2 h-2 rounded-full bg-amber-500/80" />
-                                                    <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                                    {/* Top Image Mockup Frame - Direct Link or Trigger Button */}
+                                    {isDeveloping ? (
+                                        <button
+                                            type="button"
+                                            onClick={() => showDevelopmentToast(project.title)}
+                                            className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer text-left w-full"
+                                        >
+                                            <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
+                                                <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
+                                                    <div className="flex gap-1.5">
+                                                        <span className="w-2 h-2 rounded-full bg-rose-500/80" />
+                                                        <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                                                        <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                                                    </div>
+                                                    <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
+                                                        {displayDomain}
+                                                    </span>
+                                                    <div className="w-4" />
                                                 </div>
-                                                <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
-                                                    {displayDomain}
-                                                </span>
-                                                <div className="w-4" />
-                                            </div>
 
-                                            <div className="flex-1 relative overflow-hidden bg-slate-950">
-                                                <Image
-                                                    src={project.thumbnail}
-                                                    alt={project.title}
-                                                    fill
-                                                    unoptimized
-                                                    priority={isPinned}
-                                                    sizes="(max-width: 640px) 100vw, 400px"
-                                                    className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
-                                                />
+                                                <div className="flex-1 relative overflow-hidden bg-slate-950">
+                                                    <Image
+                                                        src={project.thumbnail}
+                                                        alt={project.title}
+                                                        fill
+                                                        unoptimized
+                                                        priority={isPinned}
+                                                        sizes="(max-width: 640px) 100vw, 400px"
+                                                        className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </button>
+                                    ) : (
+                                        <a
+                                            href={targetUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
+                                        >
+                                            <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
+                                                <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
+                                                    <div className="flex gap-1.5">
+                                                        <span className="w-2 h-2 rounded-full bg-rose-500/80" />
+                                                        <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                                                        <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                                                    </div>
+                                                    <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
+                                                        {displayDomain}
+                                                    </span>
+                                                    <div className="w-4" />
+                                                </div>
+
+                                                <div className="flex-1 relative overflow-hidden bg-slate-950">
+                                                    <Image
+                                                        src={project.thumbnail}
+                                                        alt={project.title}
+                                                        fill
+                                                        unoptimized
+                                                        priority={isPinned}
+                                                        sizes="(max-width: 640px) 100vw, 400px"
+                                                        className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    )}
 
                                     {/* Content Body */}
                                     <div className="flex-1 p-5 flex flex-col justify-between">
                                         <div className="space-y-2">
                                             <div>
-                                                <a
-                                                    href={targetUrl}
-                                                    target={isDeveloping ? "_self" : "_blank"}
-                                                    rel="noopener noreferrer"
-                                                    onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
-                                                    className="text-base font-extrabold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200 block cursor-pointer"
-                                                >
-                                                    {project.title}
-                                                </a>
+                                                {isDeveloping ? (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => showDevelopmentToast(project.title)}
+                                                        className="text-base font-extrabold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200 block text-left cursor-pointer"
+                                                    >
+                                                        {project.title}
+                                                    </button>
+                                                ) : (
+                                                    <a
+                                                        href={targetUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-base font-extrabold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200 block cursor-pointer"
+                                                    >
+                                                        {project.title}
+                                                    </a>
+                                                )}
                                             </div>
 
                                             <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500">
@@ -144,16 +196,26 @@ export default function ProjectsClient() {
 
                                         {/* Action Links - Direct Web Link */}
                                         <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                                            <a
-                                                href={targetUrl}
-                                                target={isDeveloping ? "_self" : "_blank"}
-                                                rel="noopener noreferrer"
-                                                onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
-                                                className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1 cursor-pointer"
-                                            >
-                                                <span>{isVi ? "Truy cập website trực tiếp" : "Visit live website"}</span>
-                                                <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                            </a>
+                                            {isDeveloping ? (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => showDevelopmentToast(project.title)}
+                                                    className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1 cursor-pointer"
+                                                >
+                                                    <span>{isVi ? "Truy cập website trực tiếp" : "Visit live website"}</span>
+                                                    <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                                </button>
+                                            ) : (
+                                                <a
+                                                    href={targetUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1 cursor-pointer"
+                                                >
+                                                    <span>{isVi ? "Truy cập website trực tiếp" : "Visit live website"}</span>
+                                                    <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </motion.article>
@@ -165,12 +227,12 @@ export default function ProjectsClient() {
 
             {/* Sleek Floating Toast Notification for In-Development Projects - Bottom Right */}
             {toastMessage && (
-                <div className="fixed bottom-6 right-6 z-50 max-w-sm px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
+                <div className="fixed bottom-6 right-6 z-[9999] max-w-sm px-4 py-3.5 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-3 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
                     <span className="text-base shrink-0">🚀</span>
-                    <span>{toastMessage}</span>
+                    <span className="leading-snug">{toastMessage}</span>
                     <button 
                         onClick={() => setToastMessage(null)} 
-                        className="ml-2 p-1 text-slate-400 hover:text-white dark:hover:text-slate-900 transition-colors cursor-pointer"
+                        className="ml-auto p-1 text-slate-400 hover:text-white dark:hover:text-slate-900 transition-colors cursor-pointer shrink-0"
                         title="Close"
                     >
                         ✕
