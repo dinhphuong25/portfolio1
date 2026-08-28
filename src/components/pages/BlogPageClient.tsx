@@ -150,14 +150,13 @@ export default function BlogPageClient() {
                 </div>
             </div>
 
-            {/* Sleek Compact Toast Notification for Unpublished Posts - Bottom Right */}
+            {/* Clean Minimalist Toast Notification - No Emoji, Centered Text */}
             {toastMessage && (
-                <div className="fixed bottom-5 right-5 z-50 max-w-[280px] sm:max-w-xs px-3.5 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-slate-800 dark:text-slate-100 text-[11px] sm:text-xs font-bold shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center gap-2 transition-all duration-300 animate-in fade-in slide-in-from-bottom-3">
-                    <span className="text-sm shrink-0">✍️</span>
-                    <span className="leading-tight">{toastMessage}</span>
+                <div className="fixed bottom-5 right-5 z-50 max-w-[280px] sm:max-w-xs px-4 py-2.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-slate-800 dark:text-slate-100 text-[11px] sm:text-xs font-bold shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-3 transition-all duration-300 animate-in fade-in slide-in-from-bottom-3">
+                    <span className="leading-relaxed text-center flex-1">{toastMessage}</span>
                     <button 
                         onClick={() => setToastMessage(null)} 
-                        className="ml-auto p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer shrink-0"
+                        className="p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer shrink-0"
                         aria-label="Close"
                     >
                         ✕
