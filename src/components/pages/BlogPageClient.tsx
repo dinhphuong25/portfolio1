@@ -150,9 +150,9 @@ export default function BlogPageClient() {
                 </div>
             </div>
 
-            {/* Clean Minimalist Toast Notification - No Emoji, Centered Text */}
+            {/* Clean Minimalist Toast Notification - Top Right Corner */}
             {toastMessage && (
-                <div className="fixed bottom-5 right-5 z-50 max-w-[280px] sm:max-w-xs px-4 py-2.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-slate-800 dark:text-slate-100 text-[11px] sm:text-xs font-bold shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-3 transition-all duration-300 animate-in fade-in slide-in-from-bottom-3">
+                <div className="fixed top-5 right-5 sm:top-6 sm:right-6 z-50 max-w-[280px] sm:max-w-xs px-4 py-2.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-slate-800 dark:text-slate-100 text-[11px] sm:text-xs font-bold shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-3 transition-all duration-300 animate-in fade-in slide-in-from-top-3">
                     <span className="leading-relaxed text-center flex-1">{toastMessage}</span>
                     <button 
                         onClick={() => setToastMessage(null)} 
