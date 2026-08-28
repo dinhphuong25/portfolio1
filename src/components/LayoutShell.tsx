@@ -32,19 +32,19 @@ function MobileHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
     };
 
     return (
-        <header className="lg:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 py-3 safe-area-top">
-            <div className="flex items-center justify-between">
+        <header className="lg:hidden sticky top-2.5 z-40 px-3.5 pt-1 pb-2 safe-area-top">
+            <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 rounded-2xl shadow-sm px-3.5 py-2 flex items-center justify-between relative">
                 <button
                     onClick={onMenuOpen}
-                    className="p-2.5 -ml-2 rounded-xl bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-all duration-150"
+                    className="p-2 -ml-1 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-95 transition-all duration-150 cursor-pointer"
                     aria-label="Open menu"
                 >
-                    <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-slate-700 dark:text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
 
-                <h1 className="text-base font-semibold text-gray-900 absolute left-1/2 -translate-x-1/2">{getPageTitle()}</h1>
+                <h1 className="text-sm font-extrabold text-slate-900 dark:text-white absolute left-1/2 -translate-x-1/2 tracking-tight">{getPageTitle()}</h1>
             </div>
         </header>
     );
