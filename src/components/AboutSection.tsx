@@ -3,25 +3,25 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { GraduationCap, MapPin, Mail, Target } from "lucide-react";
+import { Code, MapPin, Mail, Target } from "lucide-react";
 
 export default function AboutSection() {
     const { language } = useLanguage();
 
     const storyVi = [
-        "Chào bạn! Tôi là Kim Đình Phương, sinh viên năm 3 chuyên ngành Quản lý Chuỗi cung ứng & Logistics tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ.",
-        "Tôi đặc biệt hứng thú với cách hàng hóa, dữ liệu và quy trình được kết nối để tạo nên một chuỗi cung ứng vận hành hiệu quả. Vì vậy, bên cạnh kiến thức chuyên ngành, tôi chủ động khám phá công nghệ và phát triển kỹ năng lập trình để tìm ra những cách tiếp cận mới cho các bài toán thực tế.",
-        "Tôi đang tự học và thực hành phát triển web với Next.js, TypeScript, đồng thời tìm hiểu về AI, tự động hóa quy trình và thiết kế UI/UX. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được ứng dụng để giải quyết một vấn đề cụ thể, thay vì chỉ dừng lại ở việc tạo ra một sản phẩm đẹp hoặc hiện đại.",
-        "Từ quan điểm đó, tôi đã thực hiện một số dự án cá nhân như EcoFresh WMS – hệ thống quản lý kho lạnh, Ez Study – cổng học tập và HiTOEIC – nền tảng luyện thi. Mỗi dự án là một cơ hội để tôi kết hợp tư duy Logistics với công nghệ, đồng thời rèn luyện khả năng phân tích vấn đề, thiết kế giải pháp và tối ưu trải nghiệm người dùng.",
-        "Trong tương lai, tôi hướng đến trở thành một Digital Supply Chain Specialist – người có khả năng kết nối giữa nghiệp vụ vận hành, dữ liệu và công nghệ, góp phần xây dựng những giải pháp số thiết thực cho hoạt động Logistics và Chuỗi cung ứng.",
+        "Chào bạn! Tôi là Kim Đình Phương – một người có niềm đam mê mạnh mẽ với lập trình và xây dựng các sản phẩm website hiện đại.",
+        "Tôi đặc biệt hứng thú với việc biến ý tưởng, dữ liệu và quy trình thành các giao diện web mượt mà, tối ưu trải nghiệm người dùng. Đối với tôi, mỗi trang web không chỉ là một sản phẩm hiển thị mà là một giải pháp thiết thực để giải quyết các bài toán thực tế.",
+        "Tôi chủ động tự học và thực hành chuyên sâu phát triển web với Next.js, TypeScript, đồng thời tìm hiểu về AI, tự động hóa quy trình và thiết kế UI/UX. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được áp dụng vào sản phẩm thực tế, mang lại trải nghiệm tối ưu cho người dùng.",
+        "Từ đam mê đó, tôi đã tự tay xây dựng các dự án web cá nhân như EcoFresh WMS – hệ thống quản lý kho bãi, Ez Study – cổng học tập và HiTOEIC – nền tảng luyện thi. Mỗi dự án là một cơ hội để tôi rèn luyện kỹ năng phân tích, thiết kế giải pháp và tối ưu hóa hiệu năng ứng dụng web.",
+        "Trong tương lai, tôi hướng đến trở thành một Web Developer chuyên nghiệp – người có khả năng xây dựng các hệ thống web chất lượng cao, kết hợp tư duy công nghệ, dữ liệu và trải nghiệm người dùng.",
     ];
 
     const storyEn = [
-        "Hello! I am Kim Dinh Phuong, a 3rd-year student majoring in Supply Chain Management & Logistics at Can Tho University of Technology.",
-        "I am particularly fascinated by how goods, data, and processes connect to form an efficient operational supply chain. Alongside my academic studies, I proactively explore technology and develop programming skills to find practical solutions.",
-        "I am self-learning fullstack web development with Next.js, TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology brings real value only when applied to solve real-world problems.",
-        "Guided by this principle, I engineered projects like EcoFresh WMS cold-storage system, Ez Study portal, and HiTOEIC exam platform. Each project bridges logistics domain knowledge with digital engineering.",
-        "In the future, I aim to become a Digital Supply Chain Specialist — serving as a bridge between field operations, data, and technology to build impactful digital solutions.",
+        "Hello! I am Kim Dinh Phuong — a passionate web developer dedicated to building modern websites and web applications.",
+        "I am particularly fascinated by turning ideas, data, and processes into smooth, optimized, and intuitive web experiences. To me, a website is more than just a visual interface — it is a practical solution that solves real-world problems.",
+        "I proactively self-learn and practice fullstack web development with Next.js and TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology delivers real value when built into functional, high-performance web products.",
+        "Guided by this passion, I engineered web projects like EcoFresh WMS management system, Ez Study learning portal, and HiTOEIC exam platform. Each project is an opportunity to refine my engineering mindset, solution design, and user experience optimization.",
+        "In the future, I aim to become a professional Web Developer — crafting high-quality web applications that connect technology, data, and seamless user experiences.",
     ];
 
     const isVi = language === "vi";
@@ -29,9 +29,9 @@ export default function AboutSection() {
 
     const highlightsVi = [
         {
-            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Trường học",
-            value: "ĐH Kỹ thuật – Công nghệ Cần Thơ",
+            icon: <Code className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Lĩnh vực chính",
+            value: "Web Development & UI/UX",
         },
         {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
@@ -48,15 +48,15 @@ export default function AboutSection() {
         {
             icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Định hướng sự nghiệp",
-            value: "Digital Supply Chain Specialist",
+            value: "Fullstack Web Developer",
         },
     ];
 
     const highlightsEn = [
         {
-            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Education",
-            value: "Can Tho Univ. of Technology",
+            icon: <Code className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Main Focus",
+            value: "Web Development & UI/UX",
         },
         {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
@@ -73,7 +73,7 @@ export default function AboutSection() {
         {
             icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Career Goal",
-            value: "Digital Supply Chain Specialist",
+            value: "Fullstack Web Developer",
         },
     ];
 
