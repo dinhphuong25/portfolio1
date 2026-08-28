@@ -56,7 +56,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                 </motion.h1>
 
                 {/* Small Divider Line */}
-                <div className="w-10 h-0.5 rounded-full bg-slate-200/90 dark:bg-slate-700/90 my-2.5" />
+                <div className="w-28 h-0.5 rounded-full bg-slate-200/90 dark:bg-slate-700/90 my-3" />
 
                 {/* Social Links Row */}
                 <motion.div
