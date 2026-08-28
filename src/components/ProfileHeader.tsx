@@ -55,6 +55,9 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                     </span>
                 </motion.h1>
 
+                {/* Small Divider Line */}
+                <div className="w-10 h-0.5 rounded-full bg-slate-200/90 dark:bg-slate-700/90 my-2.5" />
+
                 {/* Social Links Row */}
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
