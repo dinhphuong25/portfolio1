@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { projectsEn, projectsVi } from "@/data/projects";
@@ -17,123 +18,165 @@ function getDisplayDomain(url?: string) {
 
 export default function ProjectsClient() {
     const { language } = useLanguage();
-    const projectsList = language === "vi" ? projectsVi : projectsEn;
+    const isVi = language === "vi";
+    const projectsList = isVi ? projectsVi : projectsEn;
+
+    const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (toastMessage) {
+            const timer = setTimeout(() => setToastMessage(null), 3500);
+            return () => clearTimeout(timer);
+        }
+    }, [toastMessage]);
+
+    const handleProjectLinkClick = (e: React.MouseEvent, projectId: string, projectTitle: string) => {
+        if (projectId === "ez-tool" || projectId === "ez-study") {
+            e.preventDefault();
+            setToastMessage(
+                isVi
+                    ? `Dự án ${projectTitle} hiện đang trong quá trình phát triển và sẽ ra mắt trong thời gian tới!`
+                    : `${projectTitle} is currently in development and will launch soon!`
+            );
+        }
+    };
 
     return (
-        <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            {/* Unified Grid - Direct Link to Web */}
-            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <AnimatePresence mode="popLayout">
-                    {projectsList.map((project, index) => {
-                        const displayDomain = getDisplayDomain(project.caseStudyUrl);
-                        const isPinned = index === 0;
-                        const targetUrl = project.caseStudyUrl || "#";
+        <>
+            <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                {/* Unified Grid - Direct Link to Web */}
+                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <AnimatePresence mode="popLayout">
+                        {projectsList.map((project, index) => {
+                            const displayDomain = getDisplayDomain(project.caseStudyUrl);
+                            const isPinned = index === 0;
+                            const targetUrl = project.caseStudyUrl || "#";
+                            const isDeveloping = project.id === "ez-tool" || project.id === "ez-study";
 
-                        return (
-                            <motion.article
-                                key={project.id}
-                                layout
-                                initial={{ opacity: 0, y: 16 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.35, delay: index * 0.05 }}
-                                className={`group relative flex flex-col h-full bg-white dark:bg-slate-900 rounded-2xl border transition-all duration-300 overflow-hidden ${
-                                    isPinned
-                                        ? "border-2 border-slate-900 dark:border-slate-100 shadow-xl hover:shadow-2xl hover:-translate-y-2"
-                                        : "border-slate-200/80 dark:border-slate-800 shadow-2xs hover:shadow-xl hover:border-slate-400 dark:hover:border-slate-600 hover:-translate-y-1.5"
-                                }`}
-                            >
-                                {isPinned && (
-                                    <div className="absolute top-0 left-0 right-0 h-1 bg-slate-900 dark:bg-white z-20" />
-                                )}
-
-                                {/* Top Image Mockup Frame - Direct Link */}
-                                <a
-                                    href={targetUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
+                            return (
+                                <motion.article
+                                    key={project.id}
+                                    layout
+                                    initial={{ opacity: 0, y: 16 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.35, delay: index * 0.05 }}
+                                    className={`group relative flex flex-col h-full bg-white dark:bg-slate-900 rounded-2xl border transition-all duration-300 overflow-hidden ${
+                                        isPinned
+                                            ? "border-2 border-slate-900 dark:border-slate-100 shadow-xl hover:shadow-2xl hover:-translate-y-2"
+                                            : "border-slate-200/80 dark:border-slate-800 shadow-2xs hover:shadow-xl hover:border-slate-400 dark:hover:border-slate-600 hover:-translate-y-1.5"
+                                    }`}
                                 >
-                                    <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
-                                        <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
-                                            <div className="flex gap-1.5">
-                                                <span className="w-2 h-2 rounded-full bg-rose-500/80" />
-                                                <span className="w-2 h-2 rounded-full bg-amber-500/80" />
-                                                <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                                    {isPinned && (
+                                        <div className="absolute top-0 left-0 right-0 h-1 bg-slate-900 dark:bg-white z-20" />
+                                    )}
+
+                                    {/* Top Image Mockup Frame - Direct Link */}
+                                    <a
+                                        href={targetUrl}
+                                        target={isDeveloping ? "_self" : "_blank"}
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
+                                        className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
+                                    >
+                                        <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
+                                            <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
+                                                <div className="flex gap-1.5">
+                                                    <span className="w-2 h-2 rounded-full bg-rose-500/80" />
+                                                    <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                                                    <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                                                </div>
+                                                <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
+                                                    {displayDomain}
+                                                </span>
+                                                <div className="w-4" />
                                             </div>
-                                            <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
-                                                {displayDomain}
-                                            </span>
-                                            <div className="w-4" />
+
+                                            <div className="flex-1 relative overflow-hidden bg-slate-950">
+                                                <Image
+                                                    src={project.thumbnail}
+                                                    alt={project.title}
+                                                    fill
+                                                    unoptimized
+                                                    priority={isPinned}
+                                                    sizes="(max-width: 640px) 100vw, 400px"
+                                                    className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
+                                                />
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    {/* Content Body */}
+                                    <div className="flex-1 p-5 flex flex-col justify-between">
+                                        <div className="space-y-2">
+                                            <div>
+                                                <a
+                                                    href={targetUrl}
+                                                    target={isDeveloping ? "_self" : "_blank"}
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
+                                                    className="text-base font-extrabold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200 block cursor-pointer"
+                                                >
+                                                    {project.title}
+                                                </a>
+                                            </div>
+
+                                            <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500">
+                                                {project.role} • {project.year}
+                                            </p>
+
+                                            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 min-h-[54px] font-normal text-justify text-justify-pretty">
+                                                {project.summary}
+                                            </p>
                                         </div>
 
-                                        <div className="flex-1 relative overflow-hidden bg-slate-950">
-                                            <Image
-                                                src={project.thumbnail}
-                                                alt={project.title}
-                                                fill
-                                                unoptimized
-                                                priority={isPinned}
-                                                sizes="(max-width: 640px) 100vw, 400px"
-                                                className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
-                                            />
+                                        {/* Tech Tags */}
+                                        <div className="flex flex-wrap gap-1.5 my-4">
+                                            {project.tags.slice(0, 3).map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className="px-2 py-0.5 text-[10px] font-semibold rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
                                         </div>
-                                    </div>
-                                </a>
 
-                                {/* Content Body */}
-                                <div className="flex-1 p-5 flex flex-col justify-between">
-                                    <div className="space-y-2">
-                                        <div>
+                                        {/* Action Links - Direct Web Link */}
+                                        <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                                             <a
                                                 href={targetUrl}
-                                                target="_blank"
+                                                target={isDeveloping ? "_self" : "_blank"}
                                                 rel="noopener noreferrer"
-                                                className="text-base font-extrabold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200 block"
+                                                onClick={(e) => handleProjectLinkClick(e, project.id, project.title)}
+                                                className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1 cursor-pointer"
                                             >
-                                                {project.title}
+                                                <span>{isVi ? "Truy cập website trực tiếp" : "Visit live website"}</span>
+                                                <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                                             </a>
                                         </div>
-
-                                        <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500">
-                                            {project.role} • {project.year}
-                                        </p>
-
-                                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 min-h-[54px] font-normal text-justify text-justify-pretty">
-                                            {project.summary}
-                                        </p>
                                     </div>
+                                </motion.article>
+                            );
+                        })}
+                    </AnimatePresence>
+                </motion.div>
+            </div>
 
-                                    {/* Tech Tags */}
-                                    <div className="flex flex-wrap gap-1.5 my-4">
-                                        {project.tags.slice(0, 3).map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="px-2 py-0.5 text-[10px] font-semibold rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* Action Links - Direct Web Link */}
-                                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                                        <a
-                                            href={targetUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1"
-                                        >
-                                            <span>{language === "vi" ? "Truy cập website trực tiếp" : "Visit live website"}</span>
-                                            <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </motion.article>
-                        );
-                    })}
-                </AnimatePresence>
-            </motion.div>
-        </div>
+            {/* Sleek Floating Toast Notification for In-Development Projects - Bottom Right */}
+            {toastMessage && (
+                <div className="fixed bottom-6 right-6 z-50 max-w-sm px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
+                    <span className="text-base shrink-0">🚀</span>
+                    <span>{toastMessage}</span>
+                    <button 
+                        onClick={() => setToastMessage(null)} 
+                        className="ml-2 p-1 text-slate-400 hover:text-white dark:hover:text-slate-900 transition-colors cursor-pointer"
+                        title="Close"
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
+        </>
     );
 }
