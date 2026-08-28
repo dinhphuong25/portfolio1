@@ -60,8 +60,8 @@ export default function BlogPageClient() {
                         <div className="mb-6 space-y-2">
                             <div className="flex items-center gap-2.5">
                                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
-                                <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight uppercase">
-                                    {isVi ? 'BÀI VIẾT & CHIA SẺ' : 'BLOG & ARTICLES'}
+                                <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                    {isVi ? 'Bài viết & Chia sẻ' : 'Blog & Articles'}
                                 </h1>
                             </div>
                             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
