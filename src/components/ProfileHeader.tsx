@@ -100,17 +100,6 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                         </svg>
                         <span>TikTok</span>
                     </a>
-
-                    {/* Zalo */}
-                    <a
-                        href="https://zalo.me/0903917400"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-200 text-xs font-bold hover:text-[#0068FF] dark:hover:text-[#0068FF] hover:bg-white dark:hover:bg-slate-900 hover:border-[#0068FF]/40 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
-                    >
-                        <span className="font-extrabold text-[10px] text-[#0068FF] leading-none shrink-0">ZALO</span>
-                        <span>Zalo</span>
-                    </a>
                 </motion.div>
             </div>
         </section>
