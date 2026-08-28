@@ -54,10 +54,6 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                         <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-[#0866FF] shrink-0" />
                     </span>
                 </motion.h1>
-
-                {/* Small Divider Line */}
-                <div className="w-28 h-0.5 rounded-full bg-slate-200/90 dark:bg-slate-700/90 my-3" />
-
                 {/* Social Links Row */}
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
