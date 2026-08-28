@@ -51,9 +51,9 @@ export default function ContactPageClient() {
     ];
 
     return (
-        <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div className="max-w-6xl mx-auto p-3 sm:p-6 lg:p-8">
             {/* Unified Container */}
-            <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[2rem] shadow-xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                     
                     {/* Left Column: Info & Connect */}

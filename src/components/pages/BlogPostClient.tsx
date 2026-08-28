@@ -52,8 +52,8 @@ export default function BlogPostClient({ slug }: { slug: string }) {
     return (
         <>
             <ReadingProgressBar />
-            <div className="max-w-5xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
-                <div className="bg-white dark:bg-slate-900 sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+            <div className="max-w-5xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
                     <Reveal direction="up" delay={100}>
                         <article>
                             {/* Standard Header */}

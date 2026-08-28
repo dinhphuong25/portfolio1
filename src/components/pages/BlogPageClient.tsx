@@ -53,8 +53,8 @@ export default function BlogPageClient() {
 
     return (
         <>
-            <div className="max-w-6xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
-                <div className="bg-white dark:bg-slate-900 sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 lg:p-8 relative">
+            <div className="max-w-6xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 lg:p-8 relative">
                     {/* Header */}
                     <Reveal direction="down" delay={100}>
                         <div className="mb-6 space-y-2">
