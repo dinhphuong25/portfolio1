@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Code, MapPin, Mail, Target } from "lucide-react";
+import { Code, MapPin, Mail } from "lucide-react";
 
 export default function AboutSection() {
     const { language } = useLanguage();
@@ -13,7 +13,6 @@ export default function AboutSection() {
         "Tôi đặc biệt hứng thú với việc biến ý tưởng, dữ liệu và quy trình thành các giao diện web mượt mà, tối ưu trải nghiệm người dùng. Đối với tôi, mỗi trang web không chỉ là một sản phẩm hiển thị mà là một giải pháp thiết thực để giải quyết các bài toán thực tế.",
         "Tôi chủ động tự học và thực hành chuyên sâu phát triển web với Next.js, TypeScript, đồng thời tìm hiểu về AI, tự động hóa quy trình và thiết kế UI/UX. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được áp dụng vào sản phẩm thực tế, mang lại trải nghiệm tối ưu cho người dùng.",
         "Từ đam mê đó, tôi đã tự tay xây dựng các dự án web cá nhân như EcoFresh WMS – hệ thống quản lý kho bãi, Ez Study – cổng học tập và HiTOEIC – nền tảng luyện thi. Mỗi dự án là một cơ hội để tôi rèn luyện kỹ năng phân tích, thiết kế giải pháp và tối ưu hóa hiệu năng ứng dụng web.",
-        "Trong tương lai, tôi hướng đến trở thành một Web Developer chuyên nghiệp – người có khả năng xây dựng các hệ thống web chất lượng cao, kết hợp tư duy công nghệ, dữ liệu và trải nghiệm người dùng.",
     ];
 
     const storyEn = [
@@ -21,7 +20,6 @@ export default function AboutSection() {
         "I am particularly fascinated by turning ideas, data, and processes into smooth, optimized, and intuitive web experiences. To me, a website is more than just a visual interface — it is a practical solution that solves real-world problems.",
         "I proactively self-learn and practice fullstack web development with Next.js and TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology delivers real value when built into functional, high-performance web products.",
         "Guided by this passion, I engineered web projects like EcoFresh WMS management system, Ez Study learning portal, and HiTOEIC exam platform. Each project is an opportunity to refine my engineering mindset, solution design, and user experience optimization.",
-        "In the future, I aim to become a professional Web Developer — crafting high-quality web applications that connect technology, data, and seamless user experiences.",
     ];
 
     const isVi = language === "vi";
@@ -45,11 +43,6 @@ export default function AboutSection() {
             isLink: true,
             href: "mailto:kimdinhphuong205@gmail.com",
         },
-        {
-            icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Định hướng sự nghiệp",
-            value: "Fullstack Web Developer",
-        },
     ];
 
     const highlightsEn = [
@@ -69,11 +62,6 @@ export default function AboutSection() {
             value: "kimdinhphuong205@gmail.com",
             isLink: true,
             href: "mailto:kimdinhphuong205@gmail.com",
-        },
-        {
-            icon: <Target className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Career Goal",
-            value: "Fullstack Web Developer",
         },
     ];
 
