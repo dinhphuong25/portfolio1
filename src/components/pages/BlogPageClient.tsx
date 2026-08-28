@@ -150,15 +150,15 @@ export default function BlogPageClient() {
                 </div>
             </div>
 
-            {/* Sleek Floating Toast Notification for Unpublished Posts - Bottom Right */}
+            {/* Sleek Compact Toast Notification for Unpublished Posts - Bottom Right */}
             {toastMessage && (
-                <div className="fixed bottom-6 right-6 z-50 max-w-sm px-4 py-3 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-bold shadow-2xl border border-slate-700 dark:border-slate-300 flex items-center gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
-                    <span className="text-base shrink-0">✍️</span>
-                    <span>{toastMessage}</span>
+                <div className="fixed bottom-5 right-5 z-50 max-w-[280px] sm:max-w-xs px-3.5 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-slate-800 dark:text-slate-100 text-[11px] sm:text-xs font-bold shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center gap-2 transition-all duration-300 animate-in fade-in slide-in-from-bottom-3">
+                    <span className="text-sm shrink-0">✍️</span>
+                    <span className="leading-tight">{toastMessage}</span>
                     <button 
                         onClick={() => setToastMessage(null)} 
-                        className="ml-2 p-1 text-slate-400 hover:text-white dark:hover:text-slate-900 transition-colors"
-                        title="Close"
+                        className="ml-auto p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer shrink-0"
+                        aria-label="Close"
                     >
                         ✕
                     </button>
