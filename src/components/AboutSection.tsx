@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Code, MapPin, Mail } from "lucide-react";
+import { Code, MapPin, Mail, GraduationCap } from "lucide-react";
 
 export default function AboutSection() {
     const { language } = useLanguage();
@@ -37,6 +37,11 @@ export default function AboutSection() {
             value: "Cần Thơ, Việt Nam",
         },
         {
+            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "Trường đại học",
+            value: "ĐH Kỹ thuật Công nghệ Cần Thơ · Sinh viên năm 3",
+        },
+        {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Email liên hệ",
             value: "hi@dinhphuong.tech",
@@ -55,6 +60,11 @@ export default function AboutSection() {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Location",
             value: "Can Tho, Vietnam",
+        },
+        {
+            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: "University",
+            value: "Can Tho University of Technology · 3rd Year",
         },
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
