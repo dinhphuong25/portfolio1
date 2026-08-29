@@ -55,20 +55,14 @@ export default function BlogPageClient() {
         <>
             <div className="max-w-6xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 lg:p-8 relative">
-                    {/* Header */}
                     <Reveal direction="down" delay={100}>
-                        <div className="mb-6 space-y-2">
+                        <div className="mb-6">
                             <div className="flex items-center gap-2.5">
                                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
                                 <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                                     {isVi ? 'Bài viết & Chia sẻ' : 'Blog & Articles'}
                                 </h1>
                             </div>
-                            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                                {isVi 
-                                    ? 'Chia sẻ kinh nghiệm thực tế về Chuỗi cung ứng, Công nghệ phần mềm và Hành trình phát triển bản thân.' 
-                                    : 'Sharing practical insights on Supply Chain, Software Engineering, and Personal Growth.'}
-                            </p>
                         </div>
                     </Reveal>
 
