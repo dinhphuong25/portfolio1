@@ -87,7 +87,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                                     </div>
 
                                     {/* Title */}
-                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
+                                    <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
                                         {post.title}
                                     </h1>
 
