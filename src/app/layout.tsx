@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import LayoutContent from "@/components/LayoutContent";
 import { ViewTransitions } from '@/components/ViewTransitions';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -131,6 +132,7 @@ export default function RootLayout({
               <LayoutContent>{children}</LayoutContent>
               <CommandPalette />
               <SpeedInsights />
+              <Analytics />
             </ClientLanguageProvider>
           </ThemeProvider>
         </body>
