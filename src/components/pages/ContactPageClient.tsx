@@ -57,64 +57,62 @@ export default function ContactPageClient() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                     
                     {/* Left Column: Info & Connect */}
-                    <div className="lg:col-span-5 bg-slate-50/80 dark:bg-slate-800/40 p-8 sm:p-12 border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
-                        <div>
-                            <Reveal direction="down" delay={100}>
-                                <header className="mb-10">
-                                    <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
-                                        {isVi ? "Hãy Kết Nối" : "Let's Connect"}
-                                    </h1>
-                                    <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed pr-2 font-normal">
-                                        {isVi 
-                                            ? "Tôi luôn sẵn lòng thảo luận về công việc hoặc các cơ hội hợp tác. Hãy liên hệ và cùng nhau tạo ra những điều tuyệt vời." 
-                                            : "I'm always open to discussing work or partnership opportunities. Reach out and let's create something great together."}
-                                    </p>
-                                </header>
+                    <div className="lg:col-span-5 bg-slate-50/80 dark:bg-slate-800/40 p-8 sm:p-12 border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-start">
+                        <Reveal direction="down" delay={100}>
+                            <header className="mb-8">
+                                <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3.5 tracking-tight">
+                                    {isVi ? "Hãy Kết Nối" : "Let's Connect"}
+                                </h1>
+                                <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed pr-2 font-normal">
+                                    {isVi 
+                                        ? "Tôi luôn sẵn lòng thảo luận về công việc hoặc các cơ hội hợp tác. Hãy liên hệ và cùng nhau tạo ra những điều tuyệt vời." 
+                                        : "I'm always open to discussing work or partnership opportunities. Reach out and let's create something great together."}
+                                </p>
+                            </header>
+                        </Reveal>
+
+                        {/* Contact info details */}
+                        <div className="space-y-6">
+                            <Reveal direction="left" delay={200}>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
+                                        <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div className="flex flex-col justify-center min-w-0 pt-0.5">
+                                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">Email</p>
+                                        <a href={`mailto:${profileData.email}`} className="text-[15px] xl:text-base font-bold text-slate-900 dark:text-white hover:underline transition-colors block whitespace-nowrap tracking-tight">
+                                            {profileData.email}
+                                        </a>
+                                    </div>
+                                </div>
                             </Reveal>
 
-                            {/* Contact info details */}
-                            <div className="space-y-6">
-                                <Reveal direction="left" delay={200}>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
-                                            <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                        </div>
-                                        <div className="flex flex-col justify-center min-w-0 pt-0.5">
-                                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">Email</p>
-                                            <a href={`mailto:${profileData.email}`} className="text-[15px] xl:text-base font-bold text-slate-900 dark:text-white hover:underline transition-colors block whitespace-nowrap tracking-tight">
-                                                {profileData.email}
-                                            </a>
-                                        </div>
+                            <Reveal direction="left" delay={300}>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
+                                        <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
                                     </div>
-                                </Reveal>
-
-                                <Reveal direction="left" delay={300}>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
-                                            <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">
-                                                {isVi ? "Vị trí" : "Location"}
-                                            </p>
-                                            <p className="text-base font-bold text-slate-900 dark:text-white">
-                                                {profileData.location.city}, {profileData.location.country}
-                                            </p>
-                                        </div>
+                                    <div>
+                                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">
+                                            {isVi ? "Vị trí" : "Location"}
+                                        </p>
+                                        <p className="text-base font-bold text-slate-900 dark:text-white">
+                                            {profileData.location.city}, {profileData.location.country}
+                                        </p>
                                     </div>
-                                </Reveal>
-                            </div>
+                                </div>
+                            </Reveal>
                         </div>
                         
-                        {/* Social Links Row (LinkedIn, Instagram, TikTok, Zalo) */}
+                        {/* Social Links Row right below Location without empty gap */}
                         <Reveal direction="up" delay={400}>
-                            <div className="mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
+                            <div className="mt-8 pt-7 border-t border-slate-200/80 dark:border-slate-800">
+                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3.5">
                                     {isVi ? "Theo dõi tôi" : "Follow Me"}
                                 </p>
                                 <div className="flex items-center gap-3">
