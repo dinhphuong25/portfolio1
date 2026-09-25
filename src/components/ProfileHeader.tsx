@@ -52,19 +52,6 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                     </span>
                 </motion.h1>
 
-                {/* Available for Work Status Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.12 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 mt-1 mb-2 shadow-2xs"
-                >
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600 dark:bg-emerald-400" />
-                    </span>
-                    <span>{language === 'vi' ? 'Sẵn sàng nhận dự án mới' : 'Available for new projects'}</span>
-                </motion.div>
                 {/* Social Links Row */}
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
