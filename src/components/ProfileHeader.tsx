@@ -15,18 +15,15 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
 
     return (
         <section className="relative overflow-hidden pt-10 pb-8 px-4 sm:px-8 border-b border-slate-100 dark:border-slate-800/80">
-            {/* Ambient background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-transparent to-transparent dark:from-slate-900/30 pointer-events-none" />
-
             <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10">
-                {/* Avatar with Elegant Double Ring & Shadow Border */}
+                {/* Avatar */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
                     className="relative cursor-pointer mb-5"
                 >
-                    <div className="p-1.5 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300/80 dark:border-slate-700 shadow-md ring-4 ring-slate-100/80 dark:ring-slate-800/50">
+                    <div className="p-1 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-700 shadow-md">
                         <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden">
                             <Image
                                 src={encodeURI(profileData.avatar)}
@@ -54,6 +51,20 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                         <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-[#0866FF] shrink-0" />
                     </span>
                 </motion.h1>
+
+                {/* Available for Work Status Badge */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.12 }}
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 mt-1 mb-2 shadow-2xs"
+                >
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600 dark:bg-emerald-400" />
+                    </span>
+                    <span>{language === 'vi' ? 'Sẵn sàng nhận dự án mới' : 'Available for new projects'}</span>
+                </motion.div>
                 {/* Social Links Row */}
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}

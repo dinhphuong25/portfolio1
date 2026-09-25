@@ -21,13 +21,13 @@ export default function ProjectsClient() {
     const projectsList = isVi ? projectsVi : projectsEn;
 
     return (
-        <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="w-full">
             {/* Unified Grid - Direct Link to Web */}
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <AnimatePresence mode="popLayout">
                     {projectsList.map((project, index) => {
                         const displayDomain = getDisplayDomain(project.caseStudyUrl);
-                        const isPinned = index === 0;
+                        const isHiPhim = project.id === "hi-phim" || index === 0;
                         const targetUrl = project.caseStudyUrl || "#";
 
                         return (
@@ -38,22 +38,18 @@ export default function ProjectsClient() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.35, delay: index * 0.05 }}
-                                className={`group relative flex flex-col h-full bg-white dark:bg-slate-900 rounded-2xl border transition-all duration-300 overflow-hidden ${
-                                    isPinned
-                                        ? "border-2 border-slate-900 dark:border-slate-100 shadow-xl hover:shadow-2xl hover:-translate-y-2"
-                                        : "border-slate-200/80 dark:border-slate-800 shadow-2xs hover:shadow-xl hover:border-slate-400 dark:hover:border-slate-600 hover:-translate-y-1.5"
+                                className={`group relative flex flex-col h-full bg-white dark:bg-slate-900 rounded-2xl transition-all duration-300 overflow-hidden ${
+                                    isHiPhim
+                                        ? "border-2 border-slate-900 dark:border-white shadow-md hover:shadow-xl hover:-translate-y-1.5"
+                                        : "border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 shadow-sm hover:shadow-md hover:-translate-y-1"
                                 }`}
                             >
-                                {isPinned && (
-                                    <div className="absolute top-0 left-0 right-0 h-1 bg-slate-900 dark:bg-white z-20" />
-                                )}
-
                                 {/* Top Image Mockup Frame - Direct Link */}
                                 <a
                                     href={targetUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
+                                    className="relative h-48 w-full bg-slate-100 dark:bg-slate-950 p-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-center shrink-0 cursor-pointer"
                                 >
                                     <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 flex flex-col shadow-sm group/mockup">
                                         <div className="h-6 bg-slate-900 flex items-center justify-between px-3 border-b border-slate-800 shrink-0">
@@ -62,7 +58,7 @@ export default function ProjectsClient() {
                                                 <span className="w-2 h-2 rounded-full bg-amber-500/80" />
                                                 <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
                                             </div>
-                                            <span className="text-[9px] font-mono font-semibold text-slate-300 bg-slate-800 border border-slate-700 px-2 py-0.5 rounded truncate max-w-[130px]">
+                                            <span className="text-[9px] font-mono font-semibold px-2 py-0.5 rounded truncate max-w-[130px] text-slate-300 bg-slate-800 border border-slate-700">
                                                 {displayDomain}
                                             </span>
                                             <div className="w-4" />
@@ -74,7 +70,7 @@ export default function ProjectsClient() {
                                                 alt={project.title}
                                                 fill
                                                 unoptimized
-                                                priority={isPinned}
+                                                priority={index === 0}
                                                 sizes="(max-width: 640px) 100vw, 400px"
                                                 className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
                                             />
@@ -85,7 +81,7 @@ export default function ProjectsClient() {
                                 {/* Content Body */}
                                 <div className="flex-1 p-5 flex flex-col justify-between">
                                     <div className="space-y-2">
-                                        <div>
+                                        <div className="flex items-center justify-between gap-2">
                                             <a
                                                 href={targetUrl}
                                                 target="_blank"
@@ -94,6 +90,11 @@ export default function ProjectsClient() {
                                             >
                                                 {project.title}
                                             </a>
+                                            {isHiPhim && (
+                                                <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 shrink-0 shadow-2xs">
+                                                    {isVi ? "Nổi bật" : "Featured"}
+                                                </span>
+                                            )}
                                         </div>
 
                                         <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500">
@@ -123,10 +124,16 @@ export default function ProjectsClient() {
                                             href={targetUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="w-full inline-flex items-center justify-between text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 group/btn transition-colors py-1 cursor-pointer"
+                                            className={`w-full inline-flex items-center justify-between text-xs font-bold transition-all py-1.5 px-3 rounded-xl cursor-pointer group/btn ${
+                                                isHiPhim
+                                                    ? "bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 shadow-xs"
+                                                    : "text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800"
+                                            }`}
                                         >
                                             <span>{isVi ? "Truy cập website trực tiếp" : "Visit live website"}</span>
-                                            <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                            <ExternalLink className={`w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all ${
+                                                isHiPhim ? "text-white dark:text-slate-900" : "text-slate-500 group-hover/btn:text-slate-900 dark:group-hover/btn:text-white"
+                                            }`} />
                                         </a>
                                     </div>
                                 </div>

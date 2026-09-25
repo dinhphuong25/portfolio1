@@ -105,7 +105,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <aside
         className={`
           fixed z-50 transition-all duration-300 ease-out flex flex-col justify-between
-          glass-premium shadow-2xl border border-slate-200/80 dark:border-slate-800 overflow-y-auto
+          bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-400 dark:border-slate-600 overflow-y-auto
           lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto
           ${isOpen
             ? "left-3 top-3 bottom-3 w-[235px] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
@@ -140,7 +140,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     className={`
                       relative flex items-center gap-3 px-3 py-2.5 text-sm font-semibold rounded-xl transition-colors duration-200 z-10
                       ${active
-                        ? "text-slate-900 dark:text-white"
+                        ? "text-slate-900 dark:text-white font-bold"
                         : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                       }
                     `}
@@ -229,7 +229,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 "info"
               );
             }}
-            className="w-full px-3 py-2.5 text-xs font-semibold text-white dark:text-slate-900 bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
+            className="w-full px-3 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 rounded-xl transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             aria-label="Download CV"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -36,7 +36,7 @@ export default function ProjectDetailClient({ id }: ProjectDetailClientProps) {
 
             {/* Hero section */}
             <Reveal direction="up" delay={200}>
-                <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
+                <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-slate-400 dark:border-slate-600 overflow-hidden mb-8">
                     {/* Banner */}
                     <div className={`h-64 ${project.thumbnailGradient} relative`}>
                         {project.thumbnail ? (

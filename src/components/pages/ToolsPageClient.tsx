@@ -96,7 +96,7 @@ export default function ToolsPageClient() {
 
     return (
         <div className="max-w-6xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
-            <div className="bg-white sm:rounded-2xl shadow-sm sm:border border-slate-200 p-5 sm:p-6 lg:p-8">
+            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl sm:rounded-2xl sm:rounded-3xl border border-slate-400 dark:border-slate-600 p-5 sm:p-6 lg:p-8">
                 {/* Header */}
                 <Reveal direction="down" delay={100}>
                     <header className="mb-8">

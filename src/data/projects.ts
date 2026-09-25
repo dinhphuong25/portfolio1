@@ -37,8 +37,8 @@ export interface Project {
 
 export const projectsEn: Project[] = [
     {
-        id: "rap-phim-chill",
-        title: "Rạp Phim Chill",
+        id: "hi-phim",
+        title: "Hi Phim",
         summary: "A premium movie streaming platform providing a seamless and immersive viewing experience. Built with performance and modern UI/UX design in mind.",
         role: "Lead Developer",
         year: 2026,
@@ -51,7 +51,7 @@ export const projectsEn: Project[] = [
         solution: "Developed a fast, clean, and intuitive movie streaming website that prioritizes content discovery, seamless playback, and user engagement.",
         outcome: "Successfully launched a modern streaming platform handling high-quality video content with a growing user base.",
         images: [],
-        caseStudyUrl: "https://rapphimchill.pro",
+        caseStudyUrl: "https://hiphim.one",
     },
     {
         id: "hitoeic",
@@ -160,13 +160,13 @@ export const projectsEn: Project[] = [
 
 export const projectsVi: Project[] = [
     {
-        ...projectsEn[0], // Rạp Phim Chill
-        summary: "Nền tảng xem phim trực tuyến cao cấp, mang lại trải nghiệm mượt mà và sống động. Thiết kế giao diện hiện đại tối ưu hiệu suất với tên miền chính thức rapphimchill.pro.",
+        ...projectsEn[0], // Hi Phim
+        summary: "Nền tảng xem phim trực tuyến cao cấp, mang lại trải nghiệm mượt mà và sống động. Thiết kế giao diện hiện đại tối ưu hiệu suất với tên miền chính thức hiphim.one.",
         role: "Trưởng nhóm phát triển",
         problem: "Người xem thường xuyên gặp khó khăn với các trang web phim chứa quá nhiều quảng cáo rác, chậm trễ và khó theo dõi trên nhiều thiết bị.",
         process: "Thiết kế xoay quanh trải nghiệm người dùng với theme điện ảnh tối màu, tối ưu hóa tải phương tiện và kiến trúc đáp ứng nhanh.",
         solution: "Phát triển web phim giao diện trực quan, ưu tiên khám phá nội dung dễ dàng, trình phát video liền mạch và mượt mà.",
-        outcome: "Đã ra mắt thành công nền tảng chiếu phim ổn định tại rapphimchill.pro, xử lý phim độ phân giải cao thu hút tệp khán giả ngày càng lớn."
+        outcome: "Đã ra mắt thành công nền tảng chiếu phim ổn định tại hiphim.one, xử lý phim độ phân giải cao thu hút tệp khán giả ngày càng lớn."
     },
     {
         ...projectsEn[1], // HiTOEIC

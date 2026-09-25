@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
     return (
         <>
-            <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
-                <div className="bg-white rounded-[2rem] overflow-hidden shadow-sm ring-1 ring-slate-200/60 p-6 sm:p-10">
+            <div className="max-w-6xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
+                <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-400 dark:border-slate-600 p-6 sm:p-10">
                     <ProjectsClient />
                 </div>
             </div>

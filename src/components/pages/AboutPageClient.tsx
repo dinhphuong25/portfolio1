@@ -49,7 +49,7 @@ export default function AboutPageClient() {
 
     return (
         <div className="max-w-6xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
-            <div className="glass-premium sm:rounded-3xl overflow-hidden p-6 sm:p-8 lg:p-10 shadow-xl border border-slate-200/80 dark:border-slate-800">
+            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl sm:rounded-3xl overflow-hidden p-6 sm:p-8 lg:p-10 border border-slate-400 dark:border-slate-600">
                 {/* Header Title */}
                 <Reveal direction="down" delay={100}>
                     <div className="flex items-center gap-3 mb-8">

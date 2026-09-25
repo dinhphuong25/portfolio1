@@ -24,7 +24,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
     if (post.isPublished === false) {
         return (
             <div className="max-w-5xl mx-auto py-0 px-0 sm:py-4 sm:px-4 lg:py-6 lg:px-6 lg:pr-6">
-                <div className="bg-white dark:bg-slate-900 sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 p-8 sm:p-12 text-center space-y-6">
+                <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl sm:rounded-3xl border border-slate-400 dark:border-slate-600 p-8 sm:p-12 text-center space-y-6">
                     <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center mx-auto shadow-2xs border border-slate-200/60 dark:border-slate-700/60 text-3xl">
                         ✍️
                     </div>
@@ -53,7 +53,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
         <>
             <ReadingProgressBar />
             <div className="max-w-5xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
-                <div className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+                <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-400 dark:border-slate-600 overflow-hidden">
                     <Reveal direction="up" delay={100}>
                         <article>
                             {/* Standard Header */}

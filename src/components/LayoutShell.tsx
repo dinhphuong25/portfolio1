@@ -56,11 +56,11 @@ export default function LayoutShell({ children }: LayoutShellProps) {
     const { language } = useLanguage();
 
     return (
-        <div className="min-h-screen bg-gray-50 overflow-x-hidden text-slate-900">
+        <div className="min-h-screen bg-slate-50/90 dark:bg-slate-950 text-slate-900 dark:text-slate-100 relative overflow-x-hidden selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-slate-900">
             {/* Mobile header */}
             <MobileHeader onMenuOpen={() => setSidebarOpen(true)} />
 
-            <div className="lg:flex">
+            <div className="lg:flex relative z-10">
                 <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
                 <main className="flex-1 lg:ml-[210px] min-h-[calc(100vh-44px)] overflow-hidden">
