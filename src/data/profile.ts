@@ -39,8 +39,8 @@ export const profileData: ProfileData = {
   socialLinks: [
     { platform: "Facebook", url: "https://www.facebook.com/dinhphuongkim250705/", label: "dinhphuongkim250705" },
     { platform: "LinkedIn", url: "https://www.linkedin.com/in/kimdinhphuong/", label: "kimdinhphuong" },
-    { platform: "Instagram", url: "https://www.instagram.com/_kimdinhphuong/", label: "@_kimdinhphuong" },
-    { platform: "TikTok", url: "https://www.tiktok.com/@kimdinhphuong_", label: "@kimdinhphuong_" },
+    { platform: "Instagram", url: "https://www.instagram.com/xxjdark_/", label: "@xxjdark_" },
+    { platform: "TikTok", url: "https://www.tiktok.com/@jdark_xx", label: "@jdark_xx" },
     { platform: "GitHub", url: "https://github.com/kimdinhphuong", label: "@kimdinhphuong" },
   ],
   about: [

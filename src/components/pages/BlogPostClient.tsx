@@ -170,7 +170,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
 
                                                 {/* Instagram */}
                                                 <a
-                                                    href="https://www.instagram.com/_kimdinhphuong/"
+                                                    href="https://www.instagram.com/xxjdark_/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     title="Instagram"
@@ -183,7 +183,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
 
                                                 {/* TikTok */}
                                                 <a
-                                                    href="https://www.tiktok.com/@kimdinhphuong_"
+                                                    href="https://www.tiktok.com/@jdark_xx"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     title="TikTok"

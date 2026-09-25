@@ -74,7 +74,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
 
                     {/* Instagram */}
                     <a
-                        href="https://www.instagram.com/_kimdinhphuong/"
+                        href="https://www.instagram.com/xxjdark_/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-200 text-xs font-bold hover:text-[#E4405F] dark:hover:text-[#E4405F] hover:bg-white dark:hover:bg-slate-900 hover:border-[#E4405F]/40 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
@@ -87,7 +87,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
 
                     {/* TikTok */}
                     <a
-                        href="https://www.tiktok.com/@kimdinhphuong_"
+                        href="https://www.tiktok.com/@jdark_xx"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 text-slate-700 dark:text-slate-200 text-xs font-bold hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-slate-900 hover:border-black/40 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
