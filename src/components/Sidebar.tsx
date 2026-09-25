@@ -108,16 +108,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-400 dark:border-slate-600 overflow-y-auto shadow-2xl
           lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none
           ${isOpen
-            ? "left-3 top-3 w-[215px] sm:w-[230px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
-            : "-left-full top-3 w-[215px] sm:w-[230px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
+            ? "left-3 top-3 w-[255px] sm:w-[270px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
+            : "-left-full top-3 w-[255px] sm:w-[270px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
           }
         `}
         role="navigation"
         aria-label="Main navigation"
       >
         {/* Mobile header with close button */}
-        <div className="lg:hidden px-3.5 pt-3 pb-2 flex justify-between items-center border-b border-slate-100 dark:border-slate-800/80">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-slate-400">Menu</span>
+        <div className="lg:hidden px-4 pt-3.5 pb-2.5 flex justify-between items-center border-b border-slate-100 dark:border-slate-800/80">
+          <span className="text-xs font-black uppercase tracking-widest text-slate-400">Menu</span>
           <button
             onClick={onClose}
             className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
@@ -128,8 +128,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         {/* Navigation links */}
-        <nav className="px-3 py-2.5">
-          <ul className="space-y-1">
+        <nav className="p-3">
+          <ul className="space-y-1.5">
             {navItems.map((item) => {
               const active = isActive(item.href);
               return (
@@ -138,10 +138,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     href={item.href}
                     onClick={handleNavClick}
                     className={`
-                      relative flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-colors duration-200 z-10
+                      relative flex items-center gap-3.5 lg:gap-2.5 px-3.5 lg:px-3 py-2.5 lg:py-2 rounded-xl transition-colors duration-200 z-10
                       ${active
-                        ? "text-slate-900 dark:text-white font-bold"
-                        : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        ? "text-slate-900 dark:text-white font-extrabold"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
                       }
                     `}
                   >
@@ -153,10 +153,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       />
                     )}
 
-                    <span className={`transition-colors duration-200 ${active ? "text-slate-900 dark:text-white" : "text-slate-400"}`}>
+                    <span className={`shrink-0 transition-colors duration-200 ${active ? "text-slate-900 dark:text-white" : "text-slate-400"}`}>
                       {item.icon}
                     </span>
-                    <span>{item.label}</span>
+                    <span className="text-[14px] sm:text-[15px] lg:text-[13px]">{item.label}</span>
                   </Link>
                 </li>
               );
@@ -165,14 +165,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </nav>
 
         {/* Footer controls: language toggle & download CV button */}
-        <div className="p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
-          <div className="flex flex-col bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-xl gap-1 relative border border-slate-200/60 dark:border-slate-700/60">
+        <div className="p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5 lg:gap-2">
+          <div className="flex flex-col bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-xl gap-1.5 lg:gap-1 relative border border-slate-200/60 dark:border-slate-700/60">
             <button
               onClick={() => setLanguage("vi")}
-              className={`w-full relative flex items-center gap-3 py-2 px-3 text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${
+              className={`w-full relative flex items-center gap-3 py-2.5 lg:py-2 px-3.5 lg:px-3 rounded-lg transition-colors duration-200 z-10 ${
                 language === "vi"
-                  ? "text-slate-900 dark:text-white"
-                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                  ? "text-slate-900 dark:text-white font-extrabold"
+                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-semibold"
               }`}
             >
               {language === "vi" && (
@@ -185,20 +185,20 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <Image 
                 src="/flags/vn.svg" 
                 alt="VN" 
-                width={20} 
-                height={14} 
+                width={22} 
+                height={15} 
                 unoptimized
-                className="w-5 h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
+                className="w-5.5 h-4 lg:w-5 lg:h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
-              <span className="relative z-10">Tiếng Việt</span>
+              <span className="relative z-10 text-[13px] sm:text-sm lg:text-xs font-bold">Tiếng Việt</span>
             </button>
 
             <button
               onClick={() => setLanguage("en")}
-              className={`w-full relative flex items-center gap-3 py-2 px-3 text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${
+              className={`w-full relative flex items-center gap-3 py-2.5 lg:py-2 px-3.5 lg:px-3 rounded-lg transition-colors duration-200 z-10 ${
                 language === "en"
-                  ? "text-slate-900 dark:text-white"
-                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                  ? "text-slate-900 dark:text-white font-extrabold"
+                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-semibold"
               }`}
             >
               {language === "en" && (
@@ -211,12 +211,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <Image 
                 src="/flags/us.svg" 
                 alt="US" 
-                width={20} 
-                height={14} 
+                width={22} 
+                height={15} 
                 unoptimized
-                className="w-5 h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
+                className="w-5.5 h-4 lg:w-5 lg:h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
-              <span className="relative z-10">English</span>
+              <span className="relative z-10 text-[13px] sm:text-sm lg:text-xs font-bold">English</span>
             </button>
           </div>
 
@@ -229,13 +229,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 "info"
               );
             }}
-            className="w-full px-3 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 rounded-xl transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+            className="w-full px-4 lg:px-3 py-3 lg:py-2.5 text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 lg:gap-1.5 shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             aria-label="Download CV"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4.5 h-4.5 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span>{language === "vi" ? "Tải CV" : "Download CV"}</span>
+            <span className="text-[13px] sm:text-sm lg:text-xs font-bold">{language === "vi" ? "Tải CV" : "Download CV"}</span>
           </button>
         </div>
       </aside>
