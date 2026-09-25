@@ -27,7 +27,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
     };
 
     return (
-        <article className={`group relative p-4 rounded-3xl bg-slate-50/60 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-xl transition-all duration-300 ease-out flex flex-col ${featured ? 'md:flex-row md:gap-8 md:items-center' : 'gap-4'} ${!isPublished ? 'cursor-pointer' : ''}`}>
+        <article className={`group relative p-4 rounded-3xl bg-white dark:bg-slate-900/80 hover:bg-white dark:hover:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col ${featured ? 'md:flex-row md:gap-8 md:items-center' : 'gap-4'} ${!isPublished ? 'cursor-pointer' : ''}`}>
             {isPublished ? (
                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10 focus:outline-none rounded-3xl" aria-label={`Read ${post.title}`} />
             ) : (
@@ -35,7 +35,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
             )}
 
             {/* Thumbnail */}
-            <div className={`rounded-2xl overflow-hidden relative shadow-xs transition-all duration-500 group-hover:shadow-md ${featured ? 'w-full md:w-1/2 aspect-[16/9]' : 'w-full aspect-[16/10]'} bg-slate-100 dark:bg-slate-800`}>
+            <div className={`rounded-2xl overflow-hidden relative shadow-xs border border-slate-200/80 dark:border-slate-800 transition-all duration-500 group-hover:shadow-md ${featured ? 'w-full md:w-1/2 aspect-[16/9]' : 'w-full aspect-[16/10]'} bg-slate-100 dark:bg-slate-800`}>
                 {post.image ? (
                     <Image
                         src={post.image}
