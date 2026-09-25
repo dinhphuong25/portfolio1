@@ -183,12 +183,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 />
               )}
               <Image 
-                src="https://flagcdn.com/w20/vn.png" 
+                src="/flags/vn.svg" 
                 alt="VN" 
                 width={20} 
                 height={14} 
-                sizes="20px" 
-                className="rounded-[2px] shrink-0 relative z-10" 
+                unoptimized
+                className="w-5 h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
               <span className="relative z-10">Tiếng Việt</span>
             </button>
@@ -209,12 +209,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 />
               )}
               <Image 
-                src="https://flagcdn.com/w20/us.png" 
+                src="/flags/us.svg" 
                 alt="US" 
                 width={20} 
                 height={14} 
-                sizes="20px" 
-                className="rounded-[2px] shrink-0 relative z-10" 
+                unoptimized
+                className="w-5 h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
               <span className="relative z-10">English</span>
             </button>
