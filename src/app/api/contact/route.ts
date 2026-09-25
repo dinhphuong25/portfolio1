@@ -84,66 +84,96 @@ export async function POST(request: Request) {
 
     const autoReplyHtml = isEn
       ? `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; color: #1e293b;">
-          <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px;">
-            <h2 style="color: #0f172a; margin: 0; font-size: 22px; font-weight: 800;">Kim Đình Phương</h2>
-            <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px; font-weight: 500;">Logistics & Supply Chain Specialist</p>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </head>
+        <body style="margin: 0; padding: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc;">
+          <div style="max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; color: #1e293b;">
+            <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px;">
+              <h2 style="color: #0f172a; margin: 0; font-size: 22px; font-weight: 800;">Kim Đình Phương</h2>
+              <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px; font-weight: 500;">Logistics & Supply Chain Specialist</p>
+            </div>
+
+            <p style="font-size: 16px; margin-top: 0; line-height: 1.6;">Hi <strong>${name}</strong>,</p>
+            
+            <p style="font-size: 15px; line-height: 1.7; color: #334155;">
+              Thank you for reaching out through my website! I have received your message and will review it carefully.
+            </p>
+
+            <p style="font-size: 15px; line-height: 1.7; color: #334155;">
+              I usually respond within <strong>24 hours</strong>. If your matter is urgent, you can also reach me directly via Zalo or LinkedIn.
+            </p>
+
+            <div style="background-color: #f8fafc; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; margin: 24px 0;">
+              <p style="color: #64748b; font-weight: 700; margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Summary of your message:</p>
+              <p style="color: #1e293b; margin: 0; line-height: 1.6; font-size: 14px; font-style: italic;">"${message.replace(/\n/g, '<br>')}"</p>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 28px;">
+              <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Warm regards,</p>
+              <p style="margin: 0 0 16px 0; font-size: 17px; font-weight: 800; color: #0f172a;">Kim Đình Phương</p>
+              
+              <p style="margin: 0 0 10px 0; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8;">Connect with me:</p>
+              <div>
+                <a href="https://dinhphuong.tech" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">🌐 Website</a>
+                <a href="https://www.linkedin.com/in/kimdinhphuong/" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0A66C2; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">💼 LinkedIn</a>
+                <a href="https://zalo.me/0903917400" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0068FF; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">💬 Zalo</a>
+                <a href="https://www.instagram.com/xxjdark_/" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #E4405F; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">📸 Instagram</a>
+                <a href="https://www.tiktok.com/@jdark_xx" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #111827; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">🎵 TikTok</a>
+              </div>
+            </div>
           </div>
-
-          <p style="font-size: 16px; margin-top: 0; line-height: 1.6;">Hi <strong>${name}</strong>,</p>
-          
-          <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-            Thank you for reaching out through my website! I have received your message and will review it carefully.
-          </p>
-
-          <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-            I usually respond within <strong>24 hours</strong>. If your matter is urgent, you can also reach me directly via Zalo or LinkedIn.
-          </p>
-
-          <div style="background-color: #f8fafc; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; margin: 24px 0;">
-            <p style="color: #64748b; font-weight: 700; margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Summary of your message:</p>
-            <p style="color: #1e293b; margin: 0; line-height: 1.6; font-size: 14px; font-style: italic;">"${message.replace(/\n/g, '<br>')}"</p>
-          </div>
-
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 28px;">
-            <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Warm regards,</p>
-            <p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">🌐 Portfolio: <a href="https://dinhphuong.tech" style="color: #2563eb; text-decoration: none;">dinhphuong.tech</a></p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">💼 LinkedIn: <a href="https://www.linkedin.com/in/kimdinhphuong/" style="color: #2563eb; text-decoration: none;">linkedin.com/in/kimdinhphuong</a></p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">💬 Zalo: <a href="https://zalo.me/0903917400" style="color: #2563eb; text-decoration: none;">0903 917 400</a></p>
-          </div>
-        </div>
+        </body>
+        </html>
       `
       : `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; color: #1e293b;">
-          <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px;">
-            <h2 style="color: #0f172a; margin: 0; font-size: 22px; font-weight: 800;">Kim Đình Phương</h2>
-            <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px; font-weight: 500;">Logistics & Supply Chain Specialist</p>
+        <!DOCTYPE html>
+        <html lang="vi">
+        <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </head>
+        <body style="margin: 0; padding: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc;">
+          <div style="max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; color: #1e293b;">
+            <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px;">
+              <h2 style="color: #0f172a; margin: 0; font-size: 22px; font-weight: 800;">Kim Đình Phương</h2>
+              <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px; font-weight: 500;">Logistics & Supply Chain Specialist</p>
+            </div>
+
+            <p style="font-size: 16px; margin-top: 0; line-height: 1.6;">Chào <strong>${name}</strong>,</p>
+            
+            <p style="font-size: 15px; line-height: 1.7; color: #334155;">
+              Cảm ơn bạn đã gửi lời nhắn qua trang thông tin của Phương tại website <strong>dinhphuong.tech</strong>! Phương đã nhận được tin nhắn và sẽ xem xét thật kỹ.
+            </p>
+
+            <p style="font-size: 15px; line-height: 1.7; color: #334155;">
+              Phương sẽ phản hồi lại bạn sớm nhất có thể (thường trong vòng <strong>24 giờ</strong>). Nếu có việc cần trao đổi gấp, bạn có thể liên hệ trực tiếp với Phương qua Zalo hoặc LinkedIn bên dưới nhé.
+            </p>
+
+            <div style="background-color: #f8fafc; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; margin: 24px 0;">
+              <p style="color: #64748b; font-weight: 700; margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Nội dung tin nhắn bạn đã gửi:</p>
+              <p style="color: #1e293b; margin: 0; line-height: 1.6; font-size: 14px; font-style: italic;">"${message.replace(/\n/g, '<br>')}"</p>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 28px;">
+              <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Trân trọng,</p>
+              <p style="margin: 0 0 16px 0; font-size: 17px; font-weight: 800; color: #0f172a;">Kim Đình Phương</p>
+              
+              <p style="margin: 0 0 10px 0; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8;">Kết nối qua mạng xã hội:</p>
+              <div>
+                <a href="https://dinhphuong.tech" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">🌐 Website</a>
+                <a href="https://www.linkedin.com/in/kimdinhphuong/" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0A66C2; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">💼 LinkedIn</a>
+                <a href="https://zalo.me/0903917400" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #0068FF; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">💬 Zalo</a>
+                <a href="https://www.instagram.com/xxjdark_/" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #E4405F; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">📸 Instagram</a>
+                <a href="https://www.tiktok.com/@jdark_xx" target="_blank" style="display: inline-block; margin: 0 6px 8px 0; padding: 9px 15px; background-color: #111827; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 13px; font-weight: 700;">🎵 TikTok</a>
+              </div>
+            </div>
           </div>
-
-          <p style="font-size: 16px; margin-top: 0; line-height: 1.6;">Chào <strong>${name}</strong>,</p>
-          
-          <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-            Cảm ơn bạn đã gửi lời nhắn qua trang thông tin của Phương tại website <strong>dinhphuong.tech</strong>! Phương đã nhận được tin nhắn và sẽ xem xét thật kỹ.
-          </p>
-
-          <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-            Phương sẽ phản hồi lại bạn sớm nhất có thể (thường trong vòng <strong>24 giờ</strong>). Nếu có việc cần trao đổi gấp, bạn có thể liên hệ trực tiếp với Phương qua Zalo hoặc LinkedIn bên dưới nhé.
-          </p>
-
-          <div style="background-color: #f8fafc; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; margin: 24px 0;">
-            <p style="color: #64748b; font-weight: 700; margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Nội dung tin nhắn bạn đã gửi:</p>
-            <p style="color: #1e293b; margin: 0; line-height: 1.6; font-size: 14px; font-style: italic;">"${message.replace(/\n/g, '<br>')}"</p>
-          </div>
-
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 28px;">
-            <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Trân trọng,</p>
-            <p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">🌐 Website: <a href="https://dinhphuong.tech" style="color: #2563eb; text-decoration: none;">dinhphuong.tech</a></p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">💼 LinkedIn: <a href="https://www.linkedin.com/in/kimdinhphuong/" style="color: #2563eb; text-decoration: none;">linkedin.com/in/kimdinhphuong</a></p>
-            <p style="margin: 4px 0; font-size: 13px; color: #475569;">💬 Zalo: <a href="https://zalo.me/0903917400" style="color: #2563eb; text-decoration: none;">0903 917 400</a></p>
-          </div>
-        </div>
+        </body>
+        </html>
       `;
 
     const autoReplyPromise = resend.emails.send({
