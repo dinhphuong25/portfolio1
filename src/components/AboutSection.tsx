@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Code, MapPin, Mail, GraduationCap } from "lucide-react";
+import { Code, MapPin, Mail } from "lucide-react";
 
 export default function AboutSection() {
     const { language } = useLanguage();
@@ -17,7 +17,7 @@ export default function AboutSection() {
 
     const storyEn = [
         "Hello! I am Kim Dinh Phuong — a passionate web developer dedicated to building modern websites and web applications.",
-        "I am particularly fascinated by turning ideas, data, and processes into smooth, optimized, and intuitive web experiences. To me, a website is more than just a visual interface — it is a practical solution that solves real-world problems.",
+        "I am particularly fascinated by turning ideas, data, and processes into smooth, optimized, and intuitive web experiences. To me, a website is more than just a practical solution that solves real-world problems.",
         "I proactively self-learn and practice fullstack web development with Next.js and TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology delivers real value when built into functional, high-performance web products.",
         "Guided by this passion, I engineered web projects like EcoFresh WMS management system, Ez Study learning portal, and HiTOEIC exam platform. Each project is an opportunity to refine my engineering mindset, solution design, and user experience optimization.",
     ];
@@ -35,11 +35,6 @@ export default function AboutSection() {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Vị trí hiện tại",
             value: "Cần Thơ, Việt Nam",
-        },
-        {
-            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Trường đại học",
-            value: "ĐH Kỹ thuật Công nghệ Cần Thơ · Sinh viên năm 3",
         },
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
@@ -60,11 +55,6 @@ export default function AboutSection() {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: "Location",
             value: "Can Tho, Vietnam",
-        },
-        {
-            icon: <GraduationCap className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "University",
-            value: "Can Tho University of Technology · 3rd Year",
         },
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
