@@ -79,7 +79,21 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { label: language === "vi" ? "Liên hệ" : "Contact", icon: <ContactIcon />, href: "/contact" },
   ];
 
-  const handleNavClick = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === "/projects") {
+      e.preventDefault();
+      showToast(
+        language === "vi"
+          ? "Dự án hiện đang tạm ẩn."
+          : "Projects are currently temporarily hidden.",
+        "info"
+      );
+      if (window.innerWidth < 1024) {
+        onClose();
+      }
+      return;
+    }
+
     if (window.innerWidth < 1024) {
       onClose();
     }
@@ -136,7 +150,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    onClick={handleNavClick}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={`
                       relative flex items-center gap-3.5 lg:gap-2.5 px-3.5 lg:px-3 py-2.5 lg:py-2 rounded-xl transition-colors duration-200 z-10
                       ${active

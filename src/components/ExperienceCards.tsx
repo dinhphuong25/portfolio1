@@ -6,6 +6,8 @@ import { getFeaturedProjects } from "@/data/projects";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
+import { Toast, useToast } from "@/components/Toast";
+
 function getDisplayDomain(url?: string) {
     if (!url) return "project.live";
     try {
@@ -17,6 +19,7 @@ function getDisplayDomain(url?: string) {
 
 export default function ExperienceCards() {
     const { language } = useLanguage();
+    const { toast, showToast, hideToast } = useToast();
     const featuredProjects = getFeaturedProjects(language).slice(0, 3);
 
     return (
@@ -28,7 +31,16 @@ export default function ExperienceCards() {
                 </div>
                 <Link
                     href="/projects"
-                    className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        showToast(
+                            language === 'vi'
+                                ? 'Dự án hiện đang tạm ẩn.'
+                                : 'Projects are currently temporarily hidden.',
+                            'info'
+                        );
+                    }}
+                    className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                 >
                     <span>{language === 'vi' ? 'Xem tất cả dự án' : 'View all projects'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -145,6 +157,14 @@ export default function ExperienceCards() {
                     })}
                 </div>
             </div>
+
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={hideToast}
+                />
+            )}
         </section>
     );
 }

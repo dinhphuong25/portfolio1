@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projectsEn, projectsVi } from "@/data/projects";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 function getDisplayDomain(url?: string) {
     if (!url) return "project.live";
@@ -19,6 +20,35 @@ export default function ProjectsClient() {
     const { language } = useLanguage();
     const isVi = language === "vi";
     const projectsList = isVi ? projectsVi : projectsEn;
+
+    // Dự án hiện đang tạm ẩn
+    const isProjectsHidden = true;
+
+    if (isProjectsHidden) {
+        return (
+            <div className="w-full py-16 flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center mb-4 text-slate-500 shadow-2xs">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">
+                    {isVi ? "Dự án hiện đang tạm ẩn" : "Projects are currently hidden"}
+                </h1>
+                <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
+                    {isVi 
+                        ? "Mục dự án hiện đang được cập nhật và tối ưu lại nội dung. Vui lòng quay lại sau nhé!" 
+                        : "The projects section is currently being updated and optimized. Please check back later!"}
+                </p>
+                <Link
+                    href="/"
+                    className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-xs font-bold transition-all shadow-sm cursor-pointer"
+                >
+                    {isVi ? "Về trang chủ" : "Back to Home"}
+                </Link>
+            </div>
+        );
+    }
 
     return (
         <div className="w-full">
