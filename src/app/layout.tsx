@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     template: "%s | Kim Đình Phương",
     default: "Kim Đình Phương - Logistics Profile"
   },
-  description: "3rd Year Logistics Student passionate about optimizing supply chains, warehouse management operations, and creating efficient logistics solutions.",
-  keywords: ["Logistics", "Supply Chain", "Warehouse Management", "Transport", "Kim Đình Phương", "Portfolio", "Can Tho University of Technology"],
+  description: "Digital Supply Chain Specialist passionate about optimizing supply chains, warehouse management operations, and creating efficient logistics solutions.",
+  keywords: ["Logistics", "Supply Chain", "Warehouse Management", "Transport", "Kim Đình Phương", "Portfolio", "Digital Supply Chain"],
   authors: [{ name: "Kim Đình Phương", url: "https://kimdinhphuong.dev" }],
   creator: "Kim Đình Phương",
   publisher: "Kim Đình Phương",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Kim Đình Phương - Logistics Profile",
-    description: "3rd Year Logistics Student passionate about optimizing supply chains and creating efficient logistics solutions.",
+    description: "Digital Supply Chain Specialist passionate about optimizing supply chains and creating efficient logistics solutions.",
     url: "https://kimdinhphuong.dev",
     siteName: "Kim Đình Phương Portfolio",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kim Đình Phương - Logistics Profile",
-    description: "3rd Year Logistics Student passionate about optimizing supply chains.",
+    description: "Digital Supply Chain Specialist passionate about optimizing supply chains.",
     creator: "@kimdinhphuong",
       images: ["/twitter-image"],
   },

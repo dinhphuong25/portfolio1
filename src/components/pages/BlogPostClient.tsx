@@ -210,8 +210,8 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                                         <div className="pt-4 border-t border-slate-200/80 dark:border-slate-700/80">
                                             <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed text-justify font-normal">
                                                 {isVi 
-                                                    ? 'Sinh viên năm 3 chuyên ngành Quản lý Chuỗi cung ứng & Logistics tại ĐH Kỹ thuật – Công nghệ Cần Thơ. Blog này là góc nhỏ lưu giữ các trải nghiệm, suy tư và hành trình ứng dụng công nghệ số vào bài toán thực tế.'
-                                                    : '3rd-year Supply Chain & Logistics student at Can Tho University of Technology. This blog is a personal space documenting insights and digital transformation journeys.'
+                                                    ? 'Chuyên môn Quản lý Chuỗi cung ứng & Logistics. Blog này là góc nhỏ lưu giữ các trải nghiệm, suy tư và hành trình ứng dụng công nghệ số vào bài toán thực tế.'
+                                                    : 'Specializing in Supply Chain & Logistics. This blog is a personal space documenting insights and digital transformation journeys.'
                                                 }
                                             </p>
                                         </div>

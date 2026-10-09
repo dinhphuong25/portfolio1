@@ -13,7 +13,7 @@ export default function AboutPageClient() {
 
     const aboutTextEn = profileData.about;
     const aboutTextVi = [
-        "Xin chào! Tôi là Kim Đình Phương, sinh viên năm 3 chuyên ngành Quản lý Chuỗi cung ứng và Logistics tại Trường Đại học Kỹ thuật – Công nghệ Cần Thơ.",
+        "Xin chào! Tôi là Kim Đình Phương, hoạt động và phát triển chuyên môn trong lĩnh vực Quản lý Chuỗi cung ứng và Logistics.",
         "Tôi yêu thích việc kết hợp logistics với công nghệ để giải quyết các bài toán thực tiễn trong quản lý và vận hành. Bên cạnh kiến thức chuyên ngành, tôi dành nhiều thời gian tìm hiểu và phát triển các kỹ năng về thiết kế website, lập trình web, trí tuệ nhân tạo (AI), tự động hóa quy trình và xây dựng các công cụ hỗ trợ công việc.",
         "Tôi tin rằng công nghệ là chìa khóa thúc đẩy chuyển đổi số trong chuỗi cung ứng. Vì vậy, tôi luôn chủ động thực hiện các dự án cá nhân nhằm ứng dụng những kiến thức đã học vào các giải pháp có tính thực tiễn, từ xây dựng website, hệ thống quản lý đến các ứng dụng hỗ trợ học tập và làm việc.",
         "Mục tiêu của tôi là trở thành một chuyên gia Supply Chain có nền tảng công nghệ, có khả năng kết nối giữa nghiệp vụ logistics và các giải pháp số để tối ưu hóa quy trình, nâng cao hiệu quả vận hành và tạo ra giá trị bền vững cho doanh nghiệp.",
@@ -100,7 +100,7 @@ export default function AboutPageClient() {
                                 </div>
 
                                 <p className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 mb-3">
-                                    {isVi ? "Trường Đại học Kỹ thuật – Công nghệ Cần Thơ" : "Can Tho University of Technology"}
+                                    Digital Supply Chain Specialist
                                 </p>
 
                                 {/* Contact Pills Row */}
@@ -200,15 +200,15 @@ export default function AboutPageClient() {
                                         </div>
                                         <div>
                                             <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                                {isVi ? "Học Vấn" : "Education"}
+                                                {isVi ? "Chuyên Môn" : "Domain"}
                                             </h3>
                                             <p className="text-xs font-bold text-slate-800 dark:text-white">
-                                                {isVi ? "Sinh viên Năm 3" : "Year 3 Student"}
+                                                Logistics & SCM
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 pl-11">
-                                        Logistics & Quản lý Chuỗi cung ứng • ĐH Kỹ thuật – Công nghệ Cần Thơ
+                                        {isVi ? "Quản lý Chuỗi cung ứng & Chuyển đổi số" : "Supply Chain Management & Digital Transformation"}
                                     </p>
                                 </div>
 

@@ -64,7 +64,7 @@ export default function TwitterImage() {
               lineHeight: 1.35,
             }}
           >
-            Student profile, projects, tutorials, and practical insights by Kim Đình Phương
+            Professional profile, projects, tutorials, and practical insights by Kim Đình Phương
           </div>
         </div>
 

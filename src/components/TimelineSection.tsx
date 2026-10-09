@@ -7,8 +7,8 @@ export const timelineDataEn = [
     {
         id: 1,
         year: "Sep 2023",
-        title: "Started University",
-        description: "Began my journey majoring in Logistics and Supply Chain Management at Can Tho University of Technology.",
+        title: "Professional Focus",
+        description: "Began my journey focusing on Logistics and Supply Chain Management.",
         icon: (
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -51,7 +51,7 @@ export const timelineDataEn = [
 ];
 
 const timelineDataVi = [
-    { ...timelineDataEn[0], year: "Thg 9 2023", title: "Nhập học Đại học", description: "Bắt đầu hành trình học chuyên ngành Quản lý chuỗi cung ứng & Logistics tại ĐH KTCN Cần Thơ." },
+    { ...timelineDataEn[0], year: "Thg 9 2023", title: "Bắt đầu hành trình chuyên môn", description: "Bắt đầu định hướng chuyên sâu về Quản lý chuỗi cung ứng & Logistics." },
     { ...timelineDataEn[1], year: "Thg 3 2024", title: "Nghiên cứu học thuật", description: "Tham gia nghiên cứu tối ưu hóa tuyến đường phân phối kho bãi địa phương, cải thiện tư duy phân tích." },
     { ...timelineDataEn[2], year: "Thg 10 2024", title: "Hệ thống WMS EcoFresh", description: "Phát triển các công cụ theo dõi hệ thống kho bãi trực tuyến theo thời gian thực." },
     { ...timelineDataEn[3], year: "2025 – Hiện tại", title: "Thực tập & Chuyên sâu", description: "Tìm kiếm thực tập thực tế, mở rộng kiến thức logistics bền vững và chuỗi cung ứng toàn cầu." },

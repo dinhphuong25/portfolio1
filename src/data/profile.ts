@@ -25,8 +25,8 @@ export interface ProfileData {
 
 export const profileData: ProfileData = {
   name: "Kim Đình Phương",
-  title: "3rd Year Logistics Student",
-  tagline: "I'm a Logistics student at Can Tho University of Technology.",
+  title: "Digital Supply Chain Specialist",
+  tagline: "Focused on optimizing supply chains, logistics processes, and smart digital solutions.",
   location: {
     city: "Can Tho",
     country: "Vietnam",
@@ -44,11 +44,11 @@ export const profileData: ProfileData = {
     { platform: "GitHub", url: "https://github.com/kimdinhphuong", label: "@kimdinhphuong" },
   ],
   about: [
-    "Hello! I am Kim Dinh Phuong, a 3rd-year student majoring in Supply Chain Management and Logistics at Can Tho University of Technology.",
+    "Hello! I am Kim Dinh Phuong, specializing in Supply Chain Management and Logistics.",
     "I am passionate about combining logistics with technology to solve practical management and operational challenges. Alongside my specialized knowledge, I spend significant time researching and developing skills in web design, web development, Artificial Intelligence (AI), process automation, and building workflow tools.",
     "I believe technology is the key to driving digital transformation in supply chains. Therefore, I actively take on personal projects to apply what I've learned into practical solutions — ranging from websites and management systems to learning and productivity applications.",
     "My goal is to become a Tech-driven Supply Chain Specialist, capable of bridging logistics domain expertise with digital solutions to optimize processes, enhance operational efficiency, and deliver sustainable value for businesses.",
-    "Beyond my academic studies, I continuously research emerging trends in Supply Chain, AI, Web Development, UI/UX, and Digital Transformation, while constantly honing my skills through hands-on projects and self-directed learning.",
+    "Beyond core operations, I continuously research emerging trends in Supply Chain, AI, Web Development, UI/UX, and Digital Transformation, while constantly honing my skills through hands-on projects and self-directed learning.",
   ],
   skills: [
     "Supply Chain Management",

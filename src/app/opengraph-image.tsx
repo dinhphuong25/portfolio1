@@ -97,7 +97,7 @@ export default function OpenGraphImage() {
                 maxWidth: "580px",
               }}
             >
-              Logistics & Supply Chain management student focusing on process optimization, WMS solutions, and smart distribution systems.
+              Logistics & Supply Chain specialist focusing on process optimization, WMS solutions, and smart distribution systems.
             </p>
           </div>
 
