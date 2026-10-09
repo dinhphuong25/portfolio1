@@ -208,10 +208,10 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                                         </div>
                                         
                                         <div className="pt-4 border-t border-slate-200/80 dark:border-slate-700/80">
-                                            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed text-justify font-normal">
+                                            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed text-left font-normal">
                                                 {isVi 
-                                                    ? 'Chuyên môn Quản lý Chuỗi cung ứng & Logistics. Blog này là góc nhỏ lưu giữ các trải nghiệm, suy tư và hành trình ứng dụng công nghệ số vào bài toán thực tế.'
-                                                    : 'Specializing in Supply Chain & Logistics. This blog is a personal space documenting insights and digital transformation journeys.'
+                                                    ? 'Một blog nho nhỏ lưu giữ những trải nghiệm, suy tư và hành trình học hỏi, ứng dụng công nghệ vào thực tiễn cuộc sống.'
+                                                    : 'A small personal blog documenting experiences, reflections, and journeys of learning and applying technology to life.'
                                                 }
                                             </p>
                                         </div>
