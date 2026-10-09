@@ -166,7 +166,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         {/* Footer controls: language toggle & download CV button */}
         <div className="p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5 lg:gap-2">
-          <div className="flex flex-col bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-xl gap-1.5 lg:gap-1 relative border border-slate-200/60 dark:border-slate-700/60">
+          <div className="flex flex-col bg-slate-100/90 dark:bg-slate-800/90 p-1.5 rounded-xl gap-1.5 lg:gap-1 relative border border-slate-300 dark:border-slate-600 shadow-2xs">
             <button
               onClick={() => setLanguage("vi")}
               className={`w-full relative flex items-center gap-3 py-2.5 lg:py-2 px-3.5 lg:px-3 rounded-lg transition-colors duration-200 z-10 ${
@@ -178,7 +178,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               {language === "vi" && (
                 <motion.div
                   layoutId="activeLang"
-                  className="absolute inset-0 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 shadow-2xs -z-10"
+                  className="absolute inset-0 bg-white dark:bg-slate-900 rounded-lg border border-slate-300 dark:border-slate-600 shadow-xs -z-10"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -204,7 +204,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               {language === "en" && (
                 <motion.div
                   layoutId="activeLang"
-                  className="absolute inset-0 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 shadow-2xs -z-10"
+                  className="absolute inset-0 bg-white dark:bg-slate-900 rounded-lg border border-slate-300 dark:border-slate-600 shadow-xs -z-10"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
