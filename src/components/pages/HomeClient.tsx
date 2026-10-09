@@ -11,6 +11,7 @@ import Reveal from "@/components/Reveal";
 
 export default function HomeClient() {
   const [showVideoCall, setShowVideoCall] = useState(false);
+  const isProjectsHidden = true;
 
   return (
     <>
@@ -28,11 +29,13 @@ export default function HomeClient() {
             <AboutSection />
           </Reveal>
 
-          <Reveal direction="up" delay={300}>
-            <ExperienceCards />
-          </Reveal>
+          {!isProjectsHidden && (
+            <Reveal direction="up" delay={300}>
+              <ExperienceCards />
+            </Reveal>
+          )}
 
-          <Reveal direction="up" delay={350}>
+          <Reveal direction="up" delay={250}>
             <TestimonialsSection />
           </Reveal>
         </article>

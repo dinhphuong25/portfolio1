@@ -17,8 +17,8 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     name: "ThS. Nguyễn Hoàng Nam",
-    roleEn: "Logistics Lecturer, CTUT",
-    roleVi: "Giảng viên chuyên ngành Logistics, CTUT",
+    roleEn: "Logistics Lecturer",
+    roleVi: "Giảng viên chuyên ngành Logistics",
     contentEn: "Phuong shows exceptional dedication in class, particularly when working on logistics simulations and routing algorithms. He has a solid foundation in supply chain analysis.",
     contentVi: "Phương thể hiện tư duy cẩn thận và tính logic rất tốt trong các bài tập mô phỏng logistics và tối ưu hóa tuyến đường. Rất chủ động học hỏi và tìm tòi giải pháp mới.",
     rating: 5,
@@ -27,7 +27,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: "Trần Minh Triết",
     roleEn: "Project Partner & Tech Lead",
-    roleVi: "Đồng nghiệp / Bạn học dự án WMS",
+    roleVi: "Đồng nghiệp / Cộng sự dự án WMS",
     contentEn: "Working with Phuong on our WMS case study was great. He handled the data mapping and analytics side perfectly using Power BI and web tools, turning complex data into clear insights.",
     contentVi: "Làm việc nhóm cùng Phương trong dự án WMS rất an tâm. Bạn ấy thiết kế luồng dữ liệu và trực quan hóa báo cáo rất chi tiết, trực quan và dễ ứng dụng.",
     rating: 5,
@@ -36,9 +36,9 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: "Lê Thị Bảo Trâm",
     roleEn: "Supply Chain Club President",
-    roleVi: "Trưởng CLB Supply Chain CTUT",
-    contentEn: "Phuong is a proactive member of our student club. He contributed greatly to organizing our logistics workshops and has strong project coordination skills.",
-    contentVi: "Phương là một thành viên rất năng nổ tại CLB. Bạn ấy luôn sẵn sàng hỗ trợ tổ chức các buổi workshop chia sẻ kinh nghiệm thực tế về chuỗi cung ứng với các khóa dưới.",
+    roleVi: "Trưởng CLB Supply Chain",
+    contentEn: "Phuong is a proactive member of our club. He contributed greatly to organizing our logistics workshops and has strong project coordination skills.",
+    contentVi: "Phương là một thành viên rất năng nổ tại CLB. Bạn ấy luôn sẵn sàng hỗ trợ tổ chức các buổi workshop chia sẻ kinh nghiệm thực tế về chuỗi cung ứng.",
     rating: 5,
     avatar: "/avatar_student_female.png",
   },
