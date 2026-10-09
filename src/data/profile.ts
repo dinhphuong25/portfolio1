@@ -32,7 +32,7 @@ export const profileData: ProfileData = {
     country: "Vietnam",
     countryCode: "vn",
   },
-  avatar: "/avatar 2.jpg",
+  avatar: "/avatar.jpg",
   email: "hi@dinhphuong.tech",
   website: "https://kimdinhphuong.dev",
   portfolio: "@kimdinhphuong",
