@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kim Đình Phương - Logistics Profile",
-    description: "Digital Supply Chain Specialist passionate about optimizing supply chains.",
+    title: "Kim Đình Phương - Founder @ Hi Tech - All In One",
+    description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại và công cụ số tiện ích.",
     creator: "@kimdinhphuong",
       images: ["/twitter-image"],
   },
