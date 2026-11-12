@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Box, Code, Cpu, MapPin, Mail } from "lucide-react";
+import { Box, Code, Cpu, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function AboutSection() {
@@ -44,16 +44,19 @@ export default function AboutSection() {
         },
     ];
 
-    const quickInfo = [
+    const contactCards = [
         {
-            icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            icon: <MapPin className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
             label: isVi ? "Địa điểm" : "Location",
             value: isVi ? "Cần Thơ, Việt Nam" : "Can Tho, Vietnam",
+            subtext: isVi ? "Sẵn sàng làm việc Onsite & Remote" : "Available for Onsite & Remote",
+            href: undefined,
         },
         {
-            icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            icon: <Mail className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
             label: isVi ? "Email liên hệ" : "Contact Email",
             value: "contact@dinhphuong.dev",
+            subtext: isVi ? "Nhấp để gửi thư trao đổi" : "Click to send an email",
             href: "mailto:contact@dinhphuong.dev",
         },
     ];
@@ -124,28 +127,55 @@ export default function AboutSection() {
                 </div>
             </Reveal>
 
-            {/* Minimal Quick Info Chips */}
+            {/* 2 Clean Minimal Contact & Location Cards */}
             <Reveal direction="up" delay={150}>
-                <div className="flex flex-wrap items-center gap-3 mb-12">
-                    {quickInfo.map((info, idx) => (
-                        <div
-                            key={idx}
-                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 text-xs"
-                        >
-                            <span className="text-slate-500 dark:text-slate-400">{info.icon}</span>
-                            <span className="text-slate-400 dark:text-slate-500 font-medium">{info.label}:</span>
-                            {info.href ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-12">
+                    {contactCards.map((card, idx) => {
+                        const content = (
+                            <div className="flex items-center gap-4">
+                                <div className="w-11 h-11 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center shadow-2xs shrink-0 group-hover:scale-105 transition-transform">
+                                    {card.icon}
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                    <div className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">
+                                        {card.label}
+                                    </div>
+                                    <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate">
+                                        {card.value}
+                                    </div>
+                                    <div className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                                        {card.subtext}
+                                    </div>
+                                </div>
+                                {card.href && (
+                                    <div className="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center shrink-0 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-slate-900 transition-colors">
+                                        <ArrowUpRight className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-white dark:group-hover:text-slate-900 transition-colors" />
+                                    </div>
+                                )}
+                            </div>
+                        );
+
+                        if (card.href) {
+                            return (
                                 <a
-                                    href={info.href}
-                                    className="font-semibold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    key={idx}
+                                    href={card.href}
+                                    className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 transition-all hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-xs group block"
                                 >
-                                    {info.value}
+                                    {content}
                                 </a>
-                            ) : (
-                                <span className="font-semibold text-slate-900 dark:text-slate-100">{info.value}</span>
-                            )}
-                        </div>
-                    ))}
+                            );
+                        }
+
+                        return (
+                            <div
+                                key={idx}
+                                className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 transition-all hover:border-slate-300 dark:hover:border-slate-700 group"
+                            >
+                                {content}
+                            </div>
+                        );
+                    })}
                 </div>
             </Reveal>
 
