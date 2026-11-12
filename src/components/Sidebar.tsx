@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Toast, useToast } from "@/components/Toast";
 import { motion } from "framer-motion";
+import { profileData } from "@/data/profile";
+import { BadgeCheck } from "lucide-react";
 
 const HomeIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +98,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-slate-900/30 backdrop-blur-xs z-40 lg:hidden animate-fade-in"
+          className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 lg:hidden transition-opacity duration-300"
           onClick={onClose}
           aria-hidden="true"
         />
@@ -105,22 +107,46 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <aside
         className={`
           fixed z-50 transition-all duration-300 ease-out flex flex-col
-          bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-400 dark:border-slate-600 overflow-y-auto shadow-2xl
-          lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none
+          bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl
+          
+          /* Desktop (lg+): Floating centered pill on the left */
+          lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none lg:border lg:border-slate-300 lg:dark:border-slate-700
+          
+          /* Mobile (<lg): Full-height slide-over drawer from the left */
+          top-0 bottom-0 left-0 h-full w-[290px] sm:w-[320px] max-w-[85vw] border-r border-slate-200/90 dark:border-slate-800 shadow-2xl overflow-y-auto
           ${isOpen
-            ? "left-3 top-3 w-[255px] sm:w-[270px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-100 translate-x-0 pointer-events-auto"
-            : "-left-full top-3 w-[255px] sm:w-[270px] h-fit max-h-[calc(100vh-24px)] rounded-2xl opacity-0 -translate-x-full pointer-events-none lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto"
+            ? "translate-x-0 opacity-100 pointer-events-auto"
+            : "-translate-x-full opacity-0 pointer-events-none lg:translate-x-0 lg:opacity-100 lg:pointer-events-auto"
           }
         `}
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* Mobile header with close button */}
-        <div className="lg:hidden px-4 pt-3.5 pb-2.5 flex justify-between items-center border-b border-slate-100 dark:border-slate-800/80">
-          <span className="text-xs font-black uppercase tracking-widest text-slate-400">Menu</span>
+        {/* Mobile header with avatar & close button */}
+        <div className="lg:hidden p-4 sm:p-5 flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/50">
+          <div className="flex items-center gap-3">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0">
+              <Image
+                src={encodeURI(profileData.avatar)}
+                alt={profileData.name}
+                fill
+                unoptimized
+                className="object-cover"
+              />
+            </div>
+            <div className="min-w-0">
+              <h2 className="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-1 truncate">
+                {profileData.name}
+                <BadgeCheck className="w-3.5 h-3.5 text-white fill-[#0866FF] shrink-0" />
+              </h2>
+              <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500 truncate">
+                dinhphuong.dev
+              </p>
+            </div>
+          </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center transition-colors cursor-pointer shrink-0"
             aria-label="Close menu"
           >
             <CloseIcon />
@@ -128,7 +154,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         {/* Navigation links */}
-        <nav className="p-3">
+        <nav className="p-3 sm:p-4 flex-1 overflow-y-auto">
+          <div className="lg:hidden px-3 pb-2.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            {language === "vi" ? "Menu điều hướng" : "Navigation"}
+          </div>
           <ul className="space-y-1.5">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -138,10 +167,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     href={item.href}
                     onClick={handleNavClick}
                     className={`
-                      relative flex items-center gap-3.5 lg:gap-2.5 px-3.5 lg:px-3 py-2.5 lg:py-2 rounded-xl transition-colors duration-200 z-10
+                      relative flex items-center gap-3.5 lg:gap-2.5 px-3.5 lg:px-3 py-3 lg:py-2 rounded-xl transition-all duration-200 z-10
                       ${active
                         ? "text-slate-900 dark:text-white font-extrabold"
-                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-800/40"
                       }
                     `}
                   >
@@ -165,7 +194,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </nav>
 
         {/* Footer controls: language toggle & download CV button */}
-        <div className="p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5 lg:gap-2">
+        <div className="p-3.5 sm:p-4 lg:p-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5 lg:gap-2 bg-slate-50/50 dark:bg-slate-950/30">
           <div className="flex flex-col bg-slate-100/90 dark:bg-slate-800/90 p-1.5 rounded-xl gap-1.5 lg:gap-1 relative border border-slate-300 dark:border-slate-600 shadow-2xs">
             <button
               onClick={() => setLanguage("vi")}
