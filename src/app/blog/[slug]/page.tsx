@@ -58,19 +58,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "@type": "Article",
         headline: post.title,
         description: post.excerpt,
-        image: post.image ? [post.image] : ["https://kimdinhphuong.dev/opengraph-image"],
+        image: post.image ? [post.image] : ["https://dinhphuong.dev/opengraph-image"],
         datePublished,
         dateModified: datePublished,
         author: {
             "@type": "Person",
             name: "Kim Đình Phương",
-            url: "https://kimdinhphuong.dev",
+            url: "https://dinhphuong.dev",
         },
         publisher: {
             "@type": "Person",
             name: "Kim Đình Phương",
         },
-        mainEntityOfPage: `https://kimdinhphuong.dev/blog/${post.slug}`,
+        mainEntityOfPage: `https://dinhphuong.dev/blog/${post.slug}`,
     };
 
     return (

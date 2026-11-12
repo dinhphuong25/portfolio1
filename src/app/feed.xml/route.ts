@@ -1,7 +1,7 @@
 import { BLOG_POSTS } from "@/data/posts";
 import { tutorials } from "@/data/tutorials";
 
-const SITE_URL = "https://kimdinhphuong.dev";
+const SITE_URL = "https://dinhphuong.dev";
 
 function escapeXml(input: string): string {
   return input

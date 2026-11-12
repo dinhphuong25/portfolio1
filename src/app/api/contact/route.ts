@@ -27,8 +27,8 @@ export async function POST(request: Request) {
     // Email nhận thư thông báo khi khách gửi form (email cá nhân của Đình Phương)
     const toEmail = process.env.CONTACT_EMAIL || 'kimdinhphuong205@gmail.com';
 
-    // Email gửi đi đại diện cho domain đã xác thực trên Resend (ví dụ: contact@dinhphuong.tech)
-    const fromEmail = process.env.FROM_EMAIL || 'Kim Đình Phương <contact@dinhphuong.tech>';
+    // Email gửi đi đại diện cho domain đã xác thực trên Resend (ví dụ: contact@dinhphuong.dev)
+    const fromEmail = process.env.FROM_EMAIL || 'Kim Đình Phương <contact@dinhphuong.dev>';
 
     // 1. Thư thông báo chi tiết gửi về cho bạn (Đình Phương)
     const adminEmailPromise = resend.emails.send({
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
           <div style="border-bottom: 2px solid #0f172a; padding-bottom: 12px; margin-bottom: 20px;">
             <h2 style="color: #0f172a; margin: 0; font-size: 20px;">📬 Tin nhắn liên hệ mới từ Portfolio</h2>
-            <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px;">Nhận từ trang dinhphuong.tech/contact</p>
+            <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px;">Nhận từ trang dinhphuong.dev/contact</p>
           </div>
           
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
@@ -95,7 +95,7 @@ export async function POST(request: Request) {
             <p style="font-size: 16px; margin-top: 0; line-height: 1.6; color: #0f172a;">Hi <strong>${name}</strong>,</p>
             
             <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-              Thank you for reaching out via <strong>dinhphuong.tech</strong>! I have received your message and will review it carefully.
+              Thank you for reaching out via <strong>dinhphuong.dev</strong>! I have received your message and will review it carefully.
             </p>
 
             <p style="font-size: 15px; line-height: 1.7; color: #334155;">
@@ -127,7 +127,7 @@ export async function POST(request: Request) {
             <p style="font-size: 16px; margin-top: 0; line-height: 1.6; color: #0f172a;">Chào <strong>${name}</strong>,</p>
             
             <p style="font-size: 15px; line-height: 1.7; color: #334155;">
-              Cảm ơn bạn đã gửi lời nhắn qua website <strong>dinhphuong.tech</strong>! Phương đã nhận được thông tin và sẽ xem xét thật kỹ.
+              Cảm ơn bạn đã gửi lời nhắn qua website <strong>dinhphuong.dev</strong>! Phương đã nhận được thông tin và sẽ xem xét thật kỹ.
             </p>
 
             <p style="font-size: 15px; line-height: 1.7; color: #334155;">

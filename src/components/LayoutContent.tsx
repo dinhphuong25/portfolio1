@@ -70,7 +70,7 @@ export default function LayoutContent({ children }: { children: ReactNode }) {
                 </motion.div>
 
                 {/* Shared Website Footer */}
-                <footer className="py-4 px-6 sm:px-10 lg:px-14 border-t border-slate-100 dark:border-slate-800/40 text-slate-400 dark:text-slate-500 text-xs flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto w-full mt-4">
+                <footer className="py-4 px-6 sm:px-10 lg:px-14 border-t border-slate-100 dark:border-slate-800/40 text-slate-400 dark:text-slate-500 text-xs flex flex-col sm:flex-row items-center justify-between gap-4 max-w-7xl mx-auto w-full mt-4">
                     <div className="font-medium">
                         Copyright © 2026 Personal Website. All rights reserved.
                     </div>

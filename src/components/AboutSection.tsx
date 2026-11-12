@@ -64,8 +64,8 @@ export default function AboutSection() {
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
             label: isVi ? "Email liên hệ" : "Contact Email",
-            value: "hi@dinhphuong.tech",
-            href: "mailto:hi@dinhphuong.tech",
+            value: "contact@dinhphuong.dev",
+            href: "mailto:contact@dinhphuong.dev",
         },
     ];
 

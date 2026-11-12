@@ -31,7 +31,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em" }}>{title}</div>
           <div style={{ fontSize: 30, opacity: 0.9, lineHeight: 1.3 }}>{subtitle}</div>
         </div>
-        <div style={{ fontSize: 26, opacity: 0.85 }}>kimdinhphuong.dev/blog/{slug}</div>
+        <div style={{ fontSize: 26, opacity: 0.85 }}>dinhphuong.dev/blog/{slug}</div>
       </div>
     ),
     size

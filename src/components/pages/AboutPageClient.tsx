@@ -118,7 +118,7 @@ export default function AboutPageClient() {
                                     <div className="flex items-center gap-1.5 bg-white/80 dark:bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-200/60 dark:border-slate-700 shadow-2xs">
                                         <Globe className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
                                         <a href={profileData.website} target="_blank" rel="noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                            kimdinhphuong.dev
+                                            dinhphuong.dev
                                         </a>
                                     </div>
                                 </div>

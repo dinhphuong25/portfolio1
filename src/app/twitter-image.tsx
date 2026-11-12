@@ -75,7 +75,7 @@ export default function TwitterImage() {
             opacity: 0.9,
           }}
         >
-          kimdinhphuong.dev
+          dinhphuong.dev
         </div>
       </div>
     ),

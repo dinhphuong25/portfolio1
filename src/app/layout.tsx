@@ -21,7 +21,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kimdinhphuong.dev"),
+  metadataBase: new URL("https://dinhphuong.dev"),
   applicationName: "Kim Đình Phương Portfolio",
   title: {
     template: "%s | Kim Đình Phương",
@@ -29,16 +29,27 @@ export const metadata: Metadata = {
   },
   description: "Digital Supply Chain Specialist passionate about optimizing supply chains, warehouse management operations, and creating efficient logistics solutions.",
   keywords: ["Logistics", "Supply Chain", "Warehouse Management", "Transport", "Kim Đình Phương", "Portfolio", "Digital Supply Chain"],
-  authors: [{ name: "Kim Đình Phương", url: "https://kimdinhphuong.dev" }],
+  authors: [{ name: "Kim Đình Phương", url: "https://dinhphuong.dev" }],
   creator: "Kim Đình Phương",
   publisher: "Kim Đình Phương",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Kim Đình Phương - Logistics Profile",
     description: "Digital Supply Chain Specialist passionate about optimizing supply chains and creating efficient logistics solutions.",
-    url: "https://kimdinhphuong.dev",
+    url: "https://dinhphuong.dev",
     siteName: "Kim Đình Phương Portfolio",
     images: [
       {
@@ -85,8 +96,8 @@ export default function RootLayout({
     name: profileData.name,
     jobTitle: profileData.title,
     description: profileData.tagline,
-    url: "https://kimdinhphuong.dev",
-    image: "https://kimdinhphuong.dev/avatar.jpg",
+    url: "https://dinhphuong.dev",
+    image: "https://dinhphuong.dev/avatar.jpg",
     email: `mailto:${profileData.email}`,
     sameAs: profileData.socialLinks.map((link) => link.url),
     address: {
@@ -100,7 +111,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Kim Đình Phương Portfolio",
-    url: "https://kimdinhphuong.dev",
+    url: "https://dinhphuong.dev",
     inLanguage: "vi-VN",
     author: {
       "@type": "Person",
@@ -112,6 +123,10 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="vi" suppressHydrationWarning>
         <head>
+          <link rel="icon" href="/favicon.ico" sizes="32x32" />
+          <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         </head>

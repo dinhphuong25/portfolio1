@@ -33,8 +33,8 @@ export const profileData: ProfileData = {
     countryCode: "vn",
   },
   avatar: "/avatar.jpg",
-  email: "hi@dinhphuong.tech",
-  website: "https://kimdinhphuong.dev",
+  email: "contact@dinhphuong.dev",
+  website: "https://dinhphuong.dev",
   portfolio: "@kimdinhphuong",
   socialLinks: [
     { platform: "Facebook", url: "https://www.facebook.com/dinhphuongkim250705/", label: "dinhphuongkim250705" },

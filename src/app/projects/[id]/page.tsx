@@ -63,8 +63,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         "@type": "CreativeWork",
         name: project.title,
         description: project.summary,
-        url: `https://kimdinhphuong.dev/projects/${project.id}`,
-        image: project.thumbnail || "https://kimdinhphuong.dev/opengraph-image",
+        url: `https://dinhphuong.dev/projects/${project.id}`,
+        image: project.thumbnail || "https://dinhphuong.dev/opengraph-image",
         datePublished: `${project.year}-01-01`,
         creator: {
             "@type": "Person",
