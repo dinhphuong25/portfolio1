@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { Toast, useToast } from "./Toast";
 import { useLanguage } from "@/context/LanguageContext";
+import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 interface FormData {
     name: string;
@@ -18,7 +19,7 @@ interface FormErrors {
 
 export default function ContactForm() {
     const { language } = useLanguage();
-    const isVi = language === 'vi';
+    const isVi = language === "vi";
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -37,19 +38,19 @@ export default function ContactForm() {
         const newErrors: FormErrors = {};
 
         if (!formData.name.trim()) {
-            newErrors.name = isVi ? "Tên là bắt buộc" : "Name is required";
+            newErrors.name = isVi ? "Vui lòng nhập họ và tên" : "Name is required";
         }
 
         if (!formData.email.trim()) {
-            newErrors.email = isVi ? "Email là bắt buộc" : "Email is required";
+            newErrors.email = isVi ? "Vui lòng nhập địa chỉ email" : "Email is required";
         } else if (!validateEmail(formData.email)) {
-            newErrors.email = isVi ? "Vui lòng nhập địa chỉ email hợp lệ" : "Please enter a valid email address";
+            newErrors.email = isVi ? "Email không đúng định dạng" : "Please enter a valid email address";
         }
 
         if (!formData.message.trim()) {
-            newErrors.message = isVi ? "Tin nhắn là bắt buộc" : "Message is required";
-        } else if (formData.message.trim().length < 20) {
-            newErrors.message = isVi ? "Tin nhắn phải có ít nhất 20 ký tự" : "Message should be at least 20 characters";
+            newErrors.message = isVi ? "Vui lòng nhập nội dung tin nhắn" : "Message is required";
+        } else if (formData.message.trim().length < 15) {
+            newErrors.message = isVi ? "Nội dung cần tối thiểu 15 ký tự" : "Message should be at least 15 characters";
         }
 
         setErrors(newErrors);
@@ -78,7 +79,9 @@ export default function ContactForm() {
 
             if (response.ok) {
                 showToast(
-                    data.message || (isVi ? "Tin nhắn của bạn đã được gửi thành công! Tôi sẽ phản hồi sớm nhất có thể." : "Your message has been sent successfully! I will get back to you as soon as possible."),
+                    data.message || (isVi 
+                        ? "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi lại bạn sớm." 
+                        : "Message sent successfully! I will reply to you soon."),
                     "success"
                 );
                 setFormData({
@@ -91,7 +94,7 @@ export default function ContactForm() {
                 showToast(data.error || (isVi ? "Đã xảy ra lỗi. Vui lòng thử lại." : "An error occurred. Please try again."), "error");
             }
         } catch {
-            showToast(isVi ? "Không thể gửi tin nhắn ngay bây giờ. Vui lòng thử lại sau." : "Unable to send your message right now. Please try again later.", "error");
+            showToast(isVi ? "Không thể kết nối đến máy chủ. Vui lòng thử lại sau." : "Unable to reach server. Please try again later.", "error");
         } finally {
             setIsSubmitting(false);
         }
@@ -109,117 +112,109 @@ export default function ContactForm() {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                {/* Name field */}
-                <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
-                        {isVi ? "Tên" : "Name"} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 ${errors.name ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                {/* 2 Columns: Name & Email */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Name field */}
+                    <div>
+                        <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                            {isVi ? "Họ và tên" : "Your Name"} <span className="text-rose-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className={`w-full px-4 py-3 bg-slate-50/70 dark:bg-slate-800/60 border text-slate-900 dark:text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-850 transition-all placeholder:text-slate-400 ${
+                                errors.name ? "border-rose-400 bg-rose-50/40" : "border-slate-200 dark:border-slate-700/80"
                             }`}
-                        placeholder={isVi ? "Tên của bạn" : "Your name"}
-                        aria-invalid={!!errors.name}
-                        aria-describedby={errors.name ? "name-error" : undefined}
-                    />
-                    {errors.name && (
-                        <p id="name-error" className="mt-2 text-sm font-medium text-red-600 flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            {errors.name}
-                        </p>
-                    )}
-                </div>
+                            placeholder={isVi ? "VD: Nguyễn Văn A" : "e.g. Alex Morgan"}
+                            aria-invalid={!!errors.name}
+                        />
+                        {errors.name && (
+                            <p className="mt-1 text-xs text-rose-500 flex items-center gap-1 font-medium">
+                                <AlertCircle className="w-3.5 h-3.5" />
+                                {errors.name}
+                            </p>
+                        )}
+                    </div>
 
-                {/* Email field */}
-                <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
-                        {isVi ? "Email" : "Email"} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 ${errors.email ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
+                    {/* Email field */}
+                    <div>
+                        <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                            {isVi ? "Địa chỉ Email" : "Email Address"} <span className="text-rose-500">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className={`w-full px-4 py-3 bg-slate-50/70 dark:bg-slate-800/60 border text-slate-900 dark:text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-850 transition-all placeholder:text-slate-400 ${
+                                errors.email ? "border-rose-400 bg-rose-50/40" : "border-slate-200 dark:border-slate-700/80"
                             }`}
-                        placeholder={isVi ? "you@example.com" : "you@example.com"}
-                        aria-invalid={!!errors.email}
-                        aria-describedby={errors.email ? "email-error" : undefined}
-                    />
-                    {errors.email && (
-                        <p id="email-error" className="mt-2 text-sm font-medium text-red-600 flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            {errors.email}
-                        </p>
-                    )}
+                            placeholder="you@company.com"
+                            aria-invalid={!!errors.email}
+                        />
+                        {errors.email && (
+                            <p className="mt-1 text-xs text-rose-500 flex items-center gap-1 font-medium">
+                                <AlertCircle className="w-3.5 h-3.5" />
+                                {errors.email}
+                            </p>
+                        )}
+                    </div>
                 </div>
 
                 {/* Message textarea */}
                 <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
-                        {isVi ? "Tin nhắn" : "Message"} <span className="text-red-500">*</span>
+                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                        {isVi ? "Nội dung tin nhắn" : "Your Message"} <span className="text-rose-500">*</span>
                     </label>
                     <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        rows={6}
-                        className={`w-full px-5 py-4 bg-slate-50 dark:bg-slate-800/80 border text-slate-900 dark:text-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-900 focus:border-transparent transition-all resize-none placeholder:text-slate-400 ${errors.message ? "border-red-300 bg-red-50" : "border-slate-200 dark:border-slate-700"
-                            }`}
-                        placeholder={isVi ? "Kể cho tôi nghe về dự án của bạn..." : "Tell me about your project..."}
+                        rows={5}
+                        className={`w-full px-4 py-3 bg-slate-50/70 dark:bg-slate-800/60 border text-slate-900 dark:text-white rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:bg-white dark:focus:bg-slate-850 transition-all resize-none placeholder:text-slate-400 ${
+                            errors.message ? "border-rose-400 bg-rose-50/40" : "border-slate-200 dark:border-slate-700/80"
+                        }`}
+                        placeholder={isVi ? "Hãy chia sẻ về dự án, bài toán hoặc ý tưởng bạn muốn thảo luận..." : "Tell me about your project, idea, or questions..."}
                         aria-invalid={!!errors.message}
-                        aria-describedby={errors.message ? "message-error" : undefined}
                     />
                     {errors.message && (
-                        <p id="message-error" className="mt-2 text-sm font-medium text-red-600 flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <p className="mt-1 text-xs text-rose-500 flex items-center gap-1 font-medium">
+                            <AlertCircle className="w-3.5 h-3.5" />
                             {errors.message}
                         </p>
                     )}
                 </div>
 
                 {/* Submit button */}
-                <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-2xl hover:bg-slate-800 dark:hover:bg-white active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-3 shadow-md hover:shadow-lg cursor-pointer mt-4"
-                >
-                    {isSubmitting ? (
-                        <>
-                            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                                <circle
-                                    className="opacity-25"
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    stroke="currentColor"
-                                    strokeWidth="4"
-                                    fill="none"
-                                />
-                                <path
-                                    className="opacity-75"
-                                    fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                />
-                            </svg>
-                            {isVi ? "Đang gửi..." : "Sending..."}
-                        </>
-                    ) : (
-                        <>
-                            {isVi ? "Gửi tin nhắn" : "Send Message"}
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </>
-                    )}
-                </button>
+                <div className="pt-2 flex items-center justify-between">
+                    <p className="text-[11px] text-slate-400 dark:text-slate-500 hidden sm:block">
+                        {isVi ? "Thông tin được gửi bảo mật & trả lời nhanh." : "Protected & fast response."}
+                    </p>
+
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 font-semibold text-xs rounded-xl shadow-xs transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                        {isSubmitting ? (
+                            <>
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                <span>{isVi ? "Đang gửi..." : "Sending..."}</span>
+                            </>
+                        ) : (
+                            <>
+                                <span>{isVi ? "Gửi tin nhắn" : "Send Message"}</span>
+                                <Send className="w-3.5 h-3.5" />
+                            </>
+                        )}
+                    </button>
+                </div>
             </form>
 
             {toast && (

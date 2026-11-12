@@ -2,131 +2,160 @@
 
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
-import { profileData } from "@/data/profile";
 import { useLanguage } from "@/context/LanguageContext";
+import { Mail, MapPin, Clock, ArrowUpRight, MessageSquare, Check, Copy } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPageClient() {
     const { language } = useLanguage();
-    const isVi = language === 'vi';
+    const isVi = language === "vi";
+    const [copied, setCopied] = useState(false);
 
-    const socialPlatforms = [
+    const email = "contact@dinhphuong.dev";
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText(email);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    const directChannels = [
         {
-            platform: "LinkedIn",
-            url: "https://www.linkedin.com/in/kimdinhphuong/",
-            icon: (
-                <svg className="w-5.5 h-5.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
+            icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: isVi ? "Email trực tiếp" : "Direct Email",
+            value: email,
+            action: (
+                <button
+                    onClick={handleCopyEmail}
+                    className="p-1 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                    title={isVi ? "Sao chép email" : "Copy email"}
+                    aria-label="Copy email"
+                >
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                </button>
             ),
-            hoverClass: "hover:border-[#0A66C2] hover:text-[#0A66C2] hover:bg-[#0A66C2]/10 dark:hover:bg-[#0A66C2]/20",
+            href: `mailto:${email}`,
         },
         {
-            platform: "Instagram",
-            url: "https://www.instagram.com/xxjdark_/",
-            icon: (
-                <svg className="w-5.5 h-5.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-            ),
-            hoverClass: "hover:border-[#E4405F] hover:text-[#E4405F] hover:bg-[#E4405F]/10 dark:hover:bg-[#E4405F]/20",
+            icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: isVi ? "Địa điểm & Múi giờ" : "Location & Timezone",
+            value: isVi ? "Cần Thơ, Việt Nam (GMT+7)" : "Can Tho, Vietnam (GMT+7)",
         },
         {
-            platform: "TikTok",
-            url: "https://www.tiktok.com/@jdark_xx",
-            icon: (
-                <svg className="w-5.5 h-5.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72V13.5c-1.4-.04-2.8.29-3.98 1.05-.88.58-1.46 1.49-1.62 2.53-.1.64.03 1.33.35 1.9.43.76 1.16 1.35 2.01 1.55 1.42.34 2.93-.16 3.86-1.25.59-.69.87-1.58.91-2.51.05-3.39.02-6.79.03-10.18.01-1.2.01-2.4-.01-3.6 0-.66.01-1.32.01-1.98Z" />
-                </svg>
-            ),
-            hoverClass: "hover:border-slate-900 dark:hover:border-white hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800",
+            icon: <Clock className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+            label: isVi ? "Thời gian phản hồi" : "Response Time",
+            value: isVi ? "Thường trong vòng 24 giờ" : "Usually within 24 hours",
+        },
+    ];
+
+    const socialLinks = [
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/in/kimdinhphuong/",
+            desc: "in/kimdinhphuong",
         },
         {
-            platform: "Zalo",
-            url: "https://zalo.me/0903917400",
-            icon: (
-                <span className="font-black text-sm tracking-tight">Zalo</span>
-            ),
-            hoverClass: "hover:border-[#0068FF] hover:text-[#0068FF] hover:bg-[#0068FF]/10 dark:hover:bg-[#0068FF]/20",
+            name: "GitHub",
+            href: "https://github.com/kimdinhphuong",
+            desc: "@kimdinhphuong",
+        },
+        {
+            name: "Zalo",
+            href: "https://zalo.me/0903917400",
+            desc: "0903 917 400",
         },
     ];
 
     return (
-        <div className="w-full max-w-7xl mx-auto p-3 sm:p-6 lg:p-8">
-            {/* Unified Container */}
-            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-[2rem] border border-slate-400 dark:border-slate-600 overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                    
-                    {/* Left Column: Info & Connect */}
-                    <div className="lg:col-span-5 bg-slate-50/80 dark:bg-slate-800/40 p-8 sm:p-12 border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-start">
-                        <Reveal direction="down" delay={100}>
-                            <header className="mb-8">
-                                <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3.5 tracking-tight">
-                                    {isVi ? "Hãy Kết Nối" : "Let's Connect"}
-                                </h1>
-                                <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed pr-2 font-normal">
-                                    {isVi 
-                                        ? "Tôi luôn sẵn lòng thảo luận về công việc hoặc các cơ hội hợp tác. Hãy liên hệ và cùng nhau tạo ra những điều tuyệt vời." 
-                                        : "I'm always open to discussing work or partnership opportunities. Reach out and let's create something great together."}
+        <div className="w-full max-w-7xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6 flex-1 flex flex-col">
+            <div className="w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-400 dark:border-slate-600 p-6 sm:p-10 lg:p-12 shadow-xs">
+                {/* Header Tag */}
+                <div className="flex items-center gap-3 mb-8">
+                    <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
+                    <h1 className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
+                        {isVi ? "LIÊN HỆ & KẾT NỐI" : "CONTACT & GET IN TOUCH"}
+                    </h1>
+                    <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
+                </div>
+
+                {/* 2-Column Clean Web Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                    {/* Left Column: Context & Channels */}
+                    <div className="lg:col-span-5 space-y-6">
+                        <Reveal direction="up" delay={50}>
+                            <div>
+                                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
+                                    {isVi ? "Hãy cùng trao đổi" : "Let's Start a Conversation"}
+                                </h2>
+                                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                                    {isVi
+                                        ? "Tôi luôn sẵn lòng lắng nghe và trao đổi về các bài toán vận hành chuỗi cung ứng, dự án web hoặc cơ hội hợp tác mới. Bạn có thể gửi biểu mẫu bên cạnh hoặc liên hệ trực tiếp qua các kênh dưới đây."
+                                        : "I am always keen to discuss supply chain challenges, web development projects, or new professional opportunities. Feel free to use the form or reach out through my direct channels below."}
                                 </p>
-                            </header>
+                            </div>
                         </Reveal>
 
-                        {/* Contact info details */}
-                        <div className="space-y-6">
-                            <Reveal direction="left" delay={200}>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
-                                        <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-                                    <div className="flex flex-col justify-center min-w-0 pt-0.5">
-                                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">Email</p>
-                                        <a href={`mailto:${profileData.email}`} className="text-[15px] xl:text-base font-bold text-slate-900 dark:text-white hover:underline transition-colors block whitespace-nowrap tracking-tight">
-                                            {profileData.email}
-                                        </a>
-                                    </div>
-                                </div>
-                            </Reveal>
+                        {/* Direct Channel Cards */}
+                        <Reveal direction="up" delay={100}>
+                            <div className="space-y-2.5">
+                                {directChannels.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="p-3.5 rounded-xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-3 transition-colors hover:border-slate-300 dark:hover:border-slate-700"
+                                    >
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            <div className="p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 shrink-0 text-slate-700 dark:text-slate-300 shadow-2xs">
+                                                {item.icon}
+                                            </div>
+                                            <div className="min-w-0">
+                                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">
+                                                    {item.label}
+                                                </span>
+                                                {item.href ? (
+                                                    <a
+                                                        href={item.href}
+                                                        className="text-xs font-semibold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors block truncate"
+                                                    >
+                                                        {item.value}
+                                                    </a>
+                                                ) : (
+                                                    <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 block truncate">
+                                                        {item.value}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
 
-                            <Reveal direction="left" delay={300}>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
-                                        <svg className="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
+                                        {item.action && (
+                                            <div className="shrink-0">{item.action}</div>
+                                        )}
                                     </div>
-                                    <div>
-                                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">
-                                            {isVi ? "Vị trí" : "Location"}
-                                        </p>
-                                        <p className="text-base font-bold text-slate-900 dark:text-white">
-                                            {profileData.location.city}, {profileData.location.country}
-                                        </p>
-                                    </div>
-                                </div>
-                            </Reveal>
-                        </div>
-                        
-                        {/* Social Links Row right below Location without empty gap */}
-                        <Reveal direction="up" delay={400}>
-                            <div className="mt-8 pt-7 border-t border-slate-200/80 dark:border-slate-800">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3.5">
-                                    {isVi ? "Theo dõi tôi" : "Follow Me"}
-                                </p>
-                                <div className="flex items-center gap-3">
-                                    {socialPlatforms.map((item) => (
+                                ))}
+                            </div>
+                        </Reveal>
+
+                        {/* Social / Direct Links */}
+                        <Reveal direction="up" delay={150}>
+                            <div className="pt-2">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-3">
+                                    {isVi ? "Kênh kết nối khác" : "Other Channels"}
+                                </span>
+                                <div className="grid grid-cols-3 gap-2.5">
+                                    {socialLinks.map((social) => (
                                         <a
-                                            key={item.platform}
-                                            href={item.url}
+                                            key={social.name}
+                                            href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            title={item.platform}
-                                            aria-label={item.platform}
-                                            className={`w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-2xs border border-slate-200/80 dark:border-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-all duration-200 ${item.hoverClass} hover:shadow-md hover:-translate-y-1 hover:scale-105 active:scale-95 cursor-pointer`}
+                                            className="px-3 py-2.5 rounded-xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-800 dark:text-slate-200 flex flex-col justify-center transition-all hover:-translate-y-0.5 shadow-2xs group"
                                         >
-                                            {item.icon}
+                                            <span className="text-xs font-bold flex items-center justify-between">
+                                                {social.name}
+                                                <ArrowUpRight className="w-3 h-3 text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
+                                            </span>
+                                            <span className="text-[10px] text-slate-400 dark:text-slate-500 truncate mt-0.5">
+                                                {social.desc}
+                                            </span>
                                         </a>
                                     ))}
                                 </div>
@@ -134,14 +163,21 @@ export default function ContactPageClient() {
                         </Reveal>
                     </div>
 
-                    {/* Right Column: Form */}
-                    <div className="lg:col-span-7 bg-white dark:bg-slate-900 p-8 sm:p-12 relative flex-1">
-                        <Reveal delay={300} direction="right">
-                            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                                {isVi ? "Gửi Tin Nhắn" : "Send a Message"}
-                                <span className="inline-block w-8 h-0.5 bg-slate-900 dark:bg-white ml-2"></span>
-                            </h2>
-                            
+                    {/* Right Column: Contact Form */}
+                    <div className="lg:col-span-7 bg-slate-50/50 dark:bg-slate-850/40 p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800">
+                        <Reveal direction="up" delay={100}>
+                            <div className="mb-6">
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <MessageSquare className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+                                    <span>{isVi ? "Gửi tin nhắn trực tiếp" : "Send a Direct Message"}</span>
+                                </h3>
+                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                    {isVi
+                                        ? "Tôi sẽ nhận được thông báo ngay lập tức và phản hồi lại bạn."
+                                        : "I will receive an instant notification and respond promptly."}
+                                </p>
+                            </div>
+
                             <ContactForm />
                         </Reveal>
                     </div>
