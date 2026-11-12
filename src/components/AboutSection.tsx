@@ -3,73 +3,75 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Code, MapPin, Mail } from "lucide-react";
+import { Code, MapPin, Mail, Sparkles, Box, Cpu } from "lucide-react";
+import Reveal from "./Reveal";
 
 export default function AboutSection() {
     const { language } = useLanguage();
-
-    const storyVi = [
-        "Chào bạn! Tôi là Kim Đình Phương – một người có niềm đam mê mạnh mẽ với lập trình và xây dựng các sản phẩm website hiện đại.",
-        "Tôi đặc biệt hứng thú với việc biến ý tưởng, dữ liệu và quy trình thành các giao diện web mượt mà, tối ưu trải nghiệm người dùng. Đối với tôi, mỗi trang web không chỉ là một sản phẩm hiển thị mà là một giải pháp thiết thực để giải quyết các bài toán thực tế.",
-        "Tôi chủ động tự học và thực hành chuyên sâu phát triển web với Next.js, TypeScript, đồng thời tìm hiểu về AI, tự động hóa quy trình và thiết kế UI/UX. Tôi tin rằng công nghệ chỉ thực sự có giá trị khi được áp dụng vào sản phẩm thực tế, mang lại trải nghiệm tối ưu cho người dùng.",
-        "Từ đam mê đó, tôi đã tự tay xây dựng các dự án web cá nhân như EcoFresh WMS – hệ thống quản lý kho bãi, Ez Study – cổng học tập và HiTOEIC – nền tảng luyện thi. Mỗi dự án là một cơ hội để tôi rèn luyện kỹ năng phân tích, thiết kế giải pháp và tối ưu hóa hiệu năng ứng dụng web.",
-    ];
-
-    const storyEn = [
-        "Hello! I am Kim Dinh Phuong — a passionate web developer dedicated to building modern websites and web applications.",
-        "I am particularly fascinated by turning ideas, data, and processes into smooth, optimized, and intuitive web experiences. To me, a website is more than just a practical solution that solves real-world problems.",
-        "I proactively self-learn and practice fullstack web development with Next.js and TypeScript, while researching AI, process automation, and UI/UX design. I strongly believe technology delivers real value when built into functional, high-performance web products.",
-        "Guided by this passion, I engineered web projects like EcoFresh WMS management system, Ez Study learning portal, and HiTOEIC exam platform. Each project is an opportunity to refine my engineering mindset, solution design, and user experience optimization.",
-    ];
-
     const isVi = language === "vi";
-    const currentStory = isVi ? storyVi : storyEn;
 
-    const highlightsVi = [
+    const keyStrengths = isVi ? [
         {
-            icon: <Code className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Lĩnh vực chính",
-            value: "Web Development & UI/UX",
+            title: "Supply Chain & Logistics",
+            desc: "Nghiên cứu tối ưu hóa vận hành, quản lý kho bãi (WMS) và phân tích quy trình luân chuyển hàng hóa thực tế.",
+            icon: <Box className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+            badge: "Chuyên môn lõi",
         },
         {
-            icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Vị trí hiện tại",
-            value: "Cần Thơ, Việt Nam",
+            title: "Web Development & UI/UX",
+            desc: "Phát triển ứng dụng web hiện đại với Next.js, TypeScript và Tailwind CSS, chú trọng hiệu năng và trải nghiệm người dùng.",
+            icon: <Code className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
+            badge: "Kỹ thuật số",
         },
         {
-            icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Email liên hệ",
-            value: "hi@dinhphuong.tech",
-            isLink: true,
-            href: "mailto:hi@dinhphuong.tech",
+            title: "Tự động hóa & AI",
+            desc: "Ứng dụng AI và workflow tự động hóa để tinh gọn các tác vụ lặp lại, tối ưu thời gian và chi phí vận hành.",
+            icon: <Cpu className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+            badge: "Đổi mới sáng tạo",
+        },
+    ] : [
+        {
+            title: "Supply Chain & Logistics",
+            desc: "Focusing on operations optimization, warehouse management systems (WMS), and practical distribution workflow analysis.",
+            icon: <Box className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+            badge: "Core Discipline",
+        },
+        {
+            title: "Web Development & UI/UX",
+            desc: "Engineering modern web applications with Next.js, TypeScript, and Tailwind CSS with a sharp focus on speed and UX.",
+            icon: <Code className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
+            badge: "Digital Skills",
+        },
+        {
+            title: "Automation & AI",
+            desc: "Leveraging AI and workflow automation to streamline repetitive tasks, boost productivity, and cut operational friction.",
+            icon: <Cpu className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+            badge: "Innovation",
         },
     ];
 
-    const highlightsEn = [
+    const quickInfo = [
         {
             icon: <Code className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Main Focus",
-            value: "Web Development & UI/UX",
+            label: isVi ? "Định hướng chính" : "Primary Focus",
+            value: "Digital Supply Chain & Web Tech",
         },
         {
             icon: <MapPin className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Location",
-            value: "Can Tho, Vietnam",
+            label: isVi ? "Địa điểm" : "Location",
+            value: isVi ? "Cần Thơ, Việt Nam" : "Can Tho, Vietnam",
         },
         {
             icon: <Mail className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
-            label: "Contact Email",
+            label: isVi ? "Email liên hệ" : "Contact Email",
             value: "hi@dinhphuong.tech",
-            isLink: true,
             href: "mailto:hi@dinhphuong.tech",
         },
     ];
-
-    const currentHighlights = isVi ? highlightsVi : highlightsEn;
 
     return (
         <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-100 dark:border-slate-800" aria-labelledby="about-heading">
-            {/* Header */}
+            {/* Section Badge & Title */}
             <div className="flex items-center gap-3 mb-8">
                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
                 <h2 id="about-heading" className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
@@ -78,50 +80,100 @@ export default function AboutSection() {
                 <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
             </div>
 
-            {/* Custom 2-Column Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
-                {/* Left Story Column */}
-                <div className="lg:col-span-8 space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {currentStory.map((paragraph, idx) => (
-                        <p key={idx} className="text-justify font-normal">
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
+            {/* Featured Intro Banner */}
+            <Reveal direction="up" delay={100}>
+                <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 text-white p-6 sm:p-8 mb-8 overflow-hidden shadow-sm">
+                    {/* Decorative Background Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+                    <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -mb-20 pointer-events-none" />
 
-                {/* Right Highlights Cards */}
-                <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-                    {currentHighlights.map((item, idx) => (
+                    <div className="relative z-10">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[11px] font-semibold text-blue-200 border border-white/10 mb-4">
+                            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                            <span>{isVi ? "Tôn chỉ & Định hướng" : "Vision & Purpose"}</span>
+                        </div>
+
+                        <h3 className="text-lg sm:text-2xl font-extrabold leading-snug tracking-tight mb-3">
+                            {isVi ? (
+                                <>
+                                    Kết hợp tư duy <span className="text-blue-400">Logistics & Chuỗi cung ứng</span> với sức mạnh của <span className="text-indigo-300">Công nghệ số</span>.
+                                </>
+                            ) : (
+                                <>
+                                    Bridging <span className="text-blue-400">Supply Chain & Logistics</span> expertise with <span className="text-indigo-300">Digital Solutions</span>.
+                                </>
+                            )}
+                        </h3>
+
+                        <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-3xl font-normal">
+                            {isVi 
+                                ? "Chào bạn! Tôi là Kim Đình Phương. Tôi tin rằng công nghệ chỉ thực sự tạo ra đột phá khi được gắn liền với bài toán thực tế. Mục tiêu của tôi là trở thành một Tech-driven Supply Chain Specialist — người có thể thấu hiểu sâu sắc nghiệp vụ chuỗi cung ứng và tự tay xây dựng các công cụ, ứng dụng số để tối ưu hóa hiệu suất vận hành."
+                                : "Hello! I am Kim Dinh Phuong. I strongly believe technology creates genuine impact when applied to real-world operational challenges. My mission is to grow into a Tech-driven Supply Chain Specialist — blending domain logistics expertise with hands-on software development to streamline business processes."}
+                        </p>
+                    </div>
+                </div>
+            </Reveal>
+
+            {/* 3 Pillars Grid */}
+            <Reveal direction="up" delay={150}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    {keyStrengths.map((item, idx) => (
                         <div
                             key={idx}
-                            className="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-start gap-3 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+                            className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-2xs hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200 flex flex-col justify-between group"
                         >
-                            <div className="p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 shrink-0">
-                                {item.icon}
+                            <div>
+                                <div className="flex items-center justify-between mb-3.5">
+                                    <div className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                                        {item.badge}
+                                    </span>
+                                </div>
+                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1.5">
+                                    {item.title}
+                                </h4>
+                                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </Reveal>
+
+            {/* Quick Info Bar */}
+            <Reveal direction="up" delay={200}>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 p-2 rounded-2xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+                    {quickInfo.map((info, idx) => (
+                        <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/50 shadow-2xs">
+                            <div className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 shrink-0">
+                                {info.icon}
                             </div>
                             <div className="min-w-0 flex-1">
                                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">
-                                    {item.label}
+                                    {info.label}
                                 </span>
-                                {item.isLink ? (
+                                {info.href ? (
                                     <a
-                                        href={item.href}
-                                        className="text-xs font-bold text-slate-800 dark:text-slate-200 hover:underline leading-tight block mt-0.5 truncate"
+                                        href={info.href}
+                                        className="text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors block truncate"
                                     >
-                                        {item.value}
+                                        {info.value}
                                     </a>
                                 ) : (
-                                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight block mt-0.5">
-                                        {item.value}
+                                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block truncate">
+                                        {info.value}
                                     </span>
                                 )}
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
+            </Reveal>
 
-            {/* Timeline */}
+            {/* Timeline Section */}
             <TimelineSection />
         </section>
     );
