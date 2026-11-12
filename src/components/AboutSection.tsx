@@ -71,12 +71,32 @@ export default function AboutSection() {
 
             {/* Intro Narrative */}
             <Reveal direction="up" delay={50}>
-                <div className="mb-7">
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-4xl">
-                        {isVi 
-                            ? "Chào bạn! Mình là Kim Đình Phương – một sinh viên đam mê công nghệ và lập trình. Xuất phát điểm từ chuyên ngành Quản trị Chuỗi cung ứng & Logistics, mình luôn tìm tòi, tự học và tự tay xây dựng các ứng dụng web cũng như công cụ số để áp dụng vào thực tế, giải quyết các bài toán hàng ngày và tối ưu hóa quy trình làm việc."
-                            : "Hello! I am Kim Dinh Phuong — a student passionate about technology and programming. Coming from a Logistics & Supply Chain background, I love exploring, self-learning, and building web applications and digital tools to solve real-world problems and streamline everyday workflows."}
-                    </p>
+                <div className="mb-8 w-full space-y-4 text-justify text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    {isVi ? (
+                        <>
+                            <p>
+                                Chào bạn! Mình là Kim Đình Phương – một sinh viên đam mê công nghệ và lập trình. Xuất phát điểm từ chuyên ngành Quản trị Chuỗi cung ứng &amp; Logistics, mình luôn bị cuốn hút bởi cách mà công nghệ và phần mềm có thể số hóa, tinh gọn và tối ưu hóa những quy trình vận hành phức tạp, giúp các bài toán thực tế được giải quyết nhanh chóng và hiệu quả hơn.
+                            </p>
+                            <p>
+                                Niềm đam mê ấy là động lực lớn để mình chủ động tự học và đào sâu vào phát triển ứng dụng web hiện đại. Mình thường dành thời gian nghiên cứu và thực hành với Next.js, TypeScript, Tailwind CSS, kết hợp cùng AI và các công cụ tự động hóa quy trình (workflow automation). Đối với mình, mỗi dòng code viết ra không chỉ nằm trên lý thuyết, mà phải gắn liền với giá trị thực tế — từ dự án quản lý kho bãi EcoFresh WMS đến các nền tảng học tập số như Ez Study hay HiTOEIC, mình luôn chú trọng trải nghiệm người dùng trực quan, giao diện sạch sẽ và hiệu năng tối ưu.
+                            </p>
+                            <p>
+                                Mục tiêu dài hạn của mình là trở thành một Tech-driven Supply Chain Specialist – người có thể đóng vai trò cầu nối vững chắc giữa bài toán nghiệp vụ thực tiễn và giải pháp công nghệ hiện đại. Mình luôn giữ tinh thần cầu tiến, cởi mở học hỏi và rất mong có cơ hội được kết nối, trao đổi cũng như hợp tác cùng các anh chị và bạn bè đồng nghiệp!
+                            </p>
+                        </>
+                    ) : (
+                        <>
+                            <p>
+                                Hello! I am Kim Dinh Phuong — a student deeply passionate about technology and programming. Majoring in Logistics &amp; Supply Chain Management, I have always been fascinated by how modern software and digital solutions can streamline intricate operational workflows, making everyday business processes leaner, faster, and more visual.
+                            </p>
+                            <p>
+                                That curiosity has driven me to actively self-learn and specialize in modern full-stack web technologies. I regularly build practical applications using Next.js, TypeScript, and Tailwind CSS, while integrating AI workflows and automation tools to solve real-world problems. For me, software must always solve tangible needs — from warehouse management systems like EcoFresh WMS to e-learning platforms like Ez Study and HiTOEIC, I strive for intuitive user experiences, clean design, and dependable performance.
+                            </p>
+                            <p>
+                                My long-term goal is to grow as a Tech-driven Supply Chain Specialist — serving as a bridge between practical business logistics and cutting-edge software solutions. I maintain a continuous learning mindset and welcome any opportunity to connect, collaborate, and exchange ideas with developers, mentors, and industry peers!
+                            </p>
+                        </>
+                    )}
                 </div>
             </Reveal>
 
