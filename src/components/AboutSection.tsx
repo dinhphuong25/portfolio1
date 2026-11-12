@@ -71,18 +71,11 @@ export default function AboutSection() {
 
             {/* Intro Narrative */}
             <Reveal direction="up" delay={50}>
-                <div className="mb-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug tracking-tight mb-3">
-                        {isVi ? (
-                            <>Kết hợp tư duy Logistics & Chuỗi cung ứng với sức mạnh của Công nghệ số.</>
-                        ) : (
-                            <>Bridging Supply Chain & Logistics expertise with the power of Digital Tech.</>
-                        )}
-                    </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-4xl">
+                <div className="mb-7">
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-4xl">
                         {isVi 
-                            ? "Chào bạn! Tôi là Kim Đình Phương. Tôi tin rằng công nghệ chỉ thực sự tạo ra đột phá khi được gắn liền với bài toán thực tế. Mục tiêu của tôi là trở thành một Tech-driven Supply Chain Specialist — người có thể thấu hiểu sâu sắc nghiệp vụ chuỗi cung ứng và tự tay xây dựng các công cụ, ứng dụng số để tối ưu hóa hiệu suất vận hành."
-                            : "Hello! I am Kim Dinh Phuong. I believe technology creates real breakthroughs when applied to practical operational challenges. My mission is to become a Tech-driven Supply Chain Specialist — deeply understanding domain logistics while building tailored digital tools to streamline operations."}
+                            ? "Chào bạn! Mình là Kim Đình Phương – một sinh viên đam mê công nghệ và lập trình. Xuất phát điểm từ chuyên ngành Quản trị Chuỗi cung ứng & Logistics, mình luôn tìm tòi, tự học và tự tay xây dựng các ứng dụng web cũng như công cụ số để áp dụng vào thực tế, giải quyết các bài toán hàng ngày và tối ưu hóa quy trình làm việc."
+                            : "Hello! I am Kim Dinh Phuong — a student passionate about technology and programming. Coming from a Logistics & Supply Chain background, I love exploring, self-learning, and building web applications and digital tools to solve real-world problems and streamline everyday workflows."}
                     </p>
                 </div>
             </Reveal>
