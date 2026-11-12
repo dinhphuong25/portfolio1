@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Box, Code, Cpu, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Layers, Code, Cpu, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function AboutSection() {
@@ -12,34 +12,34 @@ export default function AboutSection() {
 
     const keyStrengths = isVi ? [
         {
-            title: "Supply Chain & Logistics",
-            desc: "Nghiên cứu tối ưu hóa vận hành, quản lý kho bãi (WMS) và phân tích quy trình luân chuyển hàng hóa thực tế.",
-            icon: <Box className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
+            title: "Hi Tech - All In One",
+            desc: "Sáng lập và phát triển hệ sinh thái sản phẩm số đa năng (HiTOEIC, Ez Tool, Hi Phim...) phục vụ học tập, tiện ích và công việc.",
+            icon: <Layers className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Web Development & UI/UX",
-            desc: "Phát triển ứng dụng web hiện đại với Next.js, TypeScript và Tailwind CSS, chú trọng hiệu năng và trải nghiệm người dùng.",
+            desc: "Phát triển ứng dụng web hiện đại với Next.js, TypeScript và Tailwind CSS, chú trọng hiệu năng cao và trải nghiệm người dùng tinh tế.",
             icon: <Code className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Tự động hóa & AI",
-            desc: "Ứng dụng AI và workflow tự động hóa để tinh gọn các tác vụ lặp lại, tối ưu thời gian và chi phí vận hành.",
+            desc: "Ứng dụng AI và workflow tự động hóa để tinh gọn quy trình phát triển, tối ưu hiệu suất và tạo ra các giải pháp thông minh.",
             icon: <Cpu className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
     ] : [
         {
-            title: "Supply Chain & Logistics",
-            desc: "Focusing on operations optimization, warehouse management systems (WMS), and practical distribution workflow analysis.",
-            icon: <Box className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
+            title: "Hi Tech - All In One",
+            desc: "Founding and scaling an all-in-one digital ecosystem (HiTOEIC, Ez Tool, Hi Phim...) for learning, developer tools, and entertainment.",
+            icon: <Layers className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Web Development & UI/UX",
-            desc: "Engineering modern web applications with Next.js, TypeScript, and Tailwind CSS with a sharp focus on speed and UX.",
+            desc: "Engineering modern web applications with Next.js, TypeScript, and Tailwind CSS with a sharp focus on speed and delightful UX.",
             icon: <Code className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Automation & AI",
-            desc: "Leveraging AI and workflow automation to streamline repetitive tasks, boost productivity, and cut operational friction.",
+            desc: "Leveraging AI workflows and automation to streamline development processes, boost productivity, and build smart interactive solutions.",
             icon: <Cpu className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
     ];
@@ -78,25 +78,25 @@ export default function AboutSection() {
                     {isVi ? (
                         <>
                             <p>
-                                Chào bạn! Mình là Kim Đình Phương – một sinh viên đam mê công nghệ và lập trình. Xuất phát điểm từ chuyên ngành Quản trị Chuỗi cung ứng &amp; Logistics, mình luôn bị cuốn hút bởi cách mà công nghệ và phần mềm có thể số hóa, tinh gọn và tối ưu hóa những quy trình vận hành phức tạp, giúp các bài toán thực tế được giải quyết nhanh chóng và hiệu quả hơn.
+                                Chào bạn! Mình là Kim Đình Phương – một nhà phát triển web và là Founder của <strong>Hi Tech - All In One</strong>. Với niềm đam mê sâu sắc dành cho công nghệ và lập trình, mình luôn hướng đến việc kiến tạo những sản phẩm số tiện ích, hiện đại, mang lại trải nghiệm mượt mà và giá trị thiết thực cho cộng đồng người dùng.
                             </p>
                             <p>
-                                Niềm đam mê ấy là động lực lớn để mình chủ động tự học và đào sâu vào phát triển ứng dụng web hiện đại. Mình thường dành thời gian nghiên cứu và thực hành với Next.js, TypeScript, Tailwind CSS, kết hợp cùng AI và các công cụ tự động hóa quy trình (workflow automation). Đối với mình, mỗi dòng code viết ra không chỉ nằm trên lý thuyết, mà phải gắn liền với giá trị thực tế — từ dự án quản lý kho bãi EcoFresh WMS đến các nền tảng học tập số như Ez Study hay HiTOEIC, mình luôn chú trọng trải nghiệm người dùng trực quan, giao diện sạch sẽ và hiệu năng tối ưu.
+                                Trên hành trình phát triển hệ sinh thái số <strong>Hi Tech - All In One</strong>, mình trực tiếp thiết kế, lập trình và vận hành nhiều nền tảng đa dạng — tiêu biểu như nền tảng luyện thi thông minh <strong>HiTOEIC</strong>, chuyên trang tiện ích lập trình <strong>Ez Tool</strong> cùng nhiều công cụ số hữu ích khác. Trong từng sản phẩm, mình luôn áp dụng các công nghệ hiện đại như Next.js, TypeScript, Tailwind CSS, kết hợp AI và tự động hóa quy trình, đồng thời đặt trải nghiệm người dùng (UI/UX) trực quan, giao diện sạch sẽ và hiệu năng tối ưu lên hàng đầu.
                             </p>
                             <p>
-                                Mục tiêu dài hạn của mình là trở thành một Tech-driven Supply Chain Specialist – người có thể đóng vai trò cầu nối vững chắc giữa bài toán nghiệp vụ thực tiễn và giải pháp công nghệ hiện đại. Mình luôn giữ tinh thần cầu tiến, cởi mở học hỏi và rất mong có cơ hội được kết nối, trao đổi cũng như hợp tác cùng các anh chị và bạn bè đồng nghiệp!
+                                Mục tiêu của mình là tiếp tục hoàn thiện và mở rộng hệ sinh thái Hi Tech - All In One trở thành điểm đến đa năng, chất lượng cho học tập, công việc và giải trí. Mình luôn giữ tinh thần cầu tiến, không ngừng học hỏi công nghệ mới và rất mong có cơ hội được kết nối, trao đổi cũng như hợp tác phát triển cùng các anh chị và bạn bè đồng nghiệp!
                             </p>
                         </>
                     ) : (
                         <>
                             <p>
-                                Hello! I am Kim Dinh Phuong — a student deeply passionate about technology and programming. Majoring in Logistics &amp; Supply Chain Management, I have always been fascinated by how modern software and digital solutions can streamline intricate operational workflows, making everyday business processes leaner, faster, and more visual.
+                                Hello! I am Kim Dinh Phuong — a web developer and the Founder of <strong>Hi Tech - All In One</strong>. Driven by a deep passion for technology and software engineering, I am dedicated to building modern, versatile digital products that deliver seamless user experiences and practical value to the community.
                             </p>
                             <p>
-                                That curiosity has driven me to actively self-learn and specialize in modern full-stack web technologies. I regularly build practical applications using Next.js, TypeScript, and Tailwind CSS, while integrating AI workflows and automation tools to solve real-world problems. For me, software must always solve tangible needs — from warehouse management systems like EcoFresh WMS to e-learning platforms like Ez Study and HiTOEIC, I strive for intuitive user experiences, clean design, and dependable performance.
+                                Through the journey of growing the <strong>Hi Tech - All In One</strong> digital ecosystem, I have personally designed, developed, and deployed diverse platforms — notably the smart exam preparation portal <strong>HiTOEIC</strong>, the developer utility hub <strong>Ez Tool</strong>, and other digital tools. In every project, I leverage modern web technologies including Next.js, TypeScript, and Tailwind CSS, integrated with AI workflows and automation, while prioritizing intuitive UI/UX design, clean layouts, and peak performance.
                             </p>
                             <p>
-                                My long-term goal is to grow as a Tech-driven Supply Chain Specialist — serving as a bridge between practical business logistics and cutting-edge software solutions. I maintain a continuous learning mindset and welcome any opportunity to connect, collaborate, and exchange ideas with developers, mentors, and industry peers!
+                                My vision is to continually innovate and scale Hi Tech - All In One into a reliable, comprehensive all-in-one platform for learning, productivity, and beyond. I maintain a continuous learning mindset and welcome any opportunity to connect, collaborate, and exchange insights with fellow developers, creators, and partners!
                             </p>
                         </>
                     )}

@@ -100,7 +100,7 @@ export default function AboutPageClient() {
                                 </div>
 
                                 <p className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 mb-3">
-                                    Digital Supply Chain Specialist
+                                    Founder @ Hi Tech - All In One | Web Developer
                                 </p>
 
                                 {/* Contact Pills Row */}
@@ -150,8 +150,8 @@ export default function AboutPageClient() {
                                 <div className="p-4 sm:p-5 bg-indigo-50/70 dark:bg-indigo-950/30 rounded-2xl border border-indigo-100 dark:border-indigo-900/40 relative">
                                     <p className="text-sm sm:text-base font-semibold text-indigo-900 dark:text-indigo-200 italic leading-relaxed">
                                         &ldquo;{isVi 
-                                            ? "Tôi tin rằng công nghệ là chìa khóa thúc đẩy chuyển đổi số trong chuỗi cung ứng, tối ưu hóa quy trình và nâng cao hiệu quả vận hành." 
-                                            : "I believe technology is the key to driving digital transformation in supply chains and optimizing operations."}&rdquo;
+                                            ? "Mình tin rằng công nghệ và tư duy sản phẩm số là chìa khóa tạo ra các giải pháp đa năng, tinh gọn và mang lại giá trị thiết thực cho cộng đồng." 
+                                            : "I believe technology and product-oriented design are the keys to building versatile, streamlined digital solutions that deliver real-world impact."}&rdquo;
                                     </p>
                                 </div>
 
@@ -164,7 +164,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Tôi yêu thích việc kết hợp <strong className="font-bold text-slate-800 dark:text-slate-100">logistics với công nghệ</strong> để giải quyết các bài toán thực tiễn trong quản lý và vận hành. Bên cạnh kiến thức chuyên ngành, tôi dành nhiều thời gian tìm hiểu và phát triển các kỹ năng về thiết kế website, lập trình web, trí tuệ nhân tạo (AI), tự động hóa quy trình và xây dựng các công cụ hỗ trợ công việc.
+                                                Với vai trò là Founder của <strong className="font-bold text-slate-800 dark:text-slate-100">Hi Tech - All In One</strong>, mình dành trọn đam mê cho việc nghiên cứu và phát triển các sản phẩm web hiện đại. Mình chuyên sâu vào các công nghệ như Next.js, TypeScript, Tailwind CSS, kết hợp cùng trí tuệ nhân tạo (AI) và tự động hóa quy trình để tạo nên các ứng dụng hữu ích, hiệu năng cao.
                                             </>
                                         ) : currentAbout[1]}
                                     </p>
@@ -172,7 +172,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Vì vậy, tôi luôn chủ động thực hiện các <strong className="font-bold text-slate-800 dark:text-slate-100">dự án cá nhân</strong> nhằm ứng dụng những kiến thức đã học vào các giải pháp có tính thực tiễn, từ xây dựng website, hệ thống quản lý đến các ứng dụng hỗ trợ học tập và làm việc.
+                                                Các dự án trong hệ sinh thái số như <strong className="font-bold text-slate-800 dark:text-slate-100">HiTOEIC, Ez Tool, Hi Phim</strong> đều được mình tự tay xây dựng từ khâu lên ý tưởng, thiết kế giao diện (UI/UX) đến triển khai hạ tầng đám mây tối ưu.
                                             </>
                                         ) : currentAbout[2]}
                                     </p>
@@ -180,7 +180,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Mục tiêu của tôi là trở thành một <strong className="font-bold text-indigo-600 dark:text-indigo-400">chuyên gia Supply Chain có nền tảng công nghệ</strong>, có khả năng kết nối giữa nghiệp vụ logistics và các giải pháp số để tạo ra giá trị bền vững cho doanh nghiệp.
+                                                Mục tiêu dài hạn của mình là tiếp tục mở rộng <strong className="font-bold text-indigo-600 dark:text-indigo-400">Hi Tech - All In One</strong> trở thành một hệ sinh thái số toàn diện, không ngừng nâng cao chất lượng trải nghiệm người dùng và đổi mới sáng tạo mỗi ngày.
                                             </>
                                         ) : currentAbout[3]}
                                     </p>
@@ -200,15 +200,15 @@ export default function AboutPageClient() {
                                         </div>
                                         <div>
                                             <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                                {isVi ? "Chuyên Môn" : "Domain"}
+                                                {isVi ? "Vai Trò" : "Role"}
                                             </h3>
                                             <p className="text-xs font-bold text-slate-800 dark:text-white">
-                                                Logistics & SCM
+                                                Founder & Product Lead
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 pl-11">
-                                        {isVi ? "Quản lý Chuỗi cung ứng & Chuyển đổi số" : "Supply Chain Management & Digital Transformation"}
+                                        {isVi ? "Sáng lập & Phát triển Hi Tech - All In One" : "Founder of Hi Tech - All In One ecosystem"}
                                     </p>
                                 </div>
 
@@ -222,12 +222,12 @@ export default function AboutPageClient() {
                                                 {isVi ? "Định Hướng" : "Focus"}
                                             </h3>
                                             <p className="text-xs font-bold text-slate-800 dark:text-white">
-                                                Logistics + Công Nghệ & AI
+                                                Web Development & UI/UX
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 pl-11">
-                                        Tối ưu hóa quy trình, thiết kế web & tự động hóa công việc
+                                        Next.js, TypeScript, Tailwind CSS & AI automation
                                     </p>
                                 </div>
 
@@ -241,12 +241,12 @@ export default function AboutPageClient() {
                                                 {isVi ? "Mục Tiêu" : "Goal"}
                                             </h3>
                                             <p className="text-xs font-bold text-slate-800 dark:text-white">
-                                                Supply Chain Specialist
+                                                All-In-One Ecosystem
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 pl-11">
-                                        Kết nối nghiệp vụ logistics và các giải pháp số thực tiễn
+                                        Xây dựng các giải pháp số đa năng mang lại giá trị thực tiễn
                                     </p>
                                 </div>
                             </div>

@@ -59,7 +59,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                     transition={{ duration: 0.4, delay: 0.15 }}
                     className="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400 mt-1"
                 >
-                    {language === "vi" ? "Digital Supply Chain Specialist & Web Developer" : "Digital Supply Chain Specialist & Web Developer"}
+                    Founder @ Hi Tech - All In One | Web Developer
                 </motion.p>
             </div>
         </section>

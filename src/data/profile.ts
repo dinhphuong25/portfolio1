@@ -25,8 +25,8 @@ export interface ProfileData {
 
 export const profileData: ProfileData = {
   name: "Kim Đình Phương",
-  title: "Digital Supply Chain Specialist",
-  tagline: "Focused on optimizing supply chains, logistics processes, and smart digital solutions.",
+  title: "Founder @ Hi Tech - All In One | Web Developer",
+  tagline: "Founder của hệ sinh thái số Hi Tech - All In One, đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và giải pháp tiện ích.",
   location: {
     city: "Can Tho",
     country: "Vietnam",
@@ -44,11 +44,11 @@ export const profileData: ProfileData = {
     { platform: "GitHub", url: "https://github.com/kimdinhphuong", label: "@kimdinhphuong" },
   ],
   about: [
-    "Hello! I am Kim Dinh Phuong, specializing in Supply Chain Management and Logistics.",
-    "I am passionate about combining logistics with technology to solve practical management and operational challenges. Alongside my specialized knowledge, I spend significant time researching and developing skills in web design, web development, Artificial Intelligence (AI), process automation, and building workflow tools.",
-    "I believe technology is the key to driving digital transformation in supply chains. Therefore, I actively take on personal projects to apply what I've learned into practical solutions — ranging from websites and management systems to learning and productivity applications.",
-    "My goal is to become a Tech-driven Supply Chain Specialist, capable of bridging logistics domain expertise with digital solutions to optimize processes, enhance operational efficiency, and deliver sustainable value for businesses.",
-    "Beyond core operations, I continuously research emerging trends in Supply Chain, AI, Web Development, UI/UX, and Digital Transformation, while constantly honing my skills through hands-on projects and self-directed learning.",
+    "Hello! I am Kim Dinh Phuong — a web developer and the Founder of Hi Tech - All In One.",
+    "Driven by a strong passion for software engineering and creative digital platforms, I focus on building high-performance web applications, developer tools, and smart digital products that serve real everyday needs.",
+    "Through the Hi Tech - All In One ecosystem, I build and operate impactful projects such as HiTOEIC, Ez Tool, and Hi Phim, applying modern technologies like Next.js, TypeScript, Tailwind CSS, and AI automation.",
+    "My long-term aspiration is to scale the Hi Tech - All In One ecosystem into a comprehensive all-in-one digital hub, continuously innovating and delivering delightful user experiences.",
+    "I believe in continuous learning, pragmatic code craftsmanship, and fostering meaningful collaborations with developers and tech enthusiasts.",
   ],
   skills: [
     "Supply Chain Management",

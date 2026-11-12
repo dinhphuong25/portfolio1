@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   applicationName: "Kim Đình Phương Portfolio",
   title: {
     template: "%s | Kim Đình Phương",
-    default: "Kim Đình Phương - Logistics Profile"
+    default: "Kim Đình Phương - Founder @ Hi Tech - All In One"
   },
-  description: "Digital Supply Chain Specialist passionate about optimizing supply chains, warehouse management operations, and creating efficient logistics solutions.",
-  keywords: ["Logistics", "Supply Chain", "Warehouse Management", "Transport", "Kim Đình Phương", "Portfolio", "Digital Supply Chain"],
+  description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và công cụ tiện ích cho cộng đồng.",
+  keywords: ["Hi Tech - All In One", "Kim Đình Phương", "Web Developer", "Next.js", "TypeScript", "HiTOEIC", "Ez Tool", "Portfolio"],
   authors: [{ name: "Kim Đình Phương", url: "https://dinhphuong.dev" }],
   creator: "Kim Đình Phương",
   publisher: "Kim Đình Phương",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Kim Đình Phương - Logistics Profile",
-    description: "Digital Supply Chain Specialist passionate about optimizing supply chains and creating efficient logistics solutions.",
+    title: "Kim Đình Phương - Founder @ Hi Tech - All In One",
+    description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và công cụ tiện ích.",
     url: "https://dinhphuong.dev",
     siteName: "Kim Đình Phương Portfolio",
     images: [
