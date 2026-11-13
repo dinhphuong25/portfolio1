@@ -3,7 +3,7 @@
 import React from "react";
 import TimelineSection from "./TimelineSection";
 import { useLanguage } from "@/context/LanguageContext";
-import { Layers, Code, Cpu, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Box, Code, Cpu, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function AboutSection() {
@@ -12,9 +12,9 @@ export default function AboutSection() {
 
     const keyStrengths = isVi ? [
         {
-            title: "Hi Tech - All In One",
-            desc: "Sáng lập và phát triển hệ sinh thái sản phẩm số đa năng (HiTOEIC, Ez Tool, Hi Phim...) phục vụ học tập, tiện ích và công việc.",
-            icon: <Layers className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
+            title: "Logistics & Chuỗi cung ứng",
+            desc: "Kết hợp tư duy quản trị chuỗi cung ứng, tối ưu hóa quy trình vận hành và phân tích luồng công việc thực tế.",
+            icon: <Box className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Web Development & UI/UX",
@@ -23,14 +23,14 @@ export default function AboutSection() {
         },
         {
             title: "Tự động hóa & AI",
-            desc: "Ứng dụng AI và workflow tự động hóa để tinh gọn quy trình phát triển, tối ưu hiệu suất và tạo ra các giải pháp thông minh.",
+            desc: "Ứng dụng AI và workflow tự động hóa để tinh gọn quy trình, tối ưu hiệu suất và tạo ra các giải pháp thông minh.",
             icon: <Cpu className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
     ] : [
         {
-            title: "Hi Tech - All In One",
-            desc: "Founding and scaling an all-in-one digital ecosystem (HiTOEIC, Ez Tool, Hi Phim...) for learning, developer tools, and entertainment.",
-            icon: <Layers className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
+            title: "Logistics & Supply Chain",
+            desc: "Combining supply chain management thinking, operational process optimization, and practical workflow analysis.",
+            icon: <Box className="w-5 h-5 text-slate-800 dark:text-slate-200" />,
         },
         {
             title: "Web Development & UI/UX",
@@ -78,25 +78,37 @@ export default function AboutSection() {
                     {isVi ? (
                         <>
                             <p>
-                                Chào bạn! Mình là Kim Đình Phương – một nhà phát triển web và là Founder của <strong>Hi Tech - All In One</strong>. Với niềm đam mê sâu sắc dành cho công nghệ và lập trình, mình luôn hướng đến việc kiến tạo những sản phẩm số tiện ích, hiện đại, mang lại trải nghiệm mượt mà và giá trị thiết thực cho cộng đồng người dùng.
+                                Chào mọi người! Mình là Kim Đình Phương, hiện đang là sinh viên ngành Logistics và Quản lý chuỗi cung ứng. Bên cạnh lĩnh vực học tập, mình có niềm đam mê đặc biệt với công nghệ thông tin, lập trình và thế giới đầy thú vị của những dòng code.
                             </p>
                             <p>
-                                Trên hành trình phát triển hệ sinh thái số <strong>Hi Tech - All In One</strong>, mình trực tiếp thiết kế, lập trình và vận hành nhiều nền tảng đa dạng — tiêu biểu như nền tảng luyện thi thông minh <strong>HiTOEIC</strong>, chuyên trang tiện ích lập trình <strong>Ez Tool</strong> cùng nhiều công cụ số hữu ích khác. Trong từng sản phẩm, mình luôn áp dụng các công nghệ hiện đại như Next.js, TypeScript, Tailwind CSS, kết hợp AI và tự động hóa quy trình, đồng thời đặt trải nghiệm người dùng (UI/UX) trực quan, giao diện sạch sẽ và hiệu năng tối ưu lên hàng đầu.
+                                Mình luôn bị cuốn hút bởi cách một ý tưởng có thể được biến thành một sản phẩm thực tế thông qua tư duy logic và khả năng lập trình. Đối với mình, mỗi dòng code không đơn thuần là những câu lệnh, mà còn là một cách để giải quyết vấn đề, tạo ra giá trị và hiện thực hóa những ý tưởng sáng tạo. Mình yêu thích việc tìm hiểu công nghệ mới, khám phá cách các hệ thống vận hành và tự tay xây dựng những website, ứng dụng hay công cụ số mang tính ứng dụng cao.
                             </p>
                             <p>
-                                Mục tiêu của mình là tiếp tục hoàn thiện và mở rộng hệ sinh thái Hi Tech - All In One trở thành điểm đến đa năng, chất lượng cho học tập, công việc và giải trí. Mình luôn giữ tinh thần cầu tiến, không ngừng học hỏi công nghệ mới và rất mong có cơ hội được kết nối, trao đổi cũng như hợp tác phát triển cùng các anh chị và bạn bè đồng nghiệp!
+                                Dù theo học ngành Logistics, mình luôn nhìn thấy sự kết nối mạnh mẽ giữa lĩnh vực này với công nghệ. Từ quản lý chuỗi cung ứng, tối ưu hóa quy trình, phân tích dữ liệu đến tự động hóa hoạt động vận hành, công nghệ thông tin đang mở ra nhiều cơ hội để nâng cao hiệu quả và đổi mới phương thức làm việc. Đây cũng chính là động lực để mình không ngừng học hỏi và phát triển kiến thức ở cả hai lĩnh vực.
+                            </p>
+                            <p>
+                                Mình mong muốn kết hợp tư duy của một sinh viên Logistics với niềm đam mê lập trình để tạo ra những giải pháp công nghệ thiết thực, góp phần đơn giản hóa công việc, tối ưu quy trình và mang lại trải nghiệm tốt hơn cho người dùng.
+                            </p>
+                            <p>
+                                Không ngừng học hỏi – Không ngại thử thách – Luôn sáng tạo và biến ý tưởng thành sản phẩm thực tế. Đó là tinh thần mà mình muốn theo đuổi trên hành trình phát triển bản thân. Mình hy vọng sẽ có cơ hội kết nối, học hỏi và hợp tác với những người có cùng đam mê công nghệ, lập trình và sáng tạo.
                             </p>
                         </>
                     ) : (
                         <>
                             <p>
-                                Hello! I am Kim Dinh Phuong — a web developer and the Founder of <strong>Hi Tech - All In One</strong>. Driven by a deep passion for technology and software engineering, I am dedicated to building modern, versatile digital products that deliver seamless user experiences and practical value to the community.
+                                Hello everyone! I am Kim Dinh Phuong, currently a student majoring in Logistics and Supply Chain Management. Beyond my academic field, I have a deep passion for information technology, software development, and the fascinating world of coding.
                             </p>
                             <p>
-                                Through the journey of growing the <strong>Hi Tech - All In One</strong> digital ecosystem, I have personally designed, developed, and deployed diverse platforms — notably the smart exam preparation portal <strong>HiTOEIC</strong>, the developer utility hub <strong>Ez Tool</strong>, and other digital tools. In every project, I leverage modern web technologies including Next.js, TypeScript, and Tailwind CSS, integrated with AI workflows and automation, while prioritizing intuitive UI/UX design, clean layouts, and peak performance.
+                                I have always been intrigued by how an idea can turn into a real-world product through logical thinking and programming skills. To me, code is not just syntax and commands, but a way to solve problems, generate value, and bring creative ideas to life. I enjoy exploring new technologies, understanding how systems operate, and crafting websites, web applications, and practical digital tools.
                             </p>
                             <p>
-                                My vision is to continually innovate and scale Hi Tech - All In One into a reliable, comprehensive all-in-one platform for learning, productivity, and beyond. I maintain a continuous learning mindset and welcome any opportunity to connect, collaborate, and exchange insights with fellow developers, creators, and partners!
+                                Despite studying Logistics, I consistently see a powerful connection between this discipline and technology. From supply chain management, workflow optimization, and data analysis to operations automation, information technology unlocks tremendous opportunities to elevate efficiency and innovate operational workflows. This fuels my drive to continuously learn and advance across both domains.
+                            </p>
+                            <p>
+                                I aspire to combine the analytical mindset of a Logistics student with my passion for coding to create pragmatic technology solutions that simplify everyday work, optimize processes, and deliver better user experiences.
+                            </p>
+                            <p>
+                                Continuous learning – Embracing challenges – Relentlessly creating and turning ideas into tangible products. That is the mindset I pursue on my journey of personal and professional growth. I look forward to connecting, learning, and collaborating with fellow enthusiasts who share a love for technology, coding, and innovation.
                             </p>
                         </>
                     )}

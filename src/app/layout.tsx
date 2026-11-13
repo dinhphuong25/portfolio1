@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   applicationName: "Kim Đình Phương Portfolio",
   title: {
     template: "%s | Kim Đình Phương",
-    default: "Kim Đình Phương - Founder @ Hi Tech - All In One"
+    default: "Kim Đình Phương - Portfolio"
   },
-  description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và công cụ tiện ích cho cộng đồng.",
-  keywords: ["Hi Tech - All In One", "Kim Đình Phương", "Web Developer", "Next.js", "TypeScript", "HiTOEIC", "Ez Tool", "Portfolio"],
+  description: "Kim Đình Phương - Sinh viên ngành Logistics và Quản lý chuỗi cung ứng với niềm đam mê công nghệ thông tin và lập trình web.",
+  keywords: ["Kim Đình Phương", "Logistics", "Supply Chain", "Web Development", "Next.js", "TypeScript", "Portfolio"],
   authors: [{ name: "Kim Đình Phương", url: "https://dinhphuong.dev" }],
   creator: "Kim Đình Phương",
   publisher: "Kim Đình Phương",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Kim Đình Phương - Founder @ Hi Tech - All In One",
-    description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và công cụ tiện ích.",
+    title: "Kim Đình Phương - Portfolio",
+    description: "Hồ sơ cá nhân và dự án của Kim Đình Phương - Sinh viên Logistics & Quản lý chuỗi cung ứng đam mê công nghệ và lập trình.",
     url: "https://dinhphuong.dev",
     siteName: "Kim Đình Phương Portfolio",
     images: [
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kim Đình Phương - Founder @ Hi Tech - All In One",
-    description: "Founder @ Hi Tech - All In One. Web Developer đam mê xây dựng các sản phẩm web hiện đại và công cụ số tiện ích.",
+    title: "Kim Đình Phương - Portfolio",
+    description: "Hồ sơ cá nhân và dự án của Kim Đình Phương - Sinh viên Logistics & Quản lý chuỗi cung ứng đam mê công nghệ và lập trình.",
     creator: "@kimdinhphuong",
       images: ["/twitter-image"],
   },

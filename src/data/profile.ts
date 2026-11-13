@@ -25,8 +25,8 @@ export interface ProfileData {
 
 export const profileData: ProfileData = {
   name: "Kim Đình Phương",
-  title: "Founder @ Hi Tech - All In One | Web Developer",
-  tagline: "Founder của hệ sinh thái số Hi Tech - All In One, đam mê xây dựng các sản phẩm web hiện đại, UI/UX tối ưu và giải pháp tiện ích.",
+  title: "Logistics & Web Development",
+  tagline: "Sinh viên ngành Logistics & Quản lý chuỗi cung ứng với niềm đam mê công nghệ thông tin và lập trình web.",
   location: {
     city: "Can Tho",
     country: "Vietnam",
@@ -44,11 +44,11 @@ export const profileData: ProfileData = {
     { platform: "GitHub", url: "https://github.com/kimdinhphuong", label: "@kimdinhphuong" },
   ],
   about: [
-    "Hello! I am Kim Dinh Phuong — a web developer and the Founder of Hi Tech - All In One.",
-    "Driven by a strong passion for software engineering and creative digital platforms, I focus on building high-performance web applications, developer tools, and smart digital products that serve real everyday needs.",
-    "Through the Hi Tech - All In One ecosystem, I build and operate impactful projects such as HiTOEIC, Ez Tool, and Hi Phim, applying modern technologies like Next.js, TypeScript, Tailwind CSS, and AI automation.",
-    "My long-term aspiration is to scale the Hi Tech - All In One ecosystem into a comprehensive all-in-one digital hub, continuously innovating and delivering delightful user experiences.",
-    "I believe in continuous learning, pragmatic code craftsmanship, and fostering meaningful collaborations with developers and tech enthusiasts.",
+    "Hello everyone! I am Kim Dinh Phuong, currently a student majoring in Logistics and Supply Chain Management. Beyond my academic field, I have a deep passion for information technology, software development, and the fascinating world of coding.",
+    "I have always been intrigued by how an idea can turn into a real-world product through logical thinking and programming skills. To me, code is not just syntax and commands, but a way to solve problems, generate value, and bring creative ideas to life.",
+    "Despite studying Logistics, I consistently see a powerful connection between this discipline and technology — from supply chain management and workflow optimization to operations automation and data analysis.",
+    "I aspire to combine the analytical mindset of a Logistics student with my passion for coding to create pragmatic technology solutions that simplify everyday work, optimize processes, and deliver better user experiences.",
+    "Continuous learning – Embracing challenges – Relentlessly creating and turning ideas into tangible products.",
   ],
   skills: [
     "Supply Chain Management",

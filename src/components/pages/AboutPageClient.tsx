@@ -100,7 +100,7 @@ export default function AboutPageClient() {
                                 </div>
 
                                 <p className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 mb-3">
-                                    Founder @ Hi Tech - All In One | Web Developer
+                                    Logistics &amp; Web Development
                                 </p>
 
                                 {/* Contact Pills Row */}
@@ -150,8 +150,8 @@ export default function AboutPageClient() {
                                 <div className="p-4 sm:p-5 bg-indigo-50/70 dark:bg-indigo-950/30 rounded-2xl border border-indigo-100 dark:border-indigo-900/40 relative">
                                     <p className="text-sm sm:text-base font-semibold text-indigo-900 dark:text-indigo-200 italic leading-relaxed">
                                         &ldquo;{isVi 
-                                            ? "Mình tin rằng công nghệ và tư duy sản phẩm số là chìa khóa tạo ra các giải pháp đa năng, tinh gọn và mang lại giá trị thiết thực cho cộng đồng." 
-                                            : "I believe technology and product-oriented design are the keys to building versatile, streamlined digital solutions that deliver real-world impact."}&rdquo;
+                                            ? "Không ngừng học hỏi – Không ngại thử thách – Luôn sáng tạo và biến ý tưởng thành sản phẩm thực tế." 
+                                            : "Continuous learning – Embracing challenges – Relentlessly creating and turning ideas into tangible products."}&rdquo;
                                     </p>
                                 </div>
 
@@ -164,7 +164,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Với vai trò là Founder của <strong className="font-bold text-slate-800 dark:text-slate-100">Hi Tech - All In One</strong>, mình dành trọn đam mê cho việc nghiên cứu và phát triển các sản phẩm web hiện đại. Mình chuyên sâu vào các công nghệ như Next.js, TypeScript, Tailwind CSS, kết hợp cùng trí tuệ nhân tạo (AI) và tự động hóa quy trình để tạo nên các ứng dụng hữu ích, hiệu năng cao.
+                                                Mình luôn bị cuốn hút bởi cách một ý tưởng có thể được biến thành một <strong className="font-bold text-slate-800 dark:text-slate-100">sản phẩm thực tế</strong> thông qua tư duy logic và khả năng lập trình. Đối với mình, mỗi dòng code không đơn thuần là những câu lệnh, mà còn là một cách để giải quyết vấn đề, tạo ra giá trị và hiện thực hóa những ý tưởng sáng tạo.
                                             </>
                                         ) : currentAbout[1]}
                                     </p>
@@ -172,7 +172,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Các dự án trong hệ sinh thái số như <strong className="font-bold text-slate-800 dark:text-slate-100">HiTOEIC, Ez Tool, Hi Phim</strong> đều được mình tự tay xây dựng từ khâu lên ý tưởng, thiết kế giao diện (UI/UX) đến triển khai hạ tầng đám mây tối ưu.
+                                                Dù theo học ngành Logistics, mình luôn nhìn thấy <strong className="font-bold text-slate-800 dark:text-slate-100">sự kết nối mạnh mẽ giữa logistics với công nghệ</strong>. Từ quản lý chuỗi cung ứng, tối ưu hóa quy trình, phân tích dữ liệu đến tự động hóa hoạt động vận hành, công nghệ thông tin đang mở ra nhiều cơ hội để nâng cao hiệu quả và đổi mới phương thức làm việc.
                                             </>
                                         ) : currentAbout[2]}
                                     </p>
@@ -180,7 +180,7 @@ export default function AboutPageClient() {
                                     <p>
                                         {isVi ? (
                                             <>
-                                                Mục tiêu dài hạn của mình là tiếp tục mở rộng <strong className="font-bold text-indigo-600 dark:text-indigo-400">Hi Tech - All In One</strong> trở thành một hệ sinh thái số toàn diện, không ngừng nâng cao chất lượng trải nghiệm người dùng và đổi mới sáng tạo mỗi ngày.
+                                                Mình mong muốn kết hợp <strong className="font-bold text-indigo-600 dark:text-indigo-400">tư duy của một sinh viên Logistics với niềm đam mê lập trình</strong> để tạo ra những giải pháp công nghệ thiết thực, góp phần đơn giản hóa công việc, tối ưu quy trình và mang lại trải nghiệm tốt hơn cho người dùng.
                                             </>
                                         ) : currentAbout[3]}
                                     </p>
@@ -200,15 +200,15 @@ export default function AboutPageClient() {
                                         </div>
                                         <div>
                                             <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                                {isVi ? "Vai Trò" : "Role"}
+                                                {isVi ? "Chuyên Ngành" : "Major"}
                                             </h3>
                                             <p className="text-xs font-bold text-slate-800 dark:text-white">
-                                                Founder & Product Lead
+                                                Logistics &amp; Supply Chain
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-xs text-slate-500 dark:text-slate-400 pl-11">
-                                        {isVi ? "Sáng lập & Phát triển Hi Tech - All In One" : "Founder of Hi Tech - All In One ecosystem"}
+                                        {isVi ? "Quản lý Chuỗi cung ứng & Tối ưu vận hành" : "Supply Chain Management & Process Optimization"}
                                     </p>
                                 </div>
 
