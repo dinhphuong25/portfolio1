@@ -5,11 +5,10 @@ import Link from "next/link";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import Reveal from "@/components/Reveal";
 import { getPostBySlug, BlogPost } from "@/data/posts";
-import { profileData } from "@/data/profile";
 import { useLanguage } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
 import MDXContent from "@/components/MDXContent";
-import { BadgeCheck, Cpu, ExternalLink, Clock, Calendar } from "lucide-react";
+import { Cpu, ExternalLink, Clock, Calendar } from "lucide-react";
 
 export default function BlogPostClient({
   slug,
@@ -179,33 +178,11 @@ export default function BlogPostClient({
                 {/* Minimalist Author Box */}
                 <div className="mt-14 max-w-3xl mx-auto">
                   <div className="bg-slate-50/80 dark:bg-slate-800/50 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 sm:p-8 shadow-xs">
-                    <div className="flex items-center gap-4 mb-5">
-                      {/* Avatar & Info */}
-                      <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm shrink-0">
-                        <Image
-                          src={encodeURI(profileData.avatar)}
-                          alt={profileData.name}
-                          fill
-                          unoptimized
-                          className="object-cover"
-                        />
-                      </div>
-
-                      <div>
-                        <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5">
-                          {isVi ? profileData.name : "Kim Dinh Phuong"}
-                          <BadgeCheck className="w-4 h-4 text-white fill-[#0866FF] shrink-0" />
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-200/80 dark:border-slate-700/80">
-                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed text-left font-normal">
-                        {isVi
-                          ? "Một blog nho nhỏ lưu giữ những trải nghiệm, suy tư và hành trình học hỏi, ứng dụng công nghệ vào thực tiễn cuộc sống."
-                          : "A small personal blog documenting experiences, reflections, and journeys of learning and applying technology to life."}
-                      </p>
-                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed text-left font-normal">
+                      {isVi
+                        ? "Một blog nho nhỏ lưu giữ những trải nghiệm, suy tư và hành trình học hỏi, ứng dụng công nghệ vào thực tiễn cuộc sống."
+                        : "A small personal blog documenting experiences, reflections, and journeys of learning and applying technology to life."}
+                    </p>
                   </div>
                 </div>
               </div>

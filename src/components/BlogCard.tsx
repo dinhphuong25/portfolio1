@@ -64,7 +64,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                         <span>{post.readTime}</span>
                     </div>
 
-                    <h3 className={`font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors tracking-tight leading-snug ${featured ? 'text-xl lg:text-2xl' : 'text-base'}`}>
+                    <h3 className={`font-extrabold text-justify text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors tracking-tight leading-snug ${featured ? 'text-xl lg:text-2xl' : 'text-base'}`}>
                         {post.title}
                     </h3>
 

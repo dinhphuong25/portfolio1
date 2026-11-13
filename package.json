@@ -13,6 +13,7 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "npx @opennextjs/cloudflare build && npx wrangler deploy",
+    "deploy:cloudflare": "npx wrangler deploy --no-bundle",
     "deploy:vercel": "vercel",
     "preview": "next dev"
   },

@@ -6,8 +6,6 @@ import Reveal from "@/components/Reveal";
 import {
   BLOG_POSTS_EN,
   BLOG_POSTS_VI,
-  BLOG_CATEGORIES_EN,
-  BLOG_CATEGORIES_VI,
   BlogPost,
 } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
@@ -17,10 +15,7 @@ export default function BlogPageClient() {
   const isVi = language === "vi";
 
   const staticPosts = isVi ? BLOG_POSTS_VI : BLOG_POSTS_EN;
-  const BLOG_CATEGORIES = isVi ? BLOG_CATEGORIES_VI : BLOG_CATEGORIES_EN;
 
-  const ALL_CATEGORY = isVi ? "Tất cả" : "All";
-  const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORY);
   const [searchQuery, setSearchQuery] = useState("");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -54,25 +49,6 @@ export default function BlogPageClient() {
     };
   }, [language, isVi]);
 
-  // Synchronize selectedCategory across languages
-  useEffect(() => {
-    if (isVi) {
-      const enIndex = BLOG_CATEGORIES_EN.findIndex(
-        (c) => c.toLowerCase() === selectedCategory.toLowerCase()
-      );
-      if (enIndex !== -1) {
-        setSelectedCategory(BLOG_CATEGORIES_VI[enIndex]);
-      }
-    } else {
-      const viIndex = BLOG_CATEGORIES_VI.findIndex(
-        (c) => c.toLowerCase() === selectedCategory.toLowerCase()
-      );
-      if (viIndex !== -1) {
-        setSelectedCategory(BLOG_CATEGORIES_EN[viIndex]);
-      }
-    }
-  }, [isVi]);
-
   // Auto dismiss toast after 3.5s
   useEffect(() => {
     if (toastMessage) {
@@ -89,20 +65,7 @@ export default function BlogPageClient() {
     );
   };
 
-  // Filter by category
-  let filteredPosts =
-    selectedCategory === ALL_CATEGORY
-      ? posts
-      : posts.filter((post) => {
-          const postCat = post.category.toLowerCase();
-          const selCat = selectedCategory.toLowerCase();
-          if (postCat === selCat) return true;
-          const viIdx = BLOG_CATEGORIES_VI.findIndex((c) => c.toLowerCase() === selCat);
-          if (viIdx !== -1 && BLOG_CATEGORIES_EN[viIdx].toLowerCase() === postCat) return true;
-          const enIdx = BLOG_CATEGORIES_EN.findIndex((c) => c.toLowerCase() === selCat);
-          if (enIdx !== -1 && BLOG_CATEGORIES_VI[enIdx].toLowerCase() === postCat) return true;
-          return false;
-        });
+  let filteredPosts = posts;
 
   // Filter by search query
   if (searchQuery.trim()) {
@@ -115,29 +78,16 @@ export default function BlogPageClient() {
     );
   }
 
+  const pinnedPost = filteredPosts.find((post) => post.slug === "stepping-out-of-the-safe-nest");
+  const regularPosts = filteredPosts.filter((post) => post.id !== pinnedPost?.id);
+
   return (
     <>
       <div className="w-full max-w-7xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
         <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-slate-400 dark:border-slate-600 p-5 sm:p-6 lg:p-8 relative shadow-sm">
           {/* Category Tabs & Search Bar */}
           <Reveal direction="up" delay={150}>
-            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex flex-wrap gap-2">
-                {BLOG_CATEGORIES.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all duration-200 cursor-pointer ${
-                      selectedCategory === category
-                        ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm"
-                        : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-
+            <div className="mb-6 flex justify-end">
               {/* Search Bar */}
               <div className="relative w-full sm:w-64 shrink-0">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -179,14 +129,31 @@ export default function BlogPageClient() {
             </div>
           </Reveal>
 
+          {/* Pinned article */}
+          {pinnedPost && (
+            <Reveal direction="up" delay={220}>
+              <div className="-mx-2 mb-8 sm:-mx-4 lg:-mx-8">
+                <div className="relative">
+                  <div className="absolute -top-3 left-5 z-20 inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-amber-700 shadow-sm dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
+                    <svg aria-hidden="true" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14.7 3.3a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4l-2 2-1.3-1.3-3.5 3.5 2.1 2.1-1.4 1.4-2.1-2.1-4.1 4.1-1.4-1.4 4.1-4.1-2.1-2.1 1.4-1.4 2.1 2.1 3.5-3.5-1.3-1.3 2-2Z" />
+                    </svg>
+                    {isVi ? "Bài viết ghim" : "Pinned article"}
+                  </div>
+                  <BlogCard post={pinnedPost} featured onUnpublishedClick={handleUnpublishedClick} />
+                </div>
+              </div>
+            </Reveal>
+          )}
+
           {/* Blog Grid */}
           <div className="space-y-8">
-            {filteredPosts.length > 0 ? (
+            {regularPosts.length > 0 ? (
               <div
-                key={`${selectedCategory}-${searchQuery}`}
+                key={searchQuery}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
               >
-                {filteredPosts.map((post, index) => (
+                {regularPosts.map((post, index) => (
                   <Reveal direction="up" delay={220 + index * 60} key={post.id}>
                     <BlogCard post={post} onUnpublishedClick={handleUnpublishedClick} />
                   </Reveal>

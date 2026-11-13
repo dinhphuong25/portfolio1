@@ -40,9 +40,9 @@ export const projectsEn: Project[] = [
         id: "hi-phim",
         title: "Hi Phim",
         summary: "A premium movie streaming platform providing a seamless and immersive viewing experience. Built with performance and modern UI/UX design in mind.",
-        role: "Lead Developer",
+        role: "Founder & Lead Developer",
         year: 2026,
-        thumbnail: "/projects/rapphim.jpg",
+        thumbnail: "/projects/hi-phim-cover.svg",
         thumbnailGradient: "bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900",
         tags: ["Web Development", "Streaming Platform", "UI/UX Design"],
         featured: true,
@@ -57,9 +57,9 @@ export const projectsEn: Project[] = [
         id: "hitoeic",
         title: "HiTOEIC",
         summary: "A comprehensive, multi-language TOEIC exam preparation platform featuring 7,700+ practice questions, 100+ full-length mock tests, AI scoring, and spaced repetition vocabulary.",
-        role: "Lead Developer",
+        role: "Founder & Lead Developer",
         year: 2026,
-        thumbnail: "/projects/hitoeic.jpg",
+        thumbnail: "/projects/hitoeic-cover.svg",
         thumbnailGradient: "bg-gradient-to-br from-blue-900 via-indigo-950 to-slate-900",
         tags: ["Web Development", "Next.js", "Fullstack", "UI/UX Design"],
         featured: true,
@@ -69,6 +69,40 @@ export const projectsEn: Project[] = [
         outcome: "Delivered an all-in-one learning platform serving thousands of students with full-length test simulation, performance analytics, and community leaderboards.",
         images: [],
         caseStudyUrl: "https://hitoeic.io.vn/",
+    },
+    {
+        id: "hi-download",
+        title: "Hi Download",
+        summary: "A fast multi-platform video downloader for TikTok, Douyin, YouTube, Facebook, Instagram, CapCut, X, and Threads, with watermark-free downloads.",
+        role: "Founder & Lead Developer",
+        year: 2026,
+        thumbnail: "/projects/hi-download-cover.svg",
+        thumbnailGradient: "bg-gradient-to-br from-orange-500 via-rose-500 to-slate-950",
+        tags: ["Web Development", "Next.js", "UI/UX Design"],
+        featured: true,
+        problem: "Saving videos from different platforms often means dealing with separate tools, inconsistent quality, and unwanted watermarks.",
+        process: "Designed a single, focused workflow that detects supported platforms, keeps the interface lightweight, and guides users from copied link to download.",
+        solution: "Built Hi Download as a cross-platform media utility with support for HD video, MP3 extraction, Reels, Shorts, CapCut templates, and GIFs.",
+        outcome: "Created a quick and approachable tool that reduces a multi-step media workflow to one link, one analysis, and one download action.",
+        images: [],
+        caseStudyUrl: "https://hidownload.one/",
+    },
+    {
+        id: "hi-pdf",
+        title: "Hi PDF",
+        summary: "An all-in-one PDF workspace for converting, editing, merging, splitting, signing, translating, and organizing documents without installing software.",
+        role: "Founder & Lead Developer",
+        year: 2026,
+        thumbnail: "/projects/hi-pdf-cover.svg",
+        thumbnailGradient: "bg-gradient-to-br from-blue-600 via-violet-600 to-slate-950",
+        tags: ["Web Development", "Next.js", "UI/UX Design"],
+        featured: true,
+        problem: "Everyday document tasks are scattered across desktop applications and online tools that can be slow, complicated, or uncomfortable for private files.",
+        process: "Focused the product around drag-and-drop workflows, clear tool discovery, browser-side processing where possible, and privacy-first handling of sensitive documents.",
+        solution: "Developed Hi PDF with 23 integrated utilities, including conversion, page organization, signatures, OCR, translation, AI summaries, and document Q&A.",
+        outcome: "Delivered a browser-based document workspace that keeps common PDF tasks close at hand while minimizing installation and upload friction.",
+        images: [],
+        caseStudyUrl: "https://hipdf.one/",
     },
     {
         id: "ez-tool",
@@ -162,7 +196,7 @@ export const projectsVi: Project[] = [
     {
         ...projectsEn[0], // Hi Phim
         summary: "Nền tảng xem phim trực tuyến cao cấp, mang lại trải nghiệm mượt mà và sống động. Thiết kế giao diện hiện đại tối ưu hiệu suất với tên miền chính thức hiphim.one.",
-        role: "Trưởng nhóm phát triển",
+        role: "Founder & Lead Developer",
         problem: "Người xem thường xuyên gặp khó khăn với các trang web phim chứa quá nhiều quảng cáo rác, chậm trễ và khó theo dõi trên nhiều thiết bị.",
         process: "Thiết kế xoay quanh trải nghiệm người dùng với theme điện ảnh tối màu, tối ưu hóa tải phương tiện và kiến trúc đáp ứng nhanh.",
         solution: "Phát triển web phim giao diện trực quan, ưu tiên khám phá nội dung dễ dàng, trình phát video liền mạch và mượt mà.",
@@ -171,14 +205,38 @@ export const projectsVi: Project[] = [
     {
         ...projectsEn[1], // HiTOEIC
         summary: "Nền tảng luyện thi TOEIC toàn diện đa ngôn ngữ với 7.700+ câu hỏi, 100+ đề thi thử chuẩn định dạng, quy đổi điểm 990 tự động và kho từ vựng học ngắt quãng.",
-        role: "Trưởng nhóm phát triển",
+        role: "Founder & Lead Developer",
         problem: "Học viên TOEIC thường gặp khó khăn với tài liệu rải rác, thiếu các bộ đề thi thử bấm giờ giống thi thật và chi phí ôn thi đắt đỏ.",
         process: "Xây dựng hệ thống web tốc độ cao tích hợp 7.700+ câu hỏi, 4 chế độ luyện nghe, hỗ trợ 5 ngôn ngữ và thuật toán chấm điểm chuẩn quốc tế.",
         solution: "Phát triển nền tảng HiTOEIC miễn phí cung cấp 100+ đề thi thử, 59 chủ đề ngữ pháp, bài nghe/đọc giải thích chi tiết và hệ thống thẻ từ vựng thông minh.",
         outcome: "Mang lại nền tảng học tập toàn diện phục vụ hàng ngàn học viên thi thử trực tuyến, theo dõi tiến độ và đua bảng xếp hạng XP."
     },
     {
-        ...projectsEn[2], // Ez Tool
+        ...projectsEn[2],
+        title: "Hi Download",
+        summary: "Công cụ tải video đa nền tảng từ TikTok, Douyin, YouTube, Facebook, Instagram, CapCut, X và Threads, hỗ trợ tải nhanh không dính logo.",
+        role: "Founder & Lead Developer",
+        problem: "Việc lưu video từ nhiều nền tảng thường phải qua nhiều công cụ khác nhau, chất lượng không đồng nhất và dễ bị dính watermark.",
+        process: "Thiết kế một quy trình tập trung, tự nhận diện nền tảng và hướng dẫn người dùng đi từ liên kết đã sao chép đến tệp tải về một cách rõ ràng.",
+        solution: "Xây dựng Hi Download với khả năng tải video HD, tách MP3, hỗ trợ Reels, Shorts, mẫu CapCut, GIF và nhiều nguồn video phổ biến.",
+        outcome: "Biến quy trình tải video nhiều bước thành một thao tác gọn: dán liên kết, phân tích nội dung và tải xuống.",
+        id: "hi-download",
+        caseStudyUrl: "https://hidownload.one/",
+    },
+    {
+        ...projectsEn[3],
+        title: "Hi PDF",
+        summary: "Không gian xử lý PDF tất cả trong một để chuyển đổi, chỉnh sửa, ghép, tách, ký số, dịch và sắp xếp tài liệu ngay trên trình duyệt.",
+        role: "Founder & Lead Developer",
+        problem: "Các tác vụ tài liệu hằng ngày thường bị chia nhỏ qua nhiều phần mềm, phức tạp và chưa tạo được cảm giác an tâm khi xử lý tệp riêng tư.",
+        process: "Tập trung vào thao tác kéo thả, khả năng tìm công cụ nhanh, xử lý cục bộ khi phù hợp và cách tiếp cận ưu tiên quyền riêng tư.",
+        solution: "Phát triển Hi PDF với 23 tiện ích gồm chuyển đổi, sắp xếp trang, ký số, OCR, dịch, tóm tắt AI và hỏi đáp tài liệu.",
+        outcome: "Tạo ra một workspace tài liệu trực tuyến giúp các tác vụ PDF phổ biến trở nên gần gũi, nhanh và ít phụ thuộc vào phần mềm cài đặt.",
+        id: "hi-pdf",
+        caseStudyUrl: "https://hipdf.one/",
+    },
+    {
+        ...projectsEn[4], // Ez Tool
         summary: "Nền tảng tổng hợp các thủ thuật phát triển web, mẹo lập trình và tài nguyên tiện ích, cung cấp các đoạn mã mẫu chất lượng cao giúp tối ưu hóa tiến độ công việc.",
         role: "Trưởng nhóm phát triển",
         problem: "Lập trình viên thường tốn nhiều thời gian tìm kiếm các đoạn mã mẫu tin cậy, công cụ tiện ích nhỏ và thủ thuật phát triển từ nhiều nguồn rải rác.",
@@ -187,7 +245,7 @@ export const projectsVi: Project[] = [
         outcome: "Tạo nên danh mục công cụ tiện ích được nhiều lập trình viên và sinh viên truy cập thường xuyên để tăng tốc độ phát triển dự án hàng ngày."
     },
     {
-        ...projectsEn[3], // Ez Study
+        ...projectsEn[5], // Ez Study
         summary: "Nền tảng học tập tương tác chuyên sâu về Logistics, quản trị chuỗi cung ứng và nhiều lĩnh vực kiến thức học thuật đa dạng khác, cung cấp các khóa học và tài nguyên bài bản.",
         role: "Trưởng nhóm phát triển",
         problem: "Sinh viên thiếu các nguồn tài liệu học tập tập trung, dễ hiểu về các khái niệm chuỗi cung ứng, công thức tính toán tồn kho và chiến lược logistics.",
@@ -196,7 +254,7 @@ export const projectsVi: Project[] = [
         outcome: "Mang lại kho học liệu học thuật tập trung giúp sinh viên ngành Logistics tại Đại học Kỹ thuật - Công nghệ Cần Thơ nghiên cứu hiệu quả hơn."
     },
     {
-        ...projectsEn[4], // Nghiện Phim Relax
+        ...projectsEn[6], // Nghiện Phim Relax
         summary: "Nền tảng xem phim trực tuyến cao cấp tập trung vào khám phá nội dung, giao diện responsive mượt mà và trình phát hiệu năng cao, mang lại trải nghiệm giải trí thư giãn.",
         role: "Trưởng nhóm phát triển",
         problem: "Tình trạng giật lag khi tải video và quảng cáo phiền nhiễu thường phá hỏng trải nghiệm xem phim của người dùng khi muốn thư giãn.",
@@ -205,7 +263,7 @@ export const projectsVi: Project[] = [
         outcome: "Ra mắt thành công Nghiện Phim Relax, cung cấp giao diện tinh giản giúp người dùng thư giãn và xem phim trơn tru không gặp trở ngại."
     },
     {
-        ...projectsEn[5],
+        ...projectsEn[7],
         summary: "Hệ thống Quản lý Kho bãi quy trình lạnh với giao diện bảo mật, theo dõi nhiệt độ container trực tuyến thời gian thực, và cảnh báo an toàn tức thì.",
         role: "Lập trình viên Fullstack",
         problem: "Các nhóm quản lý kho lạnh phải theo dõi thủ công kho bãi thông qua nhiều công cụ ngắt kết nối, gây chậm trễ xử lý các vấn đề khẩn cấp.",

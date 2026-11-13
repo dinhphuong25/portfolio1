@@ -5,7 +5,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projectsEn, projectsVi } from "@/data/projects";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
+
+const featuredProjectIds = ["hi-phim", "hi-download", "hi-pdf", "hitoeic"];
+
+const projectBrand: Record<string, { eyebrow: string; mark: string; panel: string; markStyle: string }> = {
+    "hi-phim": {
+        eyebrow: "CINEMA / STREAMING",
+        mark: "HI",
+        panel: "bg-[radial-gradient(circle_at_75%_15%,rgba(244,63,94,.35),transparent_35%),linear-gradient(135deg,#0f172a,#312e81_52%,#09090b)]",
+        markStyle: "bg-rose-500/15 text-rose-200 border-rose-300/20",
+    },
+    "hi-download": {
+        eyebrow: "MEDIA UTILITY",
+        mark: "↓",
+        panel: "bg-[radial-gradient(circle_at_80%_10%,rgba(251,146,60,.55),transparent_35%),linear-gradient(135deg,#431407,#be123c_58%,#111827)]",
+        markStyle: "bg-orange-400/20 text-orange-100 border-orange-200/30",
+    },
+    "hi-pdf": {
+        eyebrow: "DOCUMENT WORKSPACE",
+        mark: "PDF",
+        panel: "bg-[radial-gradient(circle_at_80%_10%,rgba(129,140,248,.55),transparent_35%),linear-gradient(135deg,#172554,#6d28d9_55%,#111827)]",
+        markStyle: "bg-indigo-300/20 text-indigo-100 border-indigo-100/30",
+    },
+    hitoeic: {
+        eyebrow: "LEARNING / TOEIC",
+        mark: "Hi",
+        panel: "bg-[radial-gradient(circle_at_80%_10%,rgba(34,211,238,.5),transparent_35%),linear-gradient(135deg,#082f49,#1d4ed8_55%,#111827)]",
+        markStyle: "bg-cyan-300/20 text-cyan-100 border-cyan-100/30",
+    },
+};
 
 function getDisplayDomain(url?: string) {
     if (!url) return "project.live";
@@ -19,36 +47,10 @@ function getDisplayDomain(url?: string) {
 export default function ProjectsClient() {
     const { language } = useLanguage();
     const isVi = language === "vi";
-    const projectsList = isVi ? projectsVi : projectsEn;
-
-    // Dự án hiện đang tạm ẩn
-    const isProjectsHidden = true;
-
-    if (isProjectsHidden) {
-        return (
-            <div className="w-full py-12 flex flex-col items-center justify-center text-center my-auto">
-                <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center mb-4 text-slate-500 shadow-2xs">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                </div>
-                <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">
-                    {isVi ? "Dự án hiện đang tạm ẩn" : "Projects are currently hidden"}
-                </h1>
-                <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
-                    {isVi 
-                        ? "Mục dự án hiện đang được cập nhật và tối ưu lại nội dung. Vui lòng quay lại sau nhé!" 
-                        : "The projects section is currently being updated and optimized. Please check back later!"}
-                </p>
-                <Link
-                    href="/"
-                    className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-xs font-bold transition-all shadow-sm cursor-pointer"
-                >
-                    {isVi ? "Về trang chủ" : "Back to Home"}
-                </Link>
-            </div>
-        );
-    }
+    const projectCatalog = isVi ? projectsVi : projectsEn;
+    const projectsList = featuredProjectIds
+        .map((id) => projectCatalog.find((project) => project.id === id))
+        .filter((project): project is (typeof projectCatalog)[number] => Boolean(project));
 
     return (
         <div className="w-full">
@@ -94,16 +96,35 @@ export default function ProjectsClient() {
                                             <div className="w-4" />
                                         </div>
 
-                                        <div className="flex-1 relative overflow-hidden bg-slate-950">
-                                            <Image
-                                                src={project.thumbnail}
-                                                alt={project.title}
-                                                fill
-                                                unoptimized
-                                                priority={index === 0}
-                                                sizes="(max-width: 640px) 100vw, 400px"
-                                                className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
-                                            />
+                                        <div className={`flex-1 relative overflow-hidden ${project.thumbnail ? "bg-slate-950" : projectBrand[project.id]?.panel ?? "bg-slate-950"}`}>
+                                            {project.thumbnail ? (
+                                                <Image
+                                                    src={project.thumbnail}
+                                                    alt={project.title}
+                                                    fill
+                                                    unoptimized
+                                                    priority={index === 0}
+                                                    sizes="(max-width: 640px) 100vw, 400px"
+                                                    className="object-cover object-top group-hover/mockup:scale-105 transition-transform duration-500 ease-out"
+                                                />
+                                            ) : (
+                                                <div className="absolute inset-0 flex flex-col justify-between p-5 text-white">
+                                                    <div className="flex items-start justify-between">
+                                                        <span className="text-[9px] font-bold tracking-[0.2em] text-white/65">
+                                                            {projectBrand[project.id]?.eyebrow}
+                                                        </span>
+                                                        <span className={`inline-flex h-11 min-w-11 items-center justify-center rounded-2xl border px-2 text-sm font-black ${projectBrand[project.id]?.markStyle}`}>
+                                                            {projectBrand[project.id]?.mark}
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-2xl font-black tracking-tight">{project.title}</p>
+                                                        <p className="mt-1 text-[10px] font-medium text-white/65">
+                                                            {isVi ? "Sản phẩm được sáng lập và phát triển trực tiếp" : "Founded and developed directly"}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </a>

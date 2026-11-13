@@ -1,0 +1,32 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="page" x1="600" y1="110" x2="600" y2="720" gradientUnits="userSpaceOnUse"><stop stop-color="#F3F9FD"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient>
+<linearGradient id="button" x1="180" y1="430" x2="1020" y2="485" gradientUnits="userSpaceOnUse"><stop stop-color="#17243B"/><stop offset="1" stop-color="#0B1428"/></linearGradient>
+<filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="17" flood-color="#7A8EA5" flood-opacity=".16"/></filter>
+</defs>
+<rect width="1200" height="750" rx="34" fill="#DCE6EF"/>
+<rect x="34" y="34" width="1132" height="682" rx="25" fill="url(#page)" stroke="#D3DEE8" stroke-width="2"/>
+<!-- header -->
+<rect x="34" y="34" width="1132" height="75" rx="25" fill="white"/>
+<path d="M34 108H1166" stroke="#E2E8F0"/>
+<rect x="69" y="50" width="38" height="38" rx="11" fill="#07142A" stroke="#CBD5E1"/>
+<path d="M82 61V75M77 72L82 77L87 72M74 81H90" stroke="#19A7EF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="77" fill="#101A31" font-family="Arial,sans-serif" font-size="21" font-weight="900">Hi Download</text>
+<text x="352" y="75" fill="#536782" font-family="Arial,sans-serif" font-size="13" font-weight="700">Trang Chủ</text><text x="438" y="75" fill="#536782" font-family="Arial,sans-serif" font-size="13">Hướng Dẫn</text><text x="534" y="75" fill="#536782" font-family="Arial,sans-serif" font-size="13">Câu Hỏi Thường Gặp</text>
+<rect x="972" y="50" width="143" height="40" rx="12" fill="white" stroke="#CBD5E1" stroke-width="1.5"/><rect x="987" y="62" width="17" height="13" rx="2" fill="#DC2626"/><path d="M989 62L995 68L1001 62" stroke="white" stroke-width="1.5"/><text x="1016" y="76" fill="#1E293B" font-family="Arial,sans-serif" font-size="12" font-weight="700">Tiếng Việt</text><path d="M1092 66L1097 71L1092 76" stroke="#64748B" stroke-width="2"/>
+<!-- intro -->
+<text x="600" y="176" text-anchor="middle" fill="#101A31" font-family="Arial,sans-serif" font-size="40" font-weight="900">Tải Video Đa Nền Tảng <tspan fill="#129BE0">Không Dính Logo</tspan></text>
+<text x="600" y="211" text-anchor="middle" fill="#6A819C" font-family="Arial,sans-serif" font-size="15">Tự động xóa watermark từ <tspan font-weight="800" fill="#536A86">TikTok, Douyin, YouTube Shorts, Facebook Reels, Instagram,</tspan></text><text x="600" y="233" text-anchor="middle" fill="#6A819C" font-family="Arial,sans-serif" font-size="15"><tspan font-weight="800" fill="#536A86">CapCut</tspan> và nhiều hơn nữa.</text>
+<!-- downloader panel -->
+<rect x="76" y="264" width="1048" height="157" rx="21" fill="white" stroke="#D1DCE7" filter="url(#shadow)"/>
+<rect x="99" y="289" width="1002" height="57" rx="15" fill="#FBFCFE" stroke="#516681" stroke-width="2"/>
+<circle cx="130" cy="317" r="10" stroke="#637994" stroke-width="2"/><path d="M126 317H135M133 314L136 317L133 320" stroke="#637994" stroke-width="1.5" stroke-linecap="round"/>
+<text x="155" y="323" fill="#7186A1" font-family="Arial,sans-serif" font-size="15">Dán liên kết TikTok, Douyin, YouTube, Facebook, Instagram, CapCut...</text>
+<rect x="1005" y="297" width="84" height="41" rx="11" fill="white" stroke="#9AAABD" stroke-width="1.5"/><rect x="1020" y="310" width="11" height="12" rx="2" fill="#142039"/><path d="M1022 308H1029M1024 306H1027" stroke="#142039" stroke-width="1.5"/><text x="1041" y="323" fill="#19243A" font-family="Arial,sans-serif" font-size="12" font-weight="800">Dán link</text>
+<rect x="99" y="360" width="1002" height="45" rx="13" fill="url(#button)" filter="url(#shadow)"/><path d="M599 374V391M593 386L599 392L605 386" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="618" y="389" fill="white" font-family="Arial,sans-serif" font-size="14" font-weight="800">Lấy Video Ngay</text>
+<!-- support section -->
+<path d="M76 474H1124" stroke="#C9D7E5" stroke-width="1.5"/>
+<rect x="76" y="528" width="4" height="20" rx="2" fill="#159FE6"/><text x="89" y="544" fill="#152039" font-family="Arial,sans-serif" font-size="14" font-weight="900">NỀN TẢNG HỖ TRỢ</text><text x="89" y="569" fill="#7890A9" font-family="Arial,sans-serif" font-size="13">Dễ dàng tải video chất lượng cao từ các mạng xã hội phổ biến với chuẩn video gốc.</text>
+<g filter="url(#shadow)"><rect x="89" y="594" width="170" height="61" rx="14" fill="white" stroke="#DFE7EF"/><rect x="278" y="594" width="170" height="61" rx="14" fill="white" stroke="#DFE7EF"/><rect x="467" y="594" width="170" height="61" rx="14" fill="white" stroke="#DFE7EF"/><rect x="656" y="594" width="170" height="61" rx="14" fill="white" stroke="#DFE7EF"/><rect x="845" y="594" width="170" height="61" rx="14" fill="white" stroke="#DFE7EF"/></g>
+<circle cx="119" cy="624" r="14" fill="#111827"/><text x="143" y="630" fill="#31445D" font-family="Arial,sans-serif" font-size="13" font-weight="800">TikTok</text><circle cx="308" cy="624" r="14" fill="#FF0033"/><path d="M304 618V628L312 623L304 618Z" fill="white"/><text x="332" y="630" fill="#31445D" font-family="Arial,sans-serif" font-size="13" font-weight="800">YouTube</text><circle cx="497" cy="624" r="14" fill="#D946EF"/><text x="521" y="630" fill="#31445D" font-family="Arial,sans-serif" font-size="13" font-weight="800">Instagram</text><circle cx="686" cy="624" r="14" fill="#1877F2"/><text x="710" y="630" fill="#31445D" font-family="Arial,sans-serif" font-size="13" font-weight="800">Facebook</text><circle cx="875" cy="624" r="14" fill="#111827"/><text x="899" y="630" fill="#31445D" font-family="Arial,sans-serif" font-size="13" font-weight="800">CapCut</text>
+</svg>

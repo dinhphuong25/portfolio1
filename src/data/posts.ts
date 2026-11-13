@@ -1,3 +1,5 @@
+import { REWRITTEN_POST_CONTENT_VI } from "./rewrittenPostContent";
+
 export interface BlogPost {
     id: string;
     title: string;
@@ -447,6 +449,13 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         `
     }
 ];
+
+for (const post of BLOG_POSTS_VI) {
+    const rewrittenContent = REWRITTEN_POST_CONTENT_VI[post.slug];
+    if (rewrittenContent) {
+        post.content = rewrittenContent;
+    }
+}
 
 export const BLOG_POSTS = BLOG_POSTS_EN; // Default
 
