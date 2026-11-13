@@ -79,7 +79,9 @@ export default function BlogPageClient() {
   }
 
   const pinnedPost = filteredPosts.find((post) => post.slug === "stepping-out-of-the-safe-nest");
-  const regularPosts = filteredPosts.filter((post) => post.id !== pinnedPost?.id);
+  const orderedPosts = pinnedPost
+    ? [pinnedPost, ...filteredPosts.filter((post) => post.id !== pinnedPost.id)]
+    : filteredPosts;
 
   return (
     <>
@@ -129,33 +131,20 @@ export default function BlogPageClient() {
             </div>
           </Reveal>
 
-          {/* Pinned article */}
-          {pinnedPost && (
-            <Reveal direction="up" delay={220}>
-              <div className="-mx-2 mb-8 sm:-mx-4 lg:-mx-8">
-                <div className="relative">
-                  <div className="absolute -top-3 left-5 z-20 inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-amber-700 shadow-sm dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
-                    <svg aria-hidden="true" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14.7 3.3a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4l-2 2-1.3-1.3-3.5 3.5 2.1 2.1-1.4 1.4-2.1-2.1-4.1 4.1-1.4-1.4 4.1-4.1-2.1-2.1 1.4-1.4 2.1 2.1 3.5-3.5-1.3-1.3 2-2Z" />
-                    </svg>
-                    {isVi ? "Bài viết ghim" : "Pinned article"}
-                  </div>
-                  <BlogCard post={pinnedPost} featured onUnpublishedClick={handleUnpublishedClick} />
-                </div>
-              </div>
-            </Reveal>
-          )}
-
           {/* Blog Grid */}
           <div className="space-y-8">
-            {regularPosts.length > 0 ? (
+            {orderedPosts.length > 0 ? (
               <div
                 key={searchQuery}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
               >
-                {regularPosts.map((post, index) => (
+                {orderedPosts.map((post, index) => (
                   <Reveal direction="up" delay={220 + index * 60} key={post.id}>
-                    <BlogCard post={post} onUnpublishedClick={handleUnpublishedClick} />
+                    <BlogCard
+                      post={post}
+                      pinned={post.id === pinnedPost?.id}
+                      onUnpublishedClick={handleUnpublishedClick}
+                    />
                   </Reveal>
                 ))}
               </div>

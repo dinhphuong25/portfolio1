@@ -8,10 +8,11 @@ import { useLanguage } from "@/context/LanguageContext";
 interface BlogCardProps {
     post: BlogPost;
     featured?: boolean;
+    pinned?: boolean;
     onUnpublishedClick?: () => void;
 }
 
-export default function BlogCard({ post, featured = false, onUnpublishedClick }: BlogCardProps) {
+export default function BlogCard({ post, featured = false, pinned = false, onUnpublishedClick }: BlogCardProps) {
     const { language } = useLanguage();
     const isVi = language === "vi";
     const isPublished = post.isPublished !== false;
@@ -32,6 +33,16 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                 <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10 focus:outline-none rounded-3xl" aria-label={`Read ${post.title}`} />
             ) : (
                 <div onClick={handleClick} className="absolute inset-0 z-10 cursor-pointer rounded-3xl" aria-label={`Unpublished post ${post.title}`} />
+            )}
+            {pinned && (
+                <span
+                    title={isVi ? "Bài viết được ghim" : "Pinned article"}
+                    className="absolute right-4 top-4 z-20 inline-flex h-7 w-7 items-center justify-center rounded-full border border-amber-200 bg-amber-50 text-amber-600 shadow-sm dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300"
+                >
+                    <svg aria-hidden="true" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14.7 3.3a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4l-2 2-1.3-1.3-3.5 3.5 2.1 2.1-1.4 1.4-2.1-2.1-4.1 4.1-1.4-1.4 4.1-4.1-2.1-2.1 1.4-1.4 2.1 2.1 3.5-3.5-1.3-1.3 2-2Z" />
+                    </svg>
+                </span>
             )}
 
             {/* Thumbnail */}
