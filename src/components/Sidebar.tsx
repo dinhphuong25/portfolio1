@@ -7,8 +7,6 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Toast, useToast } from "@/components/Toast";
 import { motion } from "framer-motion";
-import { profileData } from "@/data/profile";
-import { BadgeCheck } from "lucide-react";
 
 const HomeIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,28 +120,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* Mobile header with avatar & close button */}
-        <div className="lg:hidden p-4 sm:p-5 flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/50">
-          <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0">
-              <Image
-                src={encodeURI(profileData.avatar)}
-                alt={profileData.name}
-                fill
-                unoptimized
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0">
-              <h2 className="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-1 truncate">
-                {profileData.name}
-                <BadgeCheck className="w-3.5 h-3.5 text-white fill-[#0866FF] shrink-0" />
-              </h2>
-              <p className="text-[11px] font-medium text-slate-400 dark:text-slate-500 truncate">
-                dinhphuong.dev
-              </p>
-            </div>
-          </div>
+        {/* Mobile header */}
+        <div className="lg:hidden p-4 sm:p-5 flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80">
+          <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Menu
+          </span>
           <button
             onClick={onClose}
             className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center transition-colors cursor-pointer shrink-0"
@@ -155,9 +136,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         {/* Navigation links */}
         <nav className="p-3 sm:p-4 flex-1 overflow-y-auto">
-          <div className="lg:hidden px-3 pb-2.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-            {language === "vi" ? "Menu điều hướng" : "Navigation"}
-          </div>
           <ul className="space-y-1.5">
             {navItems.map((item) => {
               const active = isActive(item.href);
