@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
   compress: true,
@@ -24,6 +27,46 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "cafefcdn.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.techcrunch.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "techcrunch.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.vox-cdn.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.vox-cdn.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.arstechnica.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.vnecdn.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "vlr.vn",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "vla.com.vn",
         pathname: "/**",
       },
     ],

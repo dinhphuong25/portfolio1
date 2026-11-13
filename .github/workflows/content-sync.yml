@@ -1,0 +1,18 @@
+name: Content Hub RSS Sync
+
+on:
+  schedule:
+    # Runs every 2 hours (at minute 15 of the hour)
+    - cron: '15 */2 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  sync-feeds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Content Sync Cron
+        run: |
+          SECRET="${{ secrets.CRON_SECRET }}"
+          TARGET_URL="https://dinhphuong.dev/api/cron/sync-rss?secret=${SECRET}"
+          echo "Triggering RSS sync at $TARGET_URL..."
+          curl -s -f -X GET "$TARGET_URL" || echo "Warning: Sync request failed or returned non-200"

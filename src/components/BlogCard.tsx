@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Link } from '@/components/ViewTransitions';
 import { BlogPost } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
+import { Sparkles, BookOpen } from "lucide-react";
 
 interface BlogCardProps {
     post: BlogPost;
@@ -15,6 +16,7 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
     const { language } = useLanguage();
     const isVi = language === "vi";
     const isPublished = post.isPublished !== false;
+    const isCurated = post.sourceType === "curated" || Boolean(post.sourceName);
 
     const handleClick = (e: React.MouseEvent) => {
         if (!isPublished) {
@@ -59,6 +61,21 @@ export default function BlogCard({ post, featured = false, onUnpublishedClick }:
                     <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-800 dark:text-slate-200 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
                         {post.category}
                     </span>
+                </div>
+
+                {/* Source Badge (Top Right) */}
+                <div className="absolute top-3 right-3 z-20 pointer-events-none">
+                    {isCurated ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[10px] font-bold bg-blue-600/90 text-white backdrop-blur-md shadow-xs">
+                            <Sparkles className="w-2.5 h-2.5" />
+                            <span>{post.sourceName || "Tổng hợp"}</span>
+                        </span>
+                    ) : (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[10px] font-bold bg-slate-900/80 dark:bg-slate-800/80 text-white backdrop-blur-md shadow-xs">
+                            <BookOpen className="w-2.5 h-2.5" />
+                            <span>Cá nhân</span>
+                        </span>
+                    )}
                 </div>
             </div>
 

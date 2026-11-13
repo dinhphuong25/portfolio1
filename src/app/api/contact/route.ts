@@ -12,7 +12,13 @@ export async function POST(request: Request) {
       );
     }
 
-    const { name, email, subject, message, language } = await request.json();
+    const { name, email, subject, message, language } = (await request.json()) as {
+      name?: string;
+      email?: string;
+      subject?: string;
+      message?: string;
+      language?: string;
+    };
 
     if (!name || !email || !message) {
       return NextResponse.json(

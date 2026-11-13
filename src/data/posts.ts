@@ -10,6 +10,12 @@ export interface BlogPost {
     content?: string;
     tags: string[];
     isPublished?: boolean;
+    sourceType?: 'original' | 'curated';
+    sourceName?: string;
+    sourceUrl?: string;
+    author?: string;
+    views?: number;
+    publishedAt?: string;
 }
 
 export const BLOG_POSTS_VI: BlogPost[] = [
@@ -138,8 +144,8 @@ export const BLOG_POSTS_EN: BlogPost[] = [
 
 export const BLOG_POSTS = BLOG_POSTS_EN; // Default
 
-export const BLOG_CATEGORIES_EN = ["All", "Experience"];
-export const BLOG_CATEGORIES_VI = ["Tất cả", "Trải nghiệm"];
+export const BLOG_CATEGORIES_EN = ["All", "Technology", "Programming", "AI", "Logistics", "Learning", "Experience"];
+export const BLOG_CATEGORIES_VI = ["Tất cả", "Công nghệ", "Lập trình", "AI", "Logistics", "Học tập", "Trải nghiệm"];
 
 export const BLOG_CATEGORIES = BLOG_CATEGORIES_EN; // Default
 
