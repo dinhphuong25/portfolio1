@@ -19,7 +19,7 @@ export default function ProjectsPage() {
     return (
         <>
             <div className="w-full max-w-7xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6 flex-1 flex flex-col">
-                <div className="w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-400 dark:border-slate-600 p-6 sm:p-12 min-h-[75vh] sm:min-h-[78vh] flex flex-col justify-center flex-1 shadow-xs">
+                <div className="w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-slate-400 dark:border-slate-600 p-6 sm:p-12 min-h-[75vh] sm:min-h-[78vh] flex flex-col justify-center flex-1 shadow-sm">
                     <ProjectsClient />
                 </div>
             </div>

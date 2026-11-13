@@ -16,7 +16,7 @@ export default function HomeClient() {
   return (
     <>
       <div className="w-full max-w-7xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
-        <article className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden relative border border-slate-400 dark:border-slate-600">
+        <article className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden relative border-2 border-slate-400 dark:border-slate-600 shadow-sm">
           <Reveal direction="down">
             <ProfileHeader
               onMessage={() => {

@@ -110,7 +110,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl
           
           /* Desktop (lg+): Floating centered pill on the left */
-          lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none lg:border lg:border-slate-300 lg:dark:border-slate-700
+          lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-48 lg:h-fit lg:rounded-2xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none lg:border-2 lg:border-slate-400 lg:dark:border-slate-600
           
           /* Mobile (<lg): Full-height slide-over drawer from the left */
           top-0 bottom-0 left-0 h-full w-[290px] sm:w-[320px] max-w-[85vw] border-r border-slate-200/90 dark:border-slate-800 shadow-2xl overflow-y-auto
