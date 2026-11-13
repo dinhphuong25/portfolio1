@@ -10,25 +10,25 @@ import { motion } from "framer-motion";
 
 const HomeIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.85} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
   </svg>
 );
 
 const ProjectsIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.85} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
   </svg>
 );
 
 const BlogIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.85} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
   </svg>
 );
 
 const ContactIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.85} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
   </svg>
 );
 
@@ -107,7 +107,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           fixed z-50 transition-all duration-300 ease-out flex flex-col
           bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl
           
-          /* Desktop (lg+): Floating centered pill on the left - wider & bolder */
+          /* Desktop (lg+): Floating centered pill on the left */
           lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:w-60 lg:h-fit lg:rounded-3xl lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto lg:shadow-none lg:border-2 lg:border-slate-400 lg:dark:border-slate-600
           
           /* Mobile (<lg): Full-height slide-over drawer from the left */
@@ -147,8 +147,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     className={`
                       relative flex items-center gap-3.5 lg:gap-3 px-3.5 lg:px-3.5 py-3 lg:py-2.5 rounded-2xl transition-all duration-200 z-10
                       ${active
-                        ? "text-slate-950 dark:text-white font-extrabold"
-                        : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white font-bold hover:bg-slate-100/80 dark:hover:bg-slate-800/60"
+                        ? "text-slate-900 dark:text-white font-extrabold"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-800/40"
                       }
                     `}
                   >
@@ -160,7 +160,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       />
                     )}
 
-                    <span className={`shrink-0 transition-colors duration-200 ${active ? "text-slate-950 dark:text-white" : "text-slate-500 dark:text-slate-400"}`}>
+                    <span className={`shrink-0 transition-colors duration-200 ${active ? "text-slate-900 dark:text-white" : "text-slate-400 dark:text-slate-500"}`}>
                       {item.icon}
                     </span>
                     <span className="text-[15px] sm:text-[16px] lg:text-[15px] font-bold tracking-tight">{item.label}</span>
@@ -178,8 +178,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               onClick={() => setLanguage("vi")}
               className={`w-full relative flex items-center gap-3 py-2.5 lg:py-2 px-3.5 lg:px-3 rounded-xl transition-colors duration-200 z-10 cursor-pointer ${
                 language === "vi"
-                  ? "text-slate-950 dark:text-white font-extrabold"
-                  : "text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white font-bold"
+                  ? "text-slate-900 dark:text-white font-extrabold"
+                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-semibold"
               }`}
             >
               {language === "vi" && (
@@ -197,15 +197,15 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 unoptimized
                 className="w-5.5 h-4 lg:w-5 lg:h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
-              <span className="relative z-10 text-[14px] sm:text-sm lg:text-[13.5px] font-extrabold tracking-tight">Tiếng Việt</span>
+              <span className="relative z-10 text-[14px] sm:text-sm lg:text-[13.5px] font-bold">Tiếng Việt</span>
             </button>
 
             <button
               onClick={() => setLanguage("en")}
               className={`w-full relative flex items-center gap-3 py-2.5 lg:py-2 px-3.5 lg:px-3 rounded-xl transition-colors duration-200 z-10 cursor-pointer ${
                 language === "en"
-                  ? "text-slate-950 dark:text-white font-extrabold"
-                  : "text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white font-bold"
+                  ? "text-slate-900 dark:text-white font-extrabold"
+                  : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-semibold"
               }`}
             >
               {language === "en" && (
@@ -223,7 +223,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 unoptimized
                 className="w-5.5 h-4 lg:w-5 lg:h-3.5 object-cover rounded-[2px] shrink-0 relative z-10 shadow-2xs" 
               />
-              <span className="relative z-10 text-[14px] sm:text-sm lg:text-[13.5px] font-extrabold tracking-tight">English</span>
+              <span className="relative z-10 text-[14px] sm:text-sm lg:text-[13.5px] font-bold">English</span>
             </button>
           </div>
 
@@ -240,9 +240,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             aria-label="Download CV"
           >
             <svg className="w-5 h-5 lg:w-4.5 lg:h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span className="text-[14px] sm:text-sm lg:text-[13.5px] font-extrabold tracking-wide">{language === "vi" ? "Tải CV" : "Download CV"}</span>
+            <span className="text-[14px] sm:text-sm lg:text-[13.5px] font-bold">{language === "vi" ? "Tải CV" : "Download CV"}</span>
           </button>
         </div>
       </aside>
