@@ -11,7 +11,6 @@ import {
   BlogPost,
 } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
-import { PenLine, Cpu } from "lucide-react";
 
 export default function BlogPageClient() {
   const { language } = useLanguage();
@@ -22,7 +21,6 @@ export default function BlogPageClient() {
 
   const ALL_CATEGORY = isVi ? "Tất cả" : "All";
   const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORY);
-  const [contentTypeFilter, setContentTypeFilter] = useState<"all" | "original" | "curated">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -106,17 +104,6 @@ export default function BlogPageClient() {
           return false;
         });
 
-  // Filter by content type (Original vs Curated)
-  if (contentTypeFilter === "original") {
-    filteredPosts = filteredPosts.filter(
-      (p) => p.sourceType === "original" || !p.sourceType || !p.sourceName
-    );
-  } else if (contentTypeFilter === "curated") {
-    filteredPosts = filteredPosts.filter(
-      (p) => p.sourceType === "curated" || Boolean(p.sourceName)
-    );
-  }
-
   // Filter by search query
   if (searchQuery.trim()) {
     const q = searchQuery.toLowerCase().trim();
@@ -132,52 +119,6 @@ export default function BlogPageClient() {
     <>
       <div className="w-full max-w-7xl mx-auto p-3 sm:p-4 lg:p-6 lg:pr-6">
         <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-slate-400 dark:border-slate-600 p-5 sm:p-6 lg:p-8 relative shadow-sm">
-          {/* Header & Source Filter Buttons */}
-          <Reveal direction="up" delay={100}>
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setContentTypeFilter("all")}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
-                    contentTypeFilter === "all"
-                      ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
-                  }`}
-                >
-                  {isVi ? "Tất cả bài viết" : "All Articles"}
-                </button>
-                <button
-                  onClick={() => setContentTypeFilter("original")}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    contentTypeFilter === "original"
-                      ? "bg-emerald-600 text-white"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
-                  }`}
-                >
-                  <PenLine className="w-3.5 h-3.5" />
-                  <span>{isVi ? "Bài viết cá nhân" : "Personal"}</span>
-                </button>
-                <button
-                  onClick={() => setContentTypeFilter("curated")}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    contentTypeFilter === "curated"
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
-                  }`}
-                >
-                  <Cpu className="w-3.5 h-3.5" />
-                  <span>{isVi ? "Tổng hợp & AI Biên soạn" : "AI Curated"}</span>
-                </button>
-              </div>
-
-              <div className="text-[11px] text-slate-400 font-medium">
-                {isVi
-                  ? "Cập nhật tự động từ TechCrunch, The Verge, VnExpress & Logistics"
-                  : "Auto-updated from TechCrunch, The Verge, VnExpress & Logistics"}
-              </div>
-            </div>
-          </Reveal>
-
           {/* Category Tabs & Search Bar */}
           <Reveal direction="up" delay={150}>
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -242,7 +183,7 @@ export default function BlogPageClient() {
           <div className="space-y-8">
             {filteredPosts.length > 0 ? (
               <div
-                key={`${selectedCategory}-${searchQuery}-${contentTypeFilter}`}
+                key={`${selectedCategory}-${searchQuery}`}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
               >
                 {filteredPosts.map((post, index) => (
