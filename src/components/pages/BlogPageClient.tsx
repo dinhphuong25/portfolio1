@@ -11,7 +11,7 @@ import {
   BlogPost,
 } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
-import { Sparkles, BookOpen } from "lucide-react";
+import { PenLine, Cpu } from "lucide-react";
 
 export default function BlogPageClient() {
   const { language } = useLanguage();
@@ -122,7 +122,7 @@ export default function BlogPageClient() {
                       : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
                   }`}
                 >
-                  <BookOpen className="w-3.5 h-3.5" />
+                  <PenLine className="w-3.5 h-3.5" />
                   <span>{isVi ? "Bài viết cá nhân" : "Personal"}</span>
                 </button>
                 <button
@@ -133,7 +133,7 @@ export default function BlogPageClient() {
                       : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
                   }`}
                 >
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <Cpu className="w-3.5 h-3.5" />
                   <span>{isVi ? "Tổng hợp & AI Biên soạn" : "AI Curated"}</span>
                 </button>
               </div>

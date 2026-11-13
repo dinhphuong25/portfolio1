@@ -9,7 +9,7 @@ import { profileData } from "@/data/profile";
 import { useLanguage } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
 import MDXContent from "@/components/MDXContent";
-import { BadgeCheck, Sparkles, ExternalLink, BookOpen, Clock, Calendar } from "lucide-react";
+import { BadgeCheck, Cpu, ExternalLink, PenLine, Clock, Calendar } from "lucide-react";
 
 export default function BlogPostClient({
   slug,
@@ -98,12 +98,12 @@ export default function BlogPostClient({
                     {/* Source Badge */}
                     {isCurated ? (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-900/50">
-                        <Sparkles className="w-3 h-3" />
+                        <Cpu className="w-3 h-3" />
                         <span>Tổng hợp & Biên soạn ({post.sourceName})</span>
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-900/50">
-                        <BookOpen className="w-3 h-3" />
+                        <PenLine className="w-3 h-3" />
                         <span>Bài viết cá nhân</span>
                       </span>
                     )}
@@ -135,7 +135,7 @@ export default function BlogPostClient({
                   {isCurated && (
                     <div className="p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-blue-900 dark:text-blue-200">
                       <div className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
+                        <Cpu className="w-4 h-4 text-blue-600 shrink-0" />
                         <span>
                           Nội dung được tổng hợp, phân tích và biên soạn bằng AI từ nguồn chính thức:{" "}
                           <strong>{post.sourceName || "Đầu báo uy tín"}</strong>
