@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import Reveal from "@/components/Reveal";
-import { getPostBySlug, BlogPost } from "@/data/posts";
+import { getPostBySlug, getCategoryDisplay, BlogPost } from "@/data/posts";
 import { profileData } from "@/data/profile";
 import { useLanguage } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
@@ -22,7 +22,12 @@ export default function BlogPostClient({
   const isVi = language === "vi";
 
   const staticPost = getPostBySlug(slug, isVi ? "vi" : "en");
-  const post = initialPost || staticPost;
+  const post = staticPost
+    ? {
+        ...staticPost,
+        views: initialPost?.views ?? staticPost.views,
+      }
+    : initialPost;
 
   if (!post) {
     notFound();
@@ -92,19 +97,19 @@ export default function BlogPostClient({
                   {/* Meta Info */}
                   <div className="flex flex-wrap items-center gap-2.5 text-xs">
                     <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-extrabold uppercase tracking-wider border border-slate-200/60 dark:border-slate-700">
-                      {post.category}
+                      {getCategoryDisplay(post.category, language)}
                     </span>
 
                     {/* Source Badge */}
                     {isCurated ? (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-900/50">
                         <Cpu className="w-3 h-3" />
-                        <span>Tổng hợp & Biên soạn ({post.sourceName})</span>
+                        <span>{isVi ? `Tổng hợp & Biên soạn (${post.sourceName || "Nguồn ngoài"})` : `Curated & Compiled (${post.sourceName || "External source"})`}</span>
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-900/50">
                         <PenLine className="w-3 h-3" />
-                        <span>Bài viết cá nhân</span>
+                        <span>{isVi ? "Bài viết cá nhân" : "Personal Article"}</span>
                       </span>
                     )}
 
@@ -137,8 +142,10 @@ export default function BlogPostClient({
                       <div className="flex items-center gap-2">
                         <Cpu className="w-4 h-4 text-blue-600 shrink-0" />
                         <span>
-                          Nội dung được tổng hợp, phân tích và biên soạn bằng AI từ nguồn chính thức:{" "}
-                          <strong>{post.sourceName || "Đầu báo uy tín"}</strong>
+                          {isVi
+                            ? "Nội dung được tổng hợp, phân tích và biên soạn bằng AI từ nguồn chính thức: "
+                            : "Content curated, analyzed, and compiled by AI from official source: "}
+                          <strong>{post.sourceName || (isVi ? "Đầu báo uy tín" : "Trusted publisher")}</strong>
                         </span>
                       </div>
                       {post.sourceUrl && (
@@ -148,7 +155,7 @@ export default function BlogPostClient({
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 font-semibold text-blue-600 dark:text-blue-400 hover:underline shrink-0"
                         >
-                          <span>Xem bài gốc</span>
+                          <span>{isVi ? "Xem bài gốc" : "View original"}</span>
                           <ExternalLink className="w-3 h-3" />
                         </a>
                       )}
@@ -204,7 +211,7 @@ export default function BlogPostClient({
 
                       <div>
                         <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5">
-                          {profileData.name}
+                          {isVi ? profileData.name : "Kim Dinh Phuong"}
                           <BadgeCheck className="w-4 h-4 text-white fill-[#0866FF] shrink-0" />
                         </h3>
                       </div>

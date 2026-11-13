@@ -426,6 +426,13 @@ body {
   text-justify: inter-word;
 }
 
+.about-narrative,
+.about-narrative p,
+.about-card-desc {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
 
 .prose-lg {
   font-size: 1.125rem;

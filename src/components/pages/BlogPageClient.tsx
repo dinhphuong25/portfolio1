@@ -29,14 +29,19 @@ export default function BlogPageClient() {
   // Live posts fetched from API (with fallback to static posts)
   const [posts, setPosts] = useState<BlogPost[]>(staticPosts);
 
-  // Fetch updated posts from API
+  // Fetch updated posts from API when language changes or on mount
   useEffect(() => {
+    let isCancelled = false;
+
+    // Immediately update posts with static list matching current language to prevent stale language flash
+    setPosts(isVi ? BLOG_POSTS_VI : BLOG_POSTS_EN);
+
     async function loadLivePosts() {
       try {
-        const res = await fetch("/api/blog/posts");
+        const res = await fetch(`/api/blog/posts?lang=${language}`);
         if (res.ok) {
           const data = (await res.json()) as any;
-          if (data.posts && data.posts.length > 0) {
+          if (!isCancelled && data.posts && data.posts.length > 0) {
             setPosts(data.posts);
           }
         }
@@ -45,12 +50,30 @@ export default function BlogPageClient() {
       }
     }
     loadLivePosts();
-  }, []);
 
+    return () => {
+      isCancelled = true;
+    };
+  }, [language, isVi]);
+
+  // Synchronize selectedCategory across languages
   useEffect(() => {
-    if (selectedCategory === "All" && isVi) setSelectedCategory("Tất cả");
-    if (selectedCategory === "Tất cả" && !isVi) setSelectedCategory("All");
-  }, [isVi, selectedCategory]);
+    if (isVi) {
+      const enIndex = BLOG_CATEGORIES_EN.findIndex(
+        (c) => c.toLowerCase() === selectedCategory.toLowerCase()
+      );
+      if (enIndex !== -1) {
+        setSelectedCategory(BLOG_CATEGORIES_VI[enIndex]);
+      }
+    } else {
+      const viIndex = BLOG_CATEGORIES_VI.findIndex(
+        (c) => c.toLowerCase() === selectedCategory.toLowerCase()
+      );
+      if (viIndex !== -1) {
+        setSelectedCategory(BLOG_CATEGORIES_EN[viIndex]);
+      }
+    }
+  }, [isVi]);
 
   // Auto dismiss toast after 3.5s
   useEffect(() => {
@@ -72,7 +95,16 @@ export default function BlogPageClient() {
   let filteredPosts =
     selectedCategory === ALL_CATEGORY
       ? posts
-      : posts.filter((post) => post.category.toLowerCase() === selectedCategory.toLowerCase());
+      : posts.filter((post) => {
+          const postCat = post.category.toLowerCase();
+          const selCat = selectedCategory.toLowerCase();
+          if (postCat === selCat) return true;
+          const viIdx = BLOG_CATEGORIES_VI.findIndex((c) => c.toLowerCase() === selCat);
+          if (viIdx !== -1 && BLOG_CATEGORIES_EN[viIdx].toLowerCase() === postCat) return true;
+          const enIdx = BLOG_CATEGORIES_EN.findIndex((c) => c.toLowerCase() === selCat);
+          if (enIdx !== -1 && BLOG_CATEGORIES_VI[enIdx].toLowerCase() === postCat) return true;
+          return false;
+        });
 
   // Filter by content type (Original vs Curated)
   if (contentTypeFilter === "original") {
@@ -139,7 +171,9 @@ export default function BlogPageClient() {
               </div>
 
               <div className="text-[11px] text-slate-400 font-medium">
-                Cập nhật tự động từ TechCrunch, The Verge, VnExpress & Logistics
+                {isVi
+                  ? "Cập nhật tự động từ TechCrunch, The Verge, VnExpress & Logistics"
+                  : "Auto-updated from TechCrunch, The Verge, VnExpress & Logistics"}
               </div>
             </div>
           </Reveal>

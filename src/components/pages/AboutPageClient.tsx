@@ -156,7 +156,10 @@ export default function AboutPageClient() {
                                 </div>
 
                                 {/* Core Bio Paragraphs */}
-                                <div className="space-y-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <div 
+                                    className="about-narrative space-y-4 text-base sm:text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed sm:leading-[1.8]"
+                                    style={{ textAlign: "justify", textJustify: "inter-word" }}
+                                >
                                     <p className="font-medium text-slate-900 dark:text-slate-100 text-base sm:text-lg border-b border-slate-200/60 dark:border-slate-800/80 pb-4">
                                         {currentAbout[0]}
                                     </p>

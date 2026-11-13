@@ -37,7 +37,7 @@ async function resolvePost(slug: string): Promise<BlogPost | undefined> {
         date: formattedDate,
         readTime: `${dbPost.reading_time || 5} phút đọc`,
         category: dbPost.category,
-        image: dbPost.cover_image || "/untitled-1555924881176370155281.jpg",
+        image: dbPost.cover_image || "/blog/stepping-out-of-the-safe-nest.jpg",
         slug: dbPost.slug,
         content: dbPost.content,
         tags,

@@ -74,7 +74,10 @@ export default function AboutSection() {
 
             {/* Intro Narrative */}
             <Reveal direction="up" delay={50}>
-                <div className="mb-8 w-full space-y-4 text-justify text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <div 
+                    className="about-narrative mb-8 w-full space-y-4 text-base sm:text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed sm:leading-[1.8] font-normal"
+                    style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
                     {isVi ? (
                         <>
                             <p>
@@ -127,10 +130,13 @@ export default function AboutSection() {
                                 <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center mb-3.5 shadow-2xs">
                                     {item.icon}
                                 </div>
-                                <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-2">
+                                <h4 className="text-base sm:text-[17px] font-bold text-slate-900 dark:text-white mb-2">
                                     {item.title}
                                 </h4>
-                                <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                                <p 
+                                    className="about-card-desc text-xs sm:text-[13.5px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal"
+                                    style={{ textAlign: "justify", textJustify: "inter-word" }}
+                                >
                                     {item.desc}
                                 </p>
                             </div>

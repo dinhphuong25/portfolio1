@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { getBlogPosts } from "@/lib/db";
-import { BLOG_POSTS_VI, BlogPost } from "@/data/posts";
+import { BLOG_POSTS_VI, BLOG_POSTS_EN, BlogPost, getCategoryDisplay } from "@/data/posts";
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
+    const lang = searchParams.get("lang") === "en" ? "en" : "vi";
     const category = searchParams.get("category") || "all";
     const search = searchParams.get("search")?.toLowerCase().trim() || "";
     const limit = parseInt(searchParams.get("limit") || "50", 10);
@@ -21,6 +22,20 @@ export async function GET(request: Request) {
 
     if (dbResult.posts && dbResult.posts.length > 0) {
       posts = dbResult.posts.map((p) => {
+        // If this post matches a static post, use the static post version in the requested language
+        const staticList = lang === "en" ? BLOG_POSTS_EN : BLOG_POSTS_VI;
+        const staticMatch = staticList.find(
+          (sp) => sp.slug === p.slug || sp.id === p.id
+        );
+
+        if (staticMatch) {
+          return {
+            ...staticMatch,
+            views: p.views || staticMatch.views,
+            publishedAt: p.published_at || staticMatch.publishedAt,
+          };
+        }
+
         let tags: string[] = [];
         try {
           tags = JSON.parse(p.tags);
@@ -28,26 +43,39 @@ export async function GET(request: Request) {
           tags = [p.category];
         }
 
-        // Format date in Vietnamese
-        let formattedDate = "Gần đây";
+        // Format date according to language
+        let formattedDate = lang === "en" ? "Recently" : "Gần đây";
         try {
           const d = new Date(p.published_at);
-          const day = d.getDate().toString().padStart(2, "0");
-          const month = (d.getMonth() + 1).toString().padStart(2, "0");
-          const year = d.getFullYear();
-          formattedDate = `${day} Tháng ${month}, ${year}`;
+          if (lang === "en") {
+            const months = [
+              "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+            ];
+            formattedDate = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+          } else {
+            const day = d.getDate().toString().padStart(2, "0");
+            const month = (d.getMonth() + 1).toString().padStart(2, "0");
+            const year = d.getFullYear();
+            formattedDate = `${day} Tháng ${month}, ${year}`;
+          }
         } catch {
           //
         }
+
+        const readTime =
+          lang === "en"
+            ? `${p.reading_time || 5} min read`
+            : `${p.reading_time || 5} phút đọc`;
 
         return {
           id: p.id,
           title: p.title,
           excerpt: p.excerpt,
           date: formattedDate,
-          readTime: `${p.reading_time || 5} phút đọc`,
-          category: p.category,
-          image: p.cover_image || "/untitled-1555924881176370155281.jpg",
+          readTime,
+          category: getCategoryDisplay(p.category, lang),
+          image: p.cover_image || "/blog/stepping-out-of-the-safe-nest.jpg",
           slug: p.slug,
           content: p.content,
           tags,
@@ -55,17 +83,18 @@ export async function GET(request: Request) {
           sourceType: p.source_type,
           sourceName: p.source_name || undefined,
           sourceUrl: p.source_url || undefined,
-          author: p.author,
+          author: p.author || (lang === "en" ? "Kim Dinh Phuong" : "Kim Đình Phương"),
           views: p.views,
           publishedAt: p.published_at,
         };
       });
     } else {
       // Fallback to static posts
-      posts = BLOG_POSTS_VI.map((p) => ({
+      const staticList = lang === "en" ? BLOG_POSTS_EN : BLOG_POSTS_VI;
+      posts = staticList.map((p) => ({
         ...p,
-        sourceType: "original" as const,
-        author: "Kim Đình Phương",
+        sourceType: p.sourceType || ("original" as const),
+        author: p.author || (lang === "en" ? "Kim Dinh Phuong" : "Kim Đình Phương"),
       }));
     }
 

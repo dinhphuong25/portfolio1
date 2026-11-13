@@ -26,7 +26,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "08 Tháng 5, 2026",
         readTime: "5 phút đọc",
         category: "Trải nghiệm",
-        image: "/untitled-1555924881176370155281.jpg",
+        image: "/blog/stepping-out-of-the-safe-nest.jpg",
         slug: "stepping-out-of-the-safe-nest",
         tags: ["Tản mạn", "Phát triển bản thân", "Trải nghiệm"],
         isPublished: true,
@@ -87,7 +87,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "10 Tháng 5, 2026",
         readTime: "6 phút đọc",
         category: "Lập trình",
-        image: "/projects/eztool.jpg",
+        image: "/blog/modern-web-development-nextjs-typescript.jpg",
         slug: "modern-web-development-nextjs-typescript",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Lập trình"],
         isPublished: true,
@@ -140,7 +140,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "11 Tháng 5, 2026",
         readTime: "7 phút đọc",
         category: "Logistics",
-        image: "/projects/ecofresh.jpg",
+        image: "/blog/optimizing-warehouse-operations-wms.jpg",
         slug: "optimizing-warehouse-operations-wms",
         tags: ["Logistics", "Supply Chain", "WMS", "Tự động hóa", "Kho bãi"],
         isPublished: true,
@@ -188,7 +188,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "12 Tháng 5, 2026",
         readTime: "5 phút đọc",
         category: "AI",
-        image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
+        image: "/blog/ai-agents-shaping-modern-supply-chain.jpg",
         slug: "ai-agents-shaping-modern-supply-chain",
         tags: ["AI", "AI Agent", "Chuỗi cung ứng", "Tự động hóa", "TechCrunch"],
         isPublished: true,
@@ -236,7 +236,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "13 Tháng 5, 2026",
         readTime: "6 phút đọc",
         category: "Học tập",
-        image: "/projects/ezstudy.jpg",
+        image: "/blog/self-learning-programming-from-logistics.jpg",
         slug: "self-learning-programming-from-logistics",
         tags: ["Tự học", "Lập trình", "Sinh viên", "Kỷ luật bản thân"],
         isPublished: true,
@@ -285,7 +285,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         date: "13 Tháng 5, 2026",
         readTime: "5 phút đọc",
         category: "Công nghệ",
-        image: "/projects/hitoeic.jpg",
+        image: "/blog/mastering-core-web-vitals-performance.jpg",
         slug: "mastering-core-web-vitals-performance",
         tags: ["Web Performance", "Core Web Vitals", "Next.js", "SEO", "The Verge"],
         isPublished: true,
@@ -336,7 +336,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 8, 2026",
         readTime: "5 min read",
         category: "Experience",
-        image: "/untitled-1555924881176370155281.jpg",
+        image: "/blog/stepping-out-of-the-safe-nest.jpg",
         slug: "stepping-out-of-the-safe-nest",
         tags: ["Musings", "Growth", "Experience"],
         isPublished: true,
@@ -397,7 +397,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 10, 2026",
         readTime: "6 min read",
         category: "Programming",
-        image: "/projects/eztool.jpg",
+        image: "/blog/modern-web-development-nextjs-typescript.jpg",
         slug: "modern-web-development-nextjs-typescript",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Programming"],
         isPublished: true,
@@ -424,7 +424,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 11, 2026",
         readTime: "7 min read",
         category: "Logistics",
-        image: "/projects/ecofresh.jpg",
+        image: "/blog/optimizing-warehouse-operations-wms.jpg",
         slug: "optimizing-warehouse-operations-wms",
         tags: ["Logistics", "Supply Chain", "WMS", "Automation"],
         isPublished: true,
@@ -446,7 +446,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 12, 2026",
         readTime: "5 min read",
         category: "AI",
-        image: "/cac-phuong-phap-toi-uu-hoa-chuoi-cung-ung-trong-logistics-b1.jpg",
+        image: "/blog/ai-agents-shaping-modern-supply-chain.jpg",
         slug: "ai-agents-shaping-modern-supply-chain",
         tags: ["AI", "AI Agent", "Supply Chain", "Automation"],
         isPublished: true,
@@ -465,7 +465,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 13, 2026",
         readTime: "6 min read",
         category: "Learning",
-        image: "/projects/ezstudy.jpg",
+        image: "/blog/self-learning-programming-from-logistics.jpg",
         slug: "self-learning-programming-from-logistics",
         tags: ["Self-Learning", "Programming", "Student", "Discipline"],
         isPublished: true,
@@ -482,7 +482,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         date: "May 13, 2026",
         readTime: "5 min read",
         category: "Technology",
-        image: "/projects/hitoeic.jpg",
+        image: "/blog/mastering-core-web-vitals-performance.jpg",
         slug: "mastering-core-web-vitals-performance",
         tags: ["Web Performance", "Core Web Vitals", "Next.js", "SEO"],
         isPublished: true,
@@ -502,6 +502,18 @@ export const BLOG_CATEGORIES_EN = ["All", "Technology", "Programming", "AI", "Lo
 export const BLOG_CATEGORIES_VI = ["Tất cả", "Công nghệ", "Lập trình", "AI", "Logistics", "Học tập", "Trải nghiệm"];
 
 export const BLOG_CATEGORIES = BLOG_CATEGORIES_EN; // Default
+
+export function getCategoryDisplay(category: string, lang: 'vi' | 'en'): string {
+    const viIdx = BLOG_CATEGORIES_VI.findIndex((c) => c.toLowerCase() === category.toLowerCase());
+    if (viIdx !== -1) {
+        return lang === 'en' ? BLOG_CATEGORIES_EN[viIdx] : BLOG_CATEGORIES_VI[viIdx];
+    }
+    const enIdx = BLOG_CATEGORIES_EN.findIndex((c) => c.toLowerCase() === category.toLowerCase());
+    if (enIdx !== -1) {
+        return lang === 'en' ? BLOG_CATEGORIES_EN[enIdx] : BLOG_CATEGORIES_VI[enIdx];
+    }
+    return category;
+}
 
 export function getPostBySlug(slug: string, lang: 'vi' | 'en' = 'en'): BlogPost | undefined {
     const list = lang === 'vi' ? BLOG_POSTS_VI : BLOG_POSTS_EN;
