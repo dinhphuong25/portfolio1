@@ -60,7 +60,7 @@ export default function LayoutContent({ children }: { children: ReactNode }) {
             {/* Sidebar remains persistent */}
             <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-            <main className="flex-1 lg:ml-[210px] min-h-screen overflow-hidden flex flex-col">
+            <main className="flex-1 lg:ml-[275px] min-h-screen overflow-hidden flex flex-col">
                 <TopShell />
 
                 <motion.div
