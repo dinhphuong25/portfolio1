@@ -19,8 +19,8 @@ function MobileHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
         if (pathname.startsWith("/projects/")) return isVi ? "Chi tiết dự án" : "Case Study";
         if (pathname === "/blog") return isVi ? "Bài viết" : "Blog";
         if (pathname.startsWith("/blog/")) return isVi ? "Bài viết" : "Post";
-        if (pathname === "/tut") return isVi ? "Hướng dẫn" : "Tutorials";
-        if (pathname.startsWith("/tut/")) return isVi ? "Bài học" : "Tutorial";
+        if (pathname === "/tips" || pathname === "/tut") return isVi ? "Chia sẻ thủ thuật" : "Guides & Tips";
+        if (pathname.startsWith("/tips/") || pathname.startsWith("/tut/")) return isVi ? "Thủ thuật" : "Tip";
         if (pathname === "/about") return isVi ? "Giới thiệu" : "About";
         if (pathname === "/contact") return isVi ? "Liên hệ" : "Contact";
         return "Portfolio";

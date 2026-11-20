@@ -48,14 +48,14 @@ export default function TestimonialsSection() {
   const { language } = useLanguage();
 
   return (
-    <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-100 dark:border-slate-800" aria-labelledby="testimonials-heading">
+    <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-200 dark:border-slate-800" aria-labelledby="testimonials-heading">
       {/* Header */}
       <div className="flex items-center gap-3 mb-8">
         <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
         <h2 id="testimonials-heading" className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
           {language === "vi" ? "ĐÁNH GIÁ TỪ ĐỒNG NGHIỆP" : "PEER TESTIMONIALS"}
         </h2>
-        <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
+        <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
       </div>
 
       {/* Grid Layout */}
@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
         {TESTIMONIALS.map((t, index) => {
           return (
             <Reveal direction="up" delay={index * 120 + 80} key={t.name}>
-              <div className="h-full bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md hover:-translate-y-1 flex flex-col justify-between relative group">
+              <div className="h-full bg-slate-50/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-slate-400 dark:hover:border-slate-600 hover:shadow-md hover:-translate-y-1 flex flex-col justify-between relative group">
                 
                 <div className="space-y-3.5">
                   {/* Rating Stars */}
@@ -82,8 +82,8 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-3 mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-800">
-                  <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shrink-0">
+                <div className="flex items-center gap-3 mt-6 pt-4 border-t border-slate-300/80 dark:border-slate-700/80">
+                  <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 shrink-0">
                     <Image
                       src={t.avatar}
                       alt={t.name}

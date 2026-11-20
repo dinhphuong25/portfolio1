@@ -62,20 +62,20 @@ export default function TimelineSection() {
     const timelineData = language === "vi" ? timelineDataVi : timelineDataEn;
 
     return (
-        <div className="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800">
+        <div className="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
             {/* Header */}
             <div className="flex items-center gap-3 mb-8">
                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
                 <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
                     {language === "vi" ? "TIẾN TRÌNH PHÁT TRIỂN" : "CAREER JOURNEY"}
                 </h3>
-                <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
+                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
             </div>
 
             {/* Slate Minimal Vertical Tree Timeline */}
             <div className="relative">
                 {/* Vertical Central Line - Perfectly Centered at 18px (center of 36px / w-9 node column) */}
-                <div className="absolute left-[18px] -translate-x-1/2 top-4 bottom-4 w-px bg-slate-200 dark:bg-slate-800" />
+                <div className="absolute left-[18px] -translate-x-1/2 top-4 bottom-4 w-px bg-slate-300 dark:bg-slate-700" />
 
                 <div className="space-y-6">
                     {timelineData.map((item, index) => {
@@ -90,7 +90,7 @@ export default function TimelineSection() {
                                             className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
                                                 isLast
                                                     ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md ring-2 ring-slate-900/10 dark:ring-white/20"
-                                                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 group-hover:border-slate-400 dark:group-hover:border-slate-600 shadow-2xs"
+                                                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700 group-hover:border-slate-400 dark:group-hover:border-slate-500 shadow-2xs"
                                             }`}
                                         >
                                             {item.icon}
@@ -98,13 +98,13 @@ export default function TimelineSection() {
                                     </div>
 
                                     {/* Content Card */}
-                                    <div className="flex-1 bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-4 sm:p-5 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200">
+                                    <div className="flex-1 bg-slate-50/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 rounded-xl p-4 sm:p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-200">
                                         <div className="flex items-center justify-between gap-3 mb-1.5 flex-wrap">
                                             <h4 className="text-sm font-extrabold text-slate-900 dark:text-slate-100">
                                                 {item.title}
                                             </h4>
 
-                                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 px-2.5 py-0.5 rounded-md shrink-0">
+                                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-2.5 py-0.5 rounded-md shrink-0">
                                                 {item.year}
                                             </span>
                                         </div>
@@ -115,7 +115,7 @@ export default function TimelineSection() {
 
                                         {/* "Present" status indicator for current milestone */}
                                         {isLast && (
-                                            <div className="flex items-center gap-1.5 mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-800">
+                                            <div className="flex items-center gap-1.5 mt-3 pt-2.5 border-t border-slate-300/80 dark:border-slate-700/80">
                                                 <span className="relative flex h-1.5 w-1.5">
                                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                                                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />

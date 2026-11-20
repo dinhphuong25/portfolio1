@@ -51,7 +51,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
     );
 
     return (
-        <section className="relative overflow-hidden pt-10 pb-8 px-4 sm:px-8 border-b border-slate-100 dark:border-slate-800/80">
+        <section className="relative overflow-hidden pt-10 pb-8 px-4 sm:px-8 border-b border-slate-200 dark:border-slate-800">
             <div className="max-w-2xl mx-auto flex flex-col items-center text-center relative z-10">
                 {/* Avatar */}
                 <motion.div
@@ -112,7 +112,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                             rel="noopener noreferrer"
                             aria-label={`${link.platform}: ${link.label}`}
                             title={`${link.platform}: ${link.label}`}
-                            className="inline-flex h-9 items-center gap-2 rounded-full border border-slate-200 bg-white px-3 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600 dark:hover:bg-slate-700"
+                            className="inline-flex h-9 items-center gap-2 rounded-full border border-slate-300 bg-white px-3 transition-all hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600 dark:hover:bg-slate-700"
                         >
                             <SocialIcon platform={link.platform} />
                             <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">

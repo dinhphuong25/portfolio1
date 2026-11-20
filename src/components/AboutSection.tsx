@@ -62,14 +62,14 @@ export default function AboutSection() {
     ];
 
     return (
-        <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-100 dark:border-slate-800" aria-labelledby="about-heading">
+        <section className="px-6 sm:px-10 lg:px-14 py-8 border-t border-slate-200 dark:border-slate-800" aria-labelledby="about-heading">
             {/* Section Badge & Title */}
             <div className="flex items-center gap-3 mb-6">
                 <span className="w-1.5 h-4 rounded-full bg-slate-900 dark:bg-white inline-block" />
                 <h2 id="about-heading" className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase">
                     {isVi ? "CÂU CHUYỆN & GIỚI THIỆU" : "ABOUT & STORY"}
                 </h2>
-                <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800" />
+                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
             </div>
 
             {/* Intro Narrative */}
@@ -124,10 +124,10 @@ export default function AboutSection() {
                     {keyStrengths.map((item, idx) => (
                         <div
                             key={idx}
-                            className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 transition-colors hover:border-slate-300 dark:hover:border-slate-700 flex flex-col justify-between"
+                            className="p-5 sm:p-6 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-300 dark:border-slate-700 transition-colors hover:border-slate-400 dark:hover:border-slate-600 flex flex-col justify-between"
                         >
                             <div>
-                                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center mb-3.5 shadow-2xs">
+                                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center mb-3.5 shadow-2xs">
                                     {item.icon}
                                 </div>
                                 <h4 className="text-base sm:text-[17px] font-bold text-slate-900 dark:text-white mb-2">
@@ -151,7 +151,7 @@ export default function AboutSection() {
                     {contactCards.map((card, idx) => {
                         const content = (
                             <div className="flex items-center gap-4">
-                                <div className="w-11 h-11 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center shadow-2xs shrink-0 group-hover:scale-105 transition-transform">
+                                <div className="w-11 h-11 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center shadow-2xs shrink-0 group-hover:scale-105 transition-transform">
                                     {card.icon}
                                 </div>
                                 <div className="min-w-0 flex-1">
@@ -166,7 +166,7 @@ export default function AboutSection() {
                                     </div>
                                 </div>
                                 {card.href && (
-                                    <div className="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center shrink-0 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-slate-900 transition-colors">
+                                    <div className="w-8 h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center shrink-0 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-slate-900 transition-colors">
                                         <ArrowUpRight className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-white dark:group-hover:text-slate-900 transition-colors" />
                                     </div>
                                 )}
@@ -178,7 +178,7 @@ export default function AboutSection() {
                                 <a
                                     key={idx}
                                     href={card.href}
-                                    className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 transition-all hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-xs group block"
+                                    className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-300 dark:border-slate-700 transition-all hover:border-slate-400 dark:hover:border-slate-600 hover:shadow-xs group block"
                                 >
                                     {content}
                                 </a>
@@ -188,7 +188,7 @@ export default function AboutSection() {
                         return (
                             <div
                                 key={idx}
-                                className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-200/80 dark:border-slate-800 transition-all hover:border-slate-300 dark:hover:border-slate-700 group"
+                                className="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-850/60 border border-slate-300 dark:border-slate-700 transition-all hover:border-slate-400 dark:hover:border-slate-600 group"
                             >
                                 {content}
                             </div>

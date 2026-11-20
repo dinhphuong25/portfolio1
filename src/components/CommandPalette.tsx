@@ -13,6 +13,7 @@ import {
   Download,
   Globe,
   BookOpen,
+  Lightbulb,
   Sun,
   Moon,
   Copy
@@ -76,6 +77,14 @@ export default function CommandPalette() {
       action: () => router.push("/blog"),
       section: "navigate",
       shortcut: "G B"
+    },
+    {
+      id: "tips",
+      icon: <Lightbulb size={18} />,
+      label: { vi: "Chia sẻ thủ thuật", en: "Guides & Tips" },
+      action: () => router.push("/tips"),
+      section: "navigate",
+      shortcut: "G T"
     },
     {
       id: "contact",

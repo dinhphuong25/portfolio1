@@ -26,6 +26,12 @@ const BlogIcon = () => (
   </svg>
 );
 
+const TipsIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+  </svg>
+);
+
 const ContactIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -76,6 +82,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { label: language === "vi" ? "Tổng quan" : "Overview", icon: <HomeIcon />, href: "/" },
     { label: language === "vi" ? "Dự án" : "Projects", icon: <ProjectsIcon />, href: "/projects" },
     { label: language === "vi" ? "Bài viết" : "Blog", icon: <BlogIcon />, href: "/blog" },
+    { label: language === "vi" ? "Chia sẻ thủ thuật" : "Guides & Tips", icon: <TipsIcon />, href: "/tips" },
     { label: language === "vi" ? "Liên hệ" : "Contact", icon: <ContactIcon />, href: "/contact" },
   ];
 
@@ -163,7 +170,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     <span className={`shrink-0 transition-colors duration-200 ${active ? "text-slate-900 dark:text-white" : "text-slate-400 dark:text-slate-500"}`}>
                       {item.icon}
                     </span>
-                    <span className="text-[15px] sm:text-[16px] lg:text-[15px] font-bold tracking-tight">{item.label}</span>
+                    <span className="text-[15px] sm:text-[16px] lg:text-[14px] xl:text-[14.5px] font-bold tracking-tight whitespace-nowrap">{item.label}</span>
                   </Link>
                 </li>
               );

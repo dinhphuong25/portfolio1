@@ -196,7 +196,7 @@ export default function AboutPageClient() {
 
                             {/* Side Highlights Cards - 4 cols */}
                             <div className="lg:col-span-4 space-y-3.5">
-                                <div className="bg-white dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-800 rounded-2xl p-5 shadow-2xs hover:shadow-md transition-all duration-300">
+                                <div className="bg-white dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 rounded-2xl p-5 shadow-2xs hover:shadow-md hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-300">
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="p-2 bg-indigo-50 dark:bg-indigo-950/60 rounded-xl text-indigo-600 dark:text-indigo-400">
                                             <GraduationCap className="w-4 h-4" />
@@ -215,7 +215,7 @@ export default function AboutPageClient() {
                                     </p>
                                 </div>
 
-                                <div className="bg-white dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-800 rounded-2xl p-5 shadow-2xs hover:shadow-md transition-all duration-300">
+                                <div className="bg-white dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 rounded-2xl p-5 shadow-2xs hover:shadow-md hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-300">
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="p-2 bg-amber-50 dark:bg-amber-950/60 rounded-xl text-amber-600 dark:text-amber-400">
                                             <Lightbulb className="w-4 h-4" />
@@ -234,7 +234,7 @@ export default function AboutPageClient() {
                                     </p>
                                 </div>
 
-                                <div className="bg-white dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-800 rounded-2xl p-5 shadow-2xs hover:shadow-md transition-all duration-300">
+                                <div className="bg-white dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 rounded-2xl p-5 shadow-2xs hover:shadow-md hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-300">
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="p-2 bg-blue-50 dark:bg-blue-950/60 rounded-xl text-blue-600 dark:text-blue-400">
                                             <Target className="w-4 h-4" />
