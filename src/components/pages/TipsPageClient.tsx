@@ -24,9 +24,9 @@ export default function TipsPageClient() {
               <span>{isVi ? "Nội dung đang được hoàn thiện" : "Content in progress"}</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight pt-1">
+            <p className="text-sm sm:text-base font-medium text-slate-500 dark:text-slate-400 tracking-wider pt-0.5">
               Coming soon...
-            </h1>
+            </p>
           </div>
         </div>
       </Reveal>
