@@ -18,6 +18,8 @@ const socialIconPaths: Record<string, string> = {
         "M16.5 2h3.013c.227 1.734 1.223 3.29 2.737 4.276A8.067 8.067 0 0 0 24 7.11v3.078a10.94 10.94 0 0 1-4.487-1.427v6.535A6.704 6.704 0 1 1 13.72 8.65v3.236a3.47 3.47 0 1 0 2.78 3.41V2z",
     linkedin:
         "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z",
+    zalo:
+        "M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89",
 };
 
 const socialIconColors: Record<string, string> = {
@@ -25,6 +27,7 @@ const socialIconColors: Record<string, string> = {
     instagram: "text-[#E4405F]",
     tiktok: "text-slate-900 dark:text-white",
     linkedin: "text-[#0A66C2]",
+    zalo: "text-[#0068FF]",
 };
 
 function SocialIcon({ platform }: { platform: string }) {
@@ -47,7 +50,7 @@ function SocialIcon({ platform }: { platform: string }) {
 
 export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderProps) {
     const featuredSocialLinks = profileData.socialLinks.filter((link) =>
-        ["LinkedIn"].includes(link.platform)
+        ["LinkedIn", "Zalo"].includes(link.platform)
     );
 
     return (
@@ -95,7 +98,7 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                     transition={{ duration: 0.4, delay: 0.2 }}
                     className="mt-2 text-[11px] font-medium tracking-wide text-slate-500 dark:text-slate-400"
                 >
-                    Founder of Hi Tech - All In One.
+                    Founder of Hi Tech.
                 </motion.p>
                 <motion.nav
                         aria-label="Mạng xã hội"
