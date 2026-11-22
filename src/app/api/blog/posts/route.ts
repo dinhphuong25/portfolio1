@@ -83,7 +83,7 @@ export async function GET(request: Request) {
           sourceType: p.source_type,
           sourceName: p.source_name || undefined,
           sourceUrl: p.source_url || undefined,
-          author: p.author || (lang === "en" ? "Kim Dinh Phuong" : "Kim Đình Phương"),
+          author: p.author || (lang === "en" ? "Dinh Phuong" : "Đình Phương"),
           views: p.views,
           publishedAt: p.published_at,
         };
@@ -94,7 +94,7 @@ export async function GET(request: Request) {
       posts = staticList.map((p) => ({
         ...p,
         sourceType: p.sourceType || ("original" as const),
-        author: p.author || (lang === "en" ? "Kim Dinh Phuong" : "Kim Đình Phương"),
+        author: p.author || (lang === "en" ? "Dinh Phuong" : "Đình Phương"),
       }));
     }
 

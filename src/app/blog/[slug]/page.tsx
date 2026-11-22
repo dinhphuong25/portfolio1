@@ -67,7 +67,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Bài viết không tìm thấy | Blog Kim Đình Phương",
+      title: "Bài viết không tìm thấy | Blog Đình Phương",
       description: "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã được gỡ bỏ.",
     };
   }
@@ -76,7 +76,7 @@ export async function generateMetadata({
   const twitterImage = `/blog/${post.slug}/twitter-image`;
 
   return {
-    title: `${post.title} | Blog Kim Đình Phương`,
+    title: `${post.title} | Blog Đình Phương`,
     description: post.excerpt,
     alternates: {
       canonical: `/blog/${post.slug}`,
@@ -123,12 +123,12 @@ export default async function BlogPostPage({
     dateModified: datePublished,
     author: {
       "@type": "Person",
-      name: post.author || "Kim Đình Phương",
+      name: post.author || "Đình Phương",
       url: "https://dinhphuong.dev",
     },
     publisher: {
       "@type": "Person",
-      name: "Kim Đình Phương",
+      name: "Đình Phương",
     },
     mainEntityOfPage: `https://dinhphuong.dev/blog/${post.slug}`,
   };

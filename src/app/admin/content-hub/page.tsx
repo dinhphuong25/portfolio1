@@ -1364,7 +1364,7 @@ export default function AdminContentHubPage() {
                     </h1>
                     <p className="text-sm text-slate-500 italic mt-1">{editorData.excerpt}</p>
                     <div className="flex items-center gap-3 text-xs text-slate-400 mt-2">
-                      <span>Bởi Kim Đình Phương</span>
+                      <span>Bởi Đình Phương</span>
                       <span>•</span>
                       <span>{editorData.reading_time} phút đọc</span>
                       <span>•</span>

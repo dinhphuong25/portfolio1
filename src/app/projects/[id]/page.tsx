@@ -36,14 +36,14 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
             canonical: `/projects/${project.id}`,
         },
         openGraph: {
-            title: `${project.title} | Kim Đình Phương`,
+            title: `${project.title} | Đình Phương`,
             description: project.summary,
             url: `/projects/${project.id}`,
             type: "article",
             images: [ogImage],
         },
         twitter: {
-            title: `${project.title} | Kim Đình Phương`,
+            title: `${project.title} | Đình Phương`,
             description: project.summary,
             images: [twitterImage],
         },
@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         datePublished: `${project.year}-01-01`,
         creator: {
             "@type": "Person",
-            name: "Kim Đình Phương",
+            name: "Đình Phương",
         },
         keywords: project.tags.join(", "),
     };

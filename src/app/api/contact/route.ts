@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     const toEmail = process.env.CONTACT_EMAIL || 'kimdinhphuong205@gmail.com';
 
     // Email gửi đi đại diện cho domain đã xác thực trên Resend (ví dụ: contact@dinhphuong.dev)
-    const fromEmail = process.env.FROM_EMAIL || 'Kim Đình Phương <contact@dinhphuong.dev>';
+    const fromEmail = process.env.FROM_EMAIL || 'Đình Phương <contact@dinhphuong.dev>';
 
     // 1. Thư thông báo chi tiết gửi về cho bạn (Đình Phương)
     const adminEmailPromise = resend.emails.send({
@@ -85,8 +85,8 @@ export async function POST(request: Request) {
 
     // 2. Thư tự động phản hồi & cảm ơn gửi trực tiếp đến người dùng vừa điền form
     const autoReplySubject = isEn
-      ? `Thank you for reaching out, ${name}! - Kim Đình Phương`
-      : `Cảm ơn bạn đã liên hệ, ${name}! - Kim Đình Phương`;
+      ? `Thank you for reaching out, ${name}! - Dinh Phuong`
+      : `Cảm ơn bạn đã liên hệ, ${name}! - Đình Phương`;
 
     const autoReplyHtml = isEn
       ? `
@@ -115,7 +115,7 @@ export async function POST(request: Request) {
 
             <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
               <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Best regards,</p>
-              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
+              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Dinh Phuong</p>
             </div>
           </div>
         </body>
@@ -147,7 +147,7 @@ export async function POST(request: Request) {
 
             <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
               <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Trân trọng,</p>
-              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
+              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Đình Phương</p>
             </div>
           </div>
         </body>

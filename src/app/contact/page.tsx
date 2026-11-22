@@ -3,13 +3,13 @@ import ContactPageClient from "@/components/pages/ContactPageClient";
 
 export const metadata: Metadata = {
     title: "Contact",
-    description: "Contact Kim Đình Phương to discuss logistics projects, partnerships, or career opportunities.",
+    description: "Contact Dinh Phuong to discuss logistics projects, partnerships, or career opportunities.",
     alternates: {
         canonical: "/contact",
     },
     openGraph: {
-        title: "Contact | Kim Đình Phương",
-        description: "Connect and send a direct message to Kim Đình Phương.",
+        title: "Contact | Đình Phương",
+        description: "Connect and send a direct message to Dinh Phuong.",
         url: "/contact",
         images: ["/opengraph-image"],
     },

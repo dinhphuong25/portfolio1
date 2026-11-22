@@ -81,7 +81,7 @@ export default function AboutSection() {
                     {isVi ? (
                         <>
                             <p>
-                                Chào mọi người! Mình là Kim Đình Phương, hiện đang là sinh viên ngành Logistics và Quản lý chuỗi cung ứng. Bên cạnh lĩnh vực học tập, mình có niềm đam mê đặc biệt với công nghệ thông tin, lập trình và thế giới đầy thú vị của những dòng code.
+                                Chào mọi người! Mình là Đình Phương, hiện đang là sinh viên ngành Logistics và Quản lý chuỗi cung ứng. Bên cạnh lĩnh vực học tập, mình có niềm đam mê đặc biệt với công nghệ thông tin, lập trình và thế giới đầy thú vị của những dòng code.
                             </p>
                             <p>
                                 Mình luôn bị cuốn hút bởi cách một ý tưởng có thể được biến thành một sản phẩm thực tế thông qua tư duy logic và khả năng lập trình. Đối với mình, mỗi dòng code không đơn thuần là những câu lệnh, mà còn là một cách để giải quyết vấn đề, tạo ra giá trị và hiện thực hóa những ý tưởng sáng tạo. Mình yêu thích việc tìm hiểu công nghệ mới, khám phá cách các hệ thống vận hành và tự tay xây dựng những website, ứng dụng hay công cụ số mang tính ứng dụng cao.
@@ -99,7 +99,7 @@ export default function AboutSection() {
                     ) : (
                         <>
                             <p>
-                                Hello everyone! I am Kim Dinh Phuong, currently a student majoring in Logistics and Supply Chain Management. Beyond my academic field, I have a deep passion for information technology, software development, and the fascinating world of coding.
+                                Hello everyone! I am Dinh Phuong, currently a student majoring in Logistics and Supply Chain Management. Beyond my academic field, I have a deep passion for information technology, software development, and the fascinating world of coding.
                             </p>
                             <p>
                                 I have always been intrigued by how an idea can turn into a real-world product through logical thinking and programming skills. To me, code is not just syntax and commands, but a way to solve problems, generate value, and bring creative ideas to life. I enjoy exploring new technologies, understanding how systems operate, and crafting websites, web applications, and practical digital tools.

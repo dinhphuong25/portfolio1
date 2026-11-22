@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         canonical: "/blog",
     },
     openGraph: {
-        title: "Blog | Kim Đình Phương",
+        title: "Blog | Đình Phương",
         description: "Read the latest articles about product design, UX, and product thinking.",
         url: "/blog",
         images: ["/opengraph-image"],
