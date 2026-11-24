@@ -71,8 +71,8 @@ export default function ContactPageClient() {
                                 </h2>
                                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                                     {isVi
-                                        ? "Tôi luôn sẵn lòng lắng nghe và trao đổi về các bài toán vận hành chuỗi cung ứng, dự án web hoặc cơ hội hợp tác mới. Bạn có thể gửi biểu mẫu bên cạnh hoặc liên hệ trực tiếp qua các kênh dưới đây."
-                                        : "I am always keen to discuss supply chain challenges, web development projects, or new professional opportunities. Feel free to use the form or reach out through my direct channels below."}
+                                        ? "Tôi luôn sẵn lòng lắng nghe và trao đổi về các dự án web hoặc cơ hội hợp tác mới. Bạn có thể gửi biểu mẫu bên cạnh hoặc liên hệ trực tiếp qua các kênh dưới đây."
+                                        : "I am always keen to discuss web development projects or new professional opportunities. Feel free to use the form or reach out through my direct channels below."}
                                 </p>
                             </div>
                         </Reveal>
