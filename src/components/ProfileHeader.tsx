@@ -50,7 +50,7 @@ function SocialIcon({ platform }: { platform: string }) {
 
 export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderProps) {
     const featuredSocialLinks = profileData.socialLinks.filter((link) =>
-        ["LinkedIn", "Zalo"].includes(link.platform)
+        ["LinkedIn"].includes(link.platform)
     );
 
     return (

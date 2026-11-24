@@ -38,7 +38,6 @@ export const profileData: ProfileData = {
   portfolio: "@kimdinhphuong",
   socialLinks: [
     { platform: "LinkedIn", url: "https://www.linkedin.com/in/dinhphuongg/", label: "dinhphuongg" },
-    { platform: "Zalo", url: "https://zalo.me/0903917400", label: "0903 917 400" },
     { platform: "GitHub", url: "https://github.com/kimdinhphuong", label: "@kimdinhphuong" },
   ],
   about: [
