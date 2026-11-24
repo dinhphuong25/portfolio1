@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { profileData } from "@/data/profile";
 import { motion } from "framer-motion";
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, Send } from "lucide-react";
 
 interface ProfileHeaderProps {
     onMessage: () => void;
@@ -115,12 +115,13 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                             rel="noopener noreferrer"
                             aria-label={`${link.platform}: ${link.label}`}
                             title={`${link.platform}: ${link.label}`}
-                            className="inline-flex h-9 items-center gap-2 rounded-full border border-slate-300 bg-white px-3 transition-all hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600 dark:hover:bg-slate-700"
+                            className="group inline-flex h-9 items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 transition-all hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600 dark:hover:bg-slate-700"
                         >
                             <SocialIcon platform={link.platform} />
                             <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
                                 {link.platform}
                             </span>
+                            <Send className="w-3 h-3 text-slate-400 dark:text-slate-500 group-hover:text-[#0A66C2] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                         </a>
                     ))}
                 </motion.nav>
