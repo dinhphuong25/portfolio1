@@ -121,7 +121,20 @@ export default function ProfileHeader({ onMessage: _onMessage }: ProfileHeaderPr
                             <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
                                 {link.platform}
                             </span>
-                            <Send className="w-3 h-3 text-slate-400 dark:text-slate-500 group-hover:text-[#0A66C2] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                            <motion.span
+                                animate={{
+                                    x: [0, 2.5, 0],
+                                    y: [0, -2.5, 0],
+                                }}
+                                transition={{
+                                    duration: 1.6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className="inline-flex text-[#0A66C2]"
+                            >
+                                <Send className="w-3 h-3" />
+                            </motion.span>
                         </a>
                     ))}
                 </motion.nav>
