@@ -48,7 +48,7 @@ export async function GET() {
     )
     .join("");
 
-  const xml = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n  <title>Đình Phương Portfolio Feed</title>\n  <description>Latest blog posts and tutorials from Đình Phương</description>\n  <link>${SITE_URL}</link>${items}\n</channel>\n</rss>`;
+  const xml = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n  <title>Kim Đình Phương Portfolio Feed</title>\n  <description>Latest blog posts and tutorials from Kim Đình Phương</description>\n  <link>${SITE_URL}</link>${items}\n</channel>\n</rss>`;
 
   return new Response(xml, {
     headers: {

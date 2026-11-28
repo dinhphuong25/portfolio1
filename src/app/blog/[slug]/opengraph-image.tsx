@@ -26,7 +26,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           fontFamily: "Inter, Arial, sans-serif",
         }}
       >
-        <div style={{ fontSize: 30, opacity: 0.9 }}>Blog • Đình Phương</div>
+        <div style={{ fontSize: 30, opacity: 0.9 }}>Blog • Kim Đình Phương</div>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em" }}>{title}</div>
           <div style={{ fontSize: 30, opacity: 0.9, lineHeight: 1.3 }}>{subtitle}</div>

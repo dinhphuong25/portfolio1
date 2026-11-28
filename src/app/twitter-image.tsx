@@ -41,7 +41,7 @@ export default function TwitterImage() {
               background: "rgb(129, 140, 248)",
             }}
           />
-          Đình Phương Portfolio
+          Kim Đình Phương Portfolio
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
@@ -64,7 +64,7 @@ export default function TwitterImage() {
               lineHeight: 1.35,
             }}
           >
-            Professional profile, projects, tutorials, and practical insights by Dinh Phuong
+            Professional profile, projects, tutorials, and practical insights by Kim Đình Phương
           </div>
         </div>
 

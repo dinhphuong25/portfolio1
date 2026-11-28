@@ -3,12 +3,12 @@ import ProjectsClient from "@/components/pages/ProjectsClient";
 
 export const metadata: Metadata = {
     title: "Projects",
-    description: "A curated list of Dinh Phuong's featured projects in web development, logistics, and supply chain.",
+    description: "A curated list of Kim Đình Phương's featured projects in web development, logistics, and supply chain.",
     alternates: {
         canonical: "/projects",
     },
     openGraph: {
-        title: "Projects | Đình Phương",
+        title: "Projects | Kim Đình Phương",
         description: "Explore featured case studies and projects in logistics and digital products.",
         url: "/projects",
         images: ["/opengraph-image"],

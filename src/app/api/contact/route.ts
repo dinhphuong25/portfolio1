@@ -32,7 +32,7 @@ export async function POST(request: Request) {
 
     const apiKey = cfEnv?.RESEND_API_KEY || process.env.RESEND_API_KEY;
     const toEmail = cfEnv?.CONTACT_EMAIL || process.env.CONTACT_EMAIL || 'kimdinhphuong205@gmail.com';
-    const fromEmail = cfEnv?.FROM_EMAIL || process.env.FROM_EMAIL || 'Đình Phương <contact@dinhphuong.dev>';
+    const fromEmail = cfEnv?.FROM_EMAIL || process.env.FROM_EMAIL || 'Kim Đình Phương <contact@dinhphuong.dev>';
     const cfEmailBinding = cfEnv?.EMAIL;
 
     const adminEmailHtml = `
@@ -76,8 +76,8 @@ export async function POST(request: Request) {
     `;
 
     const autoReplySubject = isEn
-      ? `Thank you for reaching out, ${name}! - Dinh Phuong`
-      : `Cảm ơn bạn đã liên hệ, ${name}! - Đình Phương`;
+      ? `Thank you for reaching out, ${name}! - Kim Đình Phương`
+      : `Cảm ơn bạn đã liên hệ, ${name}! - Kim Đình Phương`;
 
     const autoReplyHtml = isEn
       ? `
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
 
             <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
               <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Best regards,</p>
-              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Dinh Phuong</p>
+              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
             </div>
           </div>
         </body>
@@ -138,7 +138,7 @@ export async function POST(request: Request) {
 
             <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
               <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Trân trọng,</p>
-              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Đình Phương</p>
+              <p style="margin: 0; font-size: 16px; font-weight: 700; color: #0f172a;">Kim Đình Phương</p>
             </div>
           </div>
         </body>
@@ -149,7 +149,7 @@ export async function POST(request: Request) {
     if (cfEmailBinding) {
       try {
         await cfEmailBinding.send({
-          from: { email: "contact@dinhphuong.dev", name: "Đình Phương Portfolio" },
+          from: { email: "contact@dinhphuong.dev", name: "Kim Đình Phương Portfolio" },
           to: toEmail,
           replyTo: { email, name },
           subject: `[Portfolio] Tin nhắn từ ${name}${subject ? `: ${subject}` : ''}`,
@@ -160,9 +160,9 @@ export async function POST(request: Request) {
         // Gui thu phan hoi tu dong neu co the
         try {
           await cfEmailBinding.send({
-            from: { email: "contact@dinhphuong.dev", name: "Đình Phương" },
+            from: { email: "contact@dinhphuong.dev", name: "Kim Đình Phương" },
             to: email,
-            replyTo: { email: toEmail, name: "Đình Phương" },
+            replyTo: { email: toEmail, name: "Kim Đình Phương" },
             subject: autoReplySubject,
             text: isEn ? `Thank you for reaching out, ${name}!` : `Cảm ơn bạn đã liên hệ, ${name}!`,
             html: autoReplyHtml,

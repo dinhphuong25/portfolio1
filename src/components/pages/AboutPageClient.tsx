@@ -13,7 +13,7 @@ export default function AboutPageClient() {
 
     const aboutTextEn = profileData.about;
     const aboutTextVi = [
-        "Xin chào! Tôi là Đình Phương, hoạt động và phát triển chuyên môn trong lĩnh vực Quản lý Chuỗi cung ứng và Logistics.",
+        "Xin chào! Tôi là Kim Đình Phương, hoạt động và phát triển chuyên môn trong lĩnh vực Quản lý Chuỗi cung ứng và Logistics.",
         "Tôi yêu thích việc kết hợp logistics với công nghệ để giải quyết các bài toán thực tiễn trong quản lý và vận hành. Bên cạnh kiến thức chuyên ngành, tôi dành nhiều thời gian tìm hiểu và phát triển các kỹ năng về thiết kế website, lập trình web, trí tuệ nhân tạo (AI), tự động hóa quy trình và xây dựng các công cụ hỗ trợ công việc.",
         "Tôi tin rằng công nghệ là chìa khóa thúc đẩy chuyển đổi số trong chuỗi cung ứng. Vì vậy, tôi luôn chủ động thực hiện các dự án cá nhân nhằm ứng dụng những kiến thức đã học vào các giải pháp có tính thực tiễn, từ xây dựng website, hệ thống quản lý đến các ứng dụng hỗ trợ học tập và làm việc.",
         "Mục tiêu của tôi là trở thành một chuyên gia Supply Chain có nền tảng công nghệ, có khả năng kết nối giữa nghiệp vụ logistics và các giải pháp số để tối ưu hóa quy trình, nâng cao hiệu quả vận hành và tạo ra giá trị bền vững cho doanh nghiệp.",
@@ -370,7 +370,7 @@ export default function AboutPageClient() {
                 <Reveal direction="up" delay={500}>
                     <footer className="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <span className="text-xs text-slate-400">
-                            {isVi ? "Đình Phương • 2026 Portfolio" : "Dinh Phuong • 2026 Portfolio"}
+                            {isVi ? "Kim Đình Phương • 2026 Portfolio" : "Kim Dinh Phuong • 2026 Portfolio"}
                         </span>
                         <Link
                             href="/contact"

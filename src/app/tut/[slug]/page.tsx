@@ -31,14 +31,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             canonical: `/tut/${tutorial.slug}`,
         },
         openGraph: {
-            title: `${tutorial.title} | Đình Phương`,
+            title: `${tutorial.title} | Kim Đình Phương`,
             description: tutorial.description,
             url: `/tut/${tutorial.slug}`,
             type: 'article',
             images: [ogImage],
         },
         twitter: {
-            title: `${tutorial.title} | Đình Phương`,
+            title: `${tutorial.title} | Kim Đình Phương`,
             description: tutorial.description,
             images: [twitterImage],
         },
@@ -68,7 +68,7 @@ export default async function TutorialDetailPage({ params }: { params: Promise<{
             url: `https://dinhphuong.dev/tut/${tutorial.slug}`,
             author: {
                 "@type": "Person",
-                name: "Đình Phương",
+                name: "Kim Đình Phương",
             },
         }
         : {
@@ -82,7 +82,7 @@ export default async function TutorialDetailPage({ params }: { params: Promise<{
             mainEntityOfPage: `https://dinhphuong.dev/tut/${tutorial.slug}`,
             author: {
                 "@type": "Person",
-                name: "Đình Phương",
+                name: "Kim Đình Phương",
             },
         };
 

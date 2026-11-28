@@ -107,7 +107,7 @@ Việc cập nhật liên tục các xu hướng công nghệ và vận hành m�
     category,
     tags: [category, article.source_name, "Tổng hợp tin tức", "Công nghệ số"],
     readingTime,
-    seoTitle: `${article.title.slice(0, 50)} | Blog Đình Phương`,
+    seoTitle: `${article.title.slice(0, 50)} | Blog Kim Đình Phương`,
     seoDescription: cleanSummary.slice(0, 155),
   };
 }
@@ -123,7 +123,7 @@ export async function synthesizeArticleWithGemini(
   }
 
   const prompt = `
-Bạn là Senior Tech Writer và AI Content Editor cho website cá nhân của Đình Phương (dinhphuong.dev) - sinh viên Logistics và đam mê Lập trình, Công nghệ, AI.
+Bạn là Senior Tech Writer và AI Content Editor cho website cá nhân của Kim Đình Phương (dinhphuong.dev) - sinh viên Logistics và đam mê Lập trình, Công nghệ, AI.
 
 NHIỆM VỤ:
 Hãy phân tích nội dung nguồn dưới đây và biên soạn thành một bài viết blog tiếng Việt hoàn chỉnh, sâu sắc, có giá trị riêng và phong cách chuyên nghiệp, gần gũi.
@@ -228,7 +228,7 @@ export function createBlogPostFromSynthesis(
     tags: JSON.stringify(synth.tags || [synth.category]),
     cover_image: article.image_url || null,
     reading_time: synth.readingTime || 5,
-    author: "Đình Phương",
+    author: "Kim Đình Phương",
     source_type: "curated",
     source_name: article.source_name,
     source_url: article.original_url,

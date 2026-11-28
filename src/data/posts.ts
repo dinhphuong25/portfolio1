@@ -33,7 +33,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         tags: ["Tản mạn", "Phát triển bản thân", "Trải nghiệm"],
         isPublished: true,
         sourceType: "original",
-        author: "Đình Phương",
+        author: "Kim Đình Phương",
         content: `
 <p class="lead">Trong tâm lý học hiện đại, "vùng an toàn" (Comfort Zone) được ví như chiếc kén êm ái bảo vệ con người trước những biến động và lo âu. Nhưng ở chiều ngược lại, chiếc kén ấy cũng chính là rào cản thầm lặng ngăn con người chạm tới những chân trời mới. Việc dũng cảm bước ra khỏi ranh giới quen thuộc không phải là ván cược mạo hiểm, mà là chìa khóa duy nhất để kích hoạt tiềm năng thực sự và kiến tạo một phiên bản rực rỡ hơn của chính mình.</p>
 
@@ -70,7 +70,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Lập trình"],
         isPublished: true,
         sourceType: "original",
-        author: "Đình Phương",
+        author: "Kim Đình Phương",
         content: `
 <p class="lead">Khi bắt đầu học lập trình web, chúng ta thường bị ngợp trước vô số framework và thư viện mới ra đời mỗi ngày. Tuy nhiên, việc nắm vững tư duy kiến trúc và làm chủ bộ ba <strong>Next.js, TypeScript và Tailwind CSS</strong> đã giúp mình hiện thực hóa được nhiều sản phẩm số chất lượng, từ các công cụ tiện ích nhỏ đến hệ thống quản lý hoàn chỉnh.</p>
 
@@ -123,7 +123,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         tags: ["Logistics", "Supply Chain", "WMS", "Tự động hóa", "Kho bãi"],
         isPublished: true,
         sourceType: "original",
-        author: "Đình Phương",
+        author: "Kim Đình Phương",
         content: `
 <p class="lead">Trong lĩnh vực Logistics và Quản lý Chuỗi cung ứng, kho bãi không đơn thuần là nơi chứa đựng hàng hóa, mà là một "trạm trung chuyển nhịp thở" điều phối dòng chảy của cả chuỗi cung ứng. Bất kỳ sự chậm trễ hay nhầm lẫn nào trong kho cũng đều tạo ra hiệu ứng dây chuyền làm tăng chi phí và giảm mức độ hài lòng của khách hàng.</p>
 
@@ -173,7 +173,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         sourceType: "curated",
         sourceName: "TechCrunch & Vietnam Logistics Review",
         sourceUrl: "https://techcrunch.com",
-        author: "Đình Phương (Biên soạn)",
+        author: "Kim Đình Phương (Biên soạn)",
         content: `
 <p class="lead">Trong năm 2025 - 2026, trí tuệ nhân tạo đã vượt qua giai đoạn của những chatbot hỏi đáp đơn thuần để bước vào kỷ nguyên của <strong>AI Agents (Các tác tử AI tự hành)</strong> – những hệ thống có khả năng tự động lập kế hoạch, sử dụng công cụ, phối hợp đa nhiệm và hành động độc lập để giải quyết các vấn đề phức tạp trong đời sống thực tế.</p>
 
@@ -219,7 +219,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         tags: ["Tự học", "Lập trình", "Sinh viên", "Kỷ luật bản thân"],
         isPublished: true,
         sourceType: "original",
-        author: "Đình Phương",
+        author: "Kim Đình Phương",
         content: `
 <p class="lead">Là một sinh viên chuyên ngành Logistics và Quản lý Chuỗi cung ứng, câu hỏi mình nhận được nhiều nhất từ bạn bè là: <em>"Tại sao lại học lập trình? Học có khó không và làm sao để cân bằng giữa việc học trên trường với việc tự học code?"</em>. Bài viết này là những chia sẻ chân thành từ trải nghiệm thực tế của chính mình.</p>
 
@@ -270,7 +270,7 @@ export const BLOG_POSTS_VI: BlogPost[] = [
         sourceType: "curated",
         sourceName: "The Verge & Google Web Dev",
         sourceUrl: "https://www.theverge.com",
-        author: "Đình Phương (Biên soạn)",
+        author: "Kim Đình Phương (Biên soạn)",
         content: `
 <p class="lead">Tốc độ tải trang không đơn thuần là một chỉ số kỹ thuật khô khan, mà là yếu tố quyết định trực tiếp xem người dùng có ở lại trang web của bạn hay rời đi ngay sau 2 giây đầu tiên. Google đã chính thức đưa <strong>Core Web Vitals</strong> thành tiêu chí xếp hạng tìm kiếm hàng đầu trên toàn cầu.</p>
 
@@ -319,7 +319,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         tags: ["Musings", "Growth", "Experience"],
         isPublished: true,
         sourceType: "original",
-        author: "Dinh Phuong",
+        author: "Kim Dinh Phuong",
         content: `
 <p class="lead">In modern psychology, the "Comfort Zone" is often compared to a cozy cocoon protecting individuals from anxiety and unpredictability. However, that same cocoon can quietly become a barrier holding people back from discovering new horizons. Bravely stepping beyond familiar boundaries is not a reckless gamble, but the ultimate master key to unlocking true potential and building a more fulfilled version of oneself.</p>
 
@@ -356,7 +356,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Programming"],
         isPublished: true,
         sourceType: "original",
-        author: "Dinh Phuong",
+        author: "Kim Dinh Phuong",
         content: `
 <p class="lead">Building modern web applications requires a disciplined architectural mindset. Mastering the stack of Next.js, TypeScript, and Tailwind CSS has empowered me to turn complex ideas into smooth, high-performing digital products.</p>
 
@@ -383,7 +383,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         tags: ["Logistics", "Supply Chain", "WMS", "Automation"],
         isPublished: true,
         sourceType: "original",
-        author: "Dinh Phuong",
+        author: "Kim Dinh Phuong",
         content: `
 <p class="lead">Warehousing is the heartbeat of supply chain management. Integrating barcode technology, real-time inventory tracking, and picking route optimization creates unprecedented operational efficiency.</p>
 
@@ -407,7 +407,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         sourceType: "curated",
         sourceName: "TechCrunch & Vietnam Logistics Review",
         sourceUrl: "https://techcrunch.com",
-        author: "Dinh Phuong (Curated)",
+        author: "Kim Dinh Phuong (Curated)",
         content: `
 <p class="lead">AI Agents have evolved from conversational chatbots to autonomous executors capable of orchestrating multi-step supply chain operations in real time.</p>
         `
@@ -424,7 +424,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         tags: ["Self-Learning", "Programming", "Student", "Discipline"],
         isPublished: true,
         sourceType: "original",
-        author: "Dinh Phuong",
+        author: "Kim Dinh Phuong",
         content: `
 <p class="lead">Non-traditional backgrounds are not limitations; they are unique superpowers that combine domain logic with software capabilities.</p>
         `
@@ -443,7 +443,7 @@ export const BLOG_POSTS_EN: BlogPost[] = [
         sourceType: "curated",
         sourceName: "The Verge & Google Web Dev",
         sourceUrl: "https://www.theverge.com",
-        author: "Dinh Phuong (Curated)",
+        author: "Kim Dinh Phuong (Curated)",
         content: `
 <p class="lead">Web performance is not just a technical metric; it is the ultimate user experience feature that commands user retention and search rankings.</p>
         `
